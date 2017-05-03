@@ -66,8 +66,8 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 	private void buildPlayerPanels() {
 		GameMaster master = GameMaster.instance();
 		JPanel infoPanel = new JPanel();
-        int players = master.getNumberOfPlayers();
-        infoPanel.setLayout(new GridLayout(2, (players+1)/2));
+                int players = master.getNumberOfPlayers();
+                infoPanel.setLayout(new GridLayout(2, (players+1)/2));
 		getContentPane().add(infoPanel, BorderLayout.CENTER);
 		playerPanels = new PlayerPanel[master.getNumberOfPlayers()];
 		for (int i = 0; i< master.getNumberOfPlayers(); i++){

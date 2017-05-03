@@ -11,8 +11,11 @@ public class Player {
 	private boolean inJail;
 	private int money;
 	private String name;
-
-	private Cell position;
+        private String picture;
+        private int color;
+	private Cell position;    
+        
+               
 	private ArrayList properties = new ArrayList();
 	private ArrayList railroads = new ArrayList();
 	private ArrayList utilities = new ArrayList();
@@ -60,9 +63,10 @@ public class Player {
 				return true;
 			}
 		}
-		return false;
-		
+		return false;		
 	}
+        
+       
 	
 	public void exchangeProperty(Player player) {
 		for(int i = 0; i < getPropertyNumber(); i++ ) {
@@ -113,6 +117,14 @@ public class Player {
 	public String getName() {
 		return name;
 	}
+        
+        public String getPicture(){
+                return picture;
+        }
+        
+        public int getColor(){
+            return color;
+        }
 
 	public void getOutOfJail() {
 		money -= JailCell.BAIL;
@@ -255,6 +267,14 @@ public class Player {
 	public void setPosition(Cell newPosition) {
 		this.position = newPosition;
 	}
+        
+        public void setPicture(String picture){
+                this.picture = picture;
+        }
+        
+        public void setColor(int color){
+                this.color = color;
+        }
 
     public String toString() {
         return name;
