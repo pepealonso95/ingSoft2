@@ -261,10 +261,10 @@ public class GameMaster {
 		gui.setRollDiceEnabled(enabled);
 		gui.setPurchasePropertyEnabled(enabled);
 		gui.setEndTurnEnabled(enabled);
-        gui.setTradeEnabled(turn, enabled);
-        gui.setBuyHouseEnabled(enabled);
-        gui.setDrawCardEnabled(enabled);
-        gui.setGetOutOfJailEnabled(enabled);
+                gui.setTradeEnabled(turn, enabled);
+                gui.setBuyHouseEnabled(enabled);
+                gui.setDrawCardEnabled(enabled);
+                gui.setGetOutOfJailEnabled(enabled);
 	}
 
 	public void setGameBoard(GameBoard board) {
