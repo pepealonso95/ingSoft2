@@ -66,8 +66,8 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 	private void buildPlayerPanels() {
 <span class="nc" id="L67">		GameMaster master = GameMaster.instance();</span>
 <span class="nc" id="L68">		JPanel infoPanel = new JPanel();</span>
-<span class="nc" id="L69">        int players = master.getNumberOfPlayers();</span>
-<span class="nc" id="L70">        infoPanel.setLayout(new GridLayout(2, (players+1)/2));</span>
+<span class="nc" id="L69">                int players = master.getNumberOfPlayers();</span>
+<span class="nc" id="L70">                infoPanel.setLayout(new GridLayout(2, (players+1)/2));</span>
 <span class="nc" id="L71">		getContentPane().add(infoPanel, BorderLayout.CENTER);</span>
 <span class="nc" id="L72">		playerPanels = new PlayerPanel[master.getNumberOfPlayers()];</span>
 <span class="nc bnc" id="L73" title="All 2 branches missed.">		for (int i = 0; i&lt; master.getNumberOfPlayers(); i++){</span>

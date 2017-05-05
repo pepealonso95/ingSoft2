@@ -6,34 +6,34 @@ public class MovePlayerCard extends Card {
     private String destination;
     private int type;
 
-<span class="fc" id="L9">    public MovePlayerCard(String destination, int cardType) {</span>
-<span class="fc" id="L10">        this.destination = destination;</span>
-<span class="fc" id="L11">        this.type = cardType;</span>
-<span class="fc" id="L12">    }</span>
+<span class="nc" id="L9">    public MovePlayerCard(String destination, int cardType) {</span>
+<span class="nc" id="L10">        this.destination = destination;</span>
+<span class="nc" id="L11">        this.type = cardType;</span>
+<span class="nc" id="L12">    }</span>
 
     public void applyAction() {
-<span class="fc" id="L15">        Player currentPlayer = GameMaster.instance().getCurrentPlayer();</span>
-<span class="fc" id="L16">        Cell currentPosition = currentPlayer.getPosition();</span>
-<span class="fc" id="L17">        int newCell = GameMaster.instance().getGameBoard().queryCellIndex(destination);</span>
-<span class="fc" id="L18">        int currentCell = GameMaster.instance().getGameBoard().queryCellIndex(currentPosition.getName());</span>
-<span class="fc" id="L19">        int diceValue = 0;</span>
-<span class="pc bpc" id="L20" title="1 of 2 branches missed.">        if(currentCell &gt; newCell) {</span>
-<span class="fc" id="L21">            diceValue = (GameMaster.instance().getGameBoard().getCellNumber() + </span>
+<span class="nc" id="L15">        Player currentPlayer = GameMaster.instance().getCurrentPlayer();</span>
+<span class="nc" id="L16">        Cell currentPosition = currentPlayer.getPosition();</span>
+<span class="nc" id="L17">        int newCell = GameMaster.instance().getGameBoard().queryCellIndex(destination);</span>
+<span class="nc" id="L18">        int currentCell = GameMaster.instance().getGameBoard().queryCellIndex(currentPosition.getName());</span>
+<span class="nc" id="L19">        int diceValue = 0;</span>
+<span class="nc bnc" id="L20" title="All 2 branches missed.">        if(currentCell &gt; newCell) {</span>
+<span class="nc" id="L21">            diceValue = (GameMaster.instance().getGameBoard().getCellNumber() + </span>
                     (newCell - currentCell));
         }
 <span class="nc bnc" id="L24" title="All 2 branches missed.">        else if(currentCell &lt; newCell) {</span>
 <span class="nc" id="L25">            diceValue = newCell - currentCell;</span>
         }
         //System.out.println(diceValue);
-<span class="fc" id="L28">        GameMaster.instance().movePlayer(currentPlayer, diceValue);</span>
-<span class="fc" id="L29">    }</span>
+<span class="nc" id="L28">        GameMaster.instance().movePlayer(currentPlayer, diceValue);</span>
+<span class="nc" id="L29">    }</span>
 
     public int getCardType() {
-<span class="fc" id="L32">        return type;</span>
+<span class="nc" id="L32">        return type;</span>
     }
 
     public String getLabel() {
-<span class="fc" id="L36">        return &quot;Go to &quot; + destination;</span>
+<span class="nc" id="L36">        return &quot;Go to &quot; + destination;</span>
     }
 
 }
