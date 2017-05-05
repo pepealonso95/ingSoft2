@@ -40,12 +40,13 @@ public class GUICell extends JPanel {
 		Player player = GameMaster.instance().getPlayer(index);
 		lblPlayers[index].setText(player.getName().substring(0, 1));
 		lblPlayers[index].setOpaque(true);
+                ImageIcon icon = new ImageIcon(getClass().getResource("/addIcon.png"));
+                lblPlayers[index].setIcon(icon);
 	}
 
     private void createPlayerLabels(JPanel pnlPlayer) {
 		for (int i = 0; i < GameMaster.MAX_PLAYER; i++) {
 			lblPlayers[i] = new JLabel();
-			lblPlayers[i].setBackground(Color.GREEN);
 			pnlPlayer.add(lblPlayers[i]);
 		}
 	}

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>NewPlayer.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Monopoly&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">edu.ncsu.monopoly.gui</a> &gt; <span class="el_source">NewPlayer.java</span></div><h1>NewPlayer.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package edu.ncsu.monopoly.gui;
+
+import edu.ncsu.monopoly.*;
+//import edu.ncsu.monopoly.Manager;
+//import edu.ncsu.monopoly.Player;
+
+/**
+ *
+ * @author Dolores
+ */
+public class NewPlayer extends javax.swing.JFrame {
+
+    private Manager myManager;
+
+<span class="nc" id="L20">    public NewPlayer(Manager m) {</span>
+<span class="nc" id="L21">        initComponents();</span>
+<span class="nc" id="L22">        myManager = m;</span>
+<span class="nc" id="L23">    }</span>
+
+    public Manager getManager() {
+<span class="nc" id="L26">        return myManager;</span>
+    }
+
+
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L33">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L34">        jLabel2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L35">        jLabel3 = new javax.swing.JLabel();</span>
+<span class="nc" id="L36">        btnAdd = new javax.swing.JButton();</span>
+<span class="nc" id="L37">        nameTF = new javax.swing.JTextField();</span>
+<span class="nc" id="L38">        messageLbl = new javax.swing.JLabel();</span>
+
+<span class="nc" id="L40">        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);</span>
+
+<span class="nc" id="L42">        jLabel1.setText(&quot;New Player&quot;);</span>
+
+<span class="nc" id="L44">        jLabel2.setText(&quot;Name:&quot;);</span>
+
+<span class="nc" id="L46">        jLabel3.setText(&quot;Image:&quot;);</span>
+
+<span class="nc" id="L48">        btnAdd.setText(&quot;Add&quot;);</span>
+<span class="nc" id="L49">        btnAdd.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L51">                btnAddActionPerformed(evt);</span>
+<span class="nc" id="L52">            }</span>
+        });
+
+<span class="nc" id="L55">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L56">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L57">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L58">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L59">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L60">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L61">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L62">                        .addGap(230, 230, 230)</span>
+<span class="nc" id="L63">                        .addComponent(jLabel1))</span>
+<span class="nc" id="L64">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L65">                        .addGap(131, 131, 131)</span>
+<span class="nc" id="L66">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L67">                            .addComponent(jLabel3)</span>
+<span class="nc" id="L68">                            .addComponent(jLabel2))</span>
+<span class="nc" id="L69">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L70">                        .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L71">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L72">                        .addGap(201, 201, 201)</span>
+<span class="nc" id="L73">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L74">                            .addComponent(btnAdd)</span>
+<span class="nc" id="L75">                            .addComponent(messageLbl))))</span>
+<span class="nc" id="L76">                .addContainerGap(186, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L78">        layout.setVerticalGroup(</span>
+<span class="nc" id="L79">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L80">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L81">                .addContainerGap()</span>
+<span class="nc" id="L82">                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L83">                .addGap(28, 28, 28)</span>
+<span class="nc" id="L84">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L85">                    .addComponent(jLabel2)</span>
+<span class="nc" id="L86">                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L87">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L88">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L89">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L90">                        .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L91">                        .addComponent(btnAdd)</span>
+<span class="nc" id="L92">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L93">                        .addComponent(messageLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L94">                        .addContainerGap())</span>
+<span class="nc" id="L95">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L96">                        .addComponent(jLabel3)</span>
+<span class="nc" id="L97">                        .addGap(17, 104, Short.MAX_VALUE))))</span>
+        );
+
+<span class="nc" id="L100">        pack();</span>
+<span class="nc" id="L101">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        
+
+<span class="nc" id="L106">        String name = nameTF.getText();</span>
+        //Image img =     
+
+<span class="nc bnc" id="L109" title="All 2 branches missed.">        if (myManager.playerAlreadyExists(name)) {</span>
+<span class="nc" id="L110">            PlayerInfo p = new PlayerInfo(name);</span>
+<span class="nc" id="L111">            myManager.addPlayerToList(p);</span>
+<span class="nc" id="L112">            messageLbl.setText(&quot;Player &quot; + name + &quot;has been added!&quot;);</span>
+<span class="nc" id="L113">            nameTF.setText(&quot;&quot;);</span>
+<span class="nc" id="L114">        } else {</span>
+<span class="nc" id="L115">            messageLbl.setText(&quot;That name is in use!&quot;);</span>
+        }
+<span class="nc" id="L117">    }//GEN-LAST:event_btnAddActionPerformed</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel messageLbl;
+    private javax.swing.JTextField nameTF;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
