@@ -22,7 +22,7 @@ public class NewGame extends javax.swing.JFrame {
     public NewGame(Manager m) {
         initComponents();
         myManager = m;
-        String[] data = new String[]{"1","2","3","4","5","6","7","8"};
+        String[] data = new String[]{"2","3","4","5","6","7","8"};
         
         playerlbl3.setVisible(false);
         playerlbl4.setVisible(false);
@@ -59,21 +59,21 @@ public class NewGame extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         nbrPlayerLbl = new javax.swing.JLabel();
         numberOfPlayersCB = new javax.swing.JComboBox();
-        CBplayer1 = new javax.swing.JComboBox<>();
+        CBplayer1 = new javax.swing.JComboBox<String>();
         playerlbl1 = new javax.swing.JLabel();
-        CBplayer5 = new javax.swing.JComboBox<>();
+        CBplayer5 = new javax.swing.JComboBox<String>();
         playerlbl5 = new javax.swing.JLabel();
-        CBplayer2 = new javax.swing.JComboBox<>();
+        CBplayer2 = new javax.swing.JComboBox<String>();
         playerlbl2 = new javax.swing.JLabel();
-        CBplayer6 = new javax.swing.JComboBox<>();
+        CBplayer6 = new javax.swing.JComboBox<String>();
         playerlbl6 = new javax.swing.JLabel();
-        CBplayer3 = new javax.swing.JComboBox<>();
+        CBplayer3 = new javax.swing.JComboBox<String>();
         playerlbl3 = new javax.swing.JLabel();
-        CBplayer7 = new javax.swing.JComboBox<>();
+        CBplayer7 = new javax.swing.JComboBox<String>();
         playerlbl7 = new javax.swing.JLabel();
-        CBplayer4 = new javax.swing.JComboBox<>();
+        CBplayer4 = new javax.swing.JComboBox<String>();
         playerlbl4 = new javax.swing.JLabel();
-        CBplayer8 = new javax.swing.JComboBox<>();
+        CBplayer8 = new javax.swing.JComboBox<String>();
         playerlbl8 = new javax.swing.JLabel();
         startGameBtn = new javax.swing.JButton();
 
@@ -83,41 +83,46 @@ public class NewGame extends javax.swing.JFrame {
 
         nbrPlayerLbl.setText("Number of players:");
 
+        numberOfPlayersCB.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                numberOfPlayersCBFocusLost(evt);
+            }
+        });
         numberOfPlayersCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 numberOfPlayersCBActionPerformed(evt);
             }
         });
 
-        CBplayer1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBplayer1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         playerlbl1.setText("Player 1:");
 
-        CBplayer5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBplayer5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         playerlbl5.setText("Player 5:");
 
-        CBplayer2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBplayer2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         playerlbl2.setText("Player 2:");
 
-        CBplayer6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBplayer6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         playerlbl6.setText("Player 6:");
 
-        CBplayer3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBplayer3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         playerlbl3.setText("Player 3:");
 
-        CBplayer7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBplayer7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         playerlbl7.setText("Player 7:");
 
-        CBplayer4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBplayer4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         playerlbl4.setText("Player 4:");
 
-        CBplayer8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CBplayer8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         playerlbl8.setText("Player 8:");
 
@@ -247,6 +252,11 @@ public class NewGame extends javax.swing.JFrame {
     private void numberOfPlayersCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberOfPlayersCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_numberOfPlayersCBActionPerformed
+
+    private void numberOfPlayersCBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_numberOfPlayersCBFocusLost
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_numberOfPlayersCBFocusLost
 
 
 

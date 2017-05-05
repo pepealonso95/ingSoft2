@@ -4,7 +4,14 @@
  * and open the template in the editor.
  */
 package edu.ncsu.monopoly.gui;
-
+import persistencia.ArchivoGrabacion;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import edu.ncsu.monopoly.Manager;
 import persistencia.Persistencia;
 
@@ -100,13 +107,14 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_newPlayerBtnActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        save();
+        try {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("monopoly_data.dat"));
+            out.writeObject(myManager);
+            out.close();
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_formWindowClosing
 
-    private void save(){
-        Persistencia per = new Persistencia();
-        per.savePlayerInfo(getManager());     
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton newGameBtn;

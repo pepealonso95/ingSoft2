@@ -8,6 +8,7 @@ import edu.ncsu.monopoly.GoToJailCell;
 import edu.ncsu.monopoly.JailCard;
 import edu.ncsu.monopoly.JailCell;
 import edu.ncsu.monopoly.MoneyCard;
+import edu.ncsu.monopoly.TaxiCard;
 import edu.ncsu.monopoly.MovePlayerCard;
 import edu.ncsu.monopoly.PropertyCell;
 import edu.ncsu.monopoly.RailRoadCell;
@@ -262,6 +263,11 @@ public class GameBoardFull extends GameBoard {
         addCard(new JailCard(Card.TYPE_CC));
         addCard(new MovePlayerCard("St. Charles Place", Card.TYPE_CC));
         addCard(new MovePlayerCard("Boardwalk", Card.TYPE_CC));
+        addCard(new TaxiCard(Card.TYPE_CC));
+        addCard(new TaxiCard(Card.TYPE_CC));
+        addCard(new TaxiCard(Card.TYPE_CC));
+        addCard(new MovePlayerCard("Boardwalk", Card.TYPE_CC));
+        addCard(new MovePlayerCard("Boardwalk", Card.TYPE_CC));
 
         addCard(new MoneyCard("Win $50", 50, Card.TYPE_CHANCE));
         addCard(new MoneyCard("Win $20", 20, Card.TYPE_CHANCE));
@@ -270,5 +276,8 @@ public class GameBoardFull extends GameBoard {
         addCard(new MoneyCard("Lose $50", -50, Card.TYPE_CHANCE));
         addCard(new JailCard(Card.TYPE_CHANCE));
         addCard(new MovePlayerCard("Illinois Avenue", Card.TYPE_CHANCE));
+        addCard(new TaxiCard(Card.TYPE_CHANCE));
+        addCard(new TaxiCard(Card.TYPE_CHANCE));
+        addCard(new TaxiCard(Card.TYPE_CHANCE));
     }
 }

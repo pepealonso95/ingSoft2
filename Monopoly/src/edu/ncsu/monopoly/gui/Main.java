@@ -2,6 +2,8 @@ package edu.ncsu.monopoly.gui;
 
 import javax.swing.JOptionPane;
 
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import edu.ncsu.monopoly.*;
 import edu.ncsu.monopoly.test.boardScenarios.GameBoardFull;
 import persistencia.Persistencia;
@@ -31,8 +33,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Persistencia per = new Persistencia();
-        Manager myManager = per.loadPLayerInfo();
+        Manager myManager = null;
+          try {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream("monopoly_data.dat"));
+            myManager = (Manager) in.readObject();
+        } catch (Exception e) {
+            myManager = new Manager();
+        }
         Menu mainMenu = new Menu(myManager);
         mainMenu.setVisible(true);
 

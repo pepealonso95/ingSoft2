@@ -5,11 +5,12 @@
  */
 package edu.ncsu.monopoly;
 
+import java.io.Serializable;
 /**
  *
  * @author Dolores
  */
-public class PlayerInfo {
+public class PlayerInfo implements Serializable{
     	private String name;
         private String picture;    
         private int gamesPlayed;
