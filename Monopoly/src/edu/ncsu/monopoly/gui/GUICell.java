@@ -40,6 +40,7 @@ public class GUICell extends JPanel {
         Player player = GameMaster.instance().getPlayer(index);
         lblPlayers[index].setText(player.getName().substring(0, 1));
         lblPlayers[index].setOpaque(true);
+        lblPlayers[index].setBackground(player.getColor());
                 //ImageIcon icon = new ImageIcon(getClass().getResource("/addIcon.png"));
         //lblPlayers[index].setIcon(icon);
     }
@@ -48,7 +49,6 @@ public class GUICell extends JPanel {
         for (int i = 0; i < GameMaster.MAX_PLAYER; i++) {
             lblPlayers[i] = new JLabel();
             pnlPlayer.add(lblPlayers[i]);
-            lblPlayers[i].setBackground(Color.red);
         }
     }
 

@@ -30,6 +30,14 @@ public class Manager implements Serializable{
         return playerInfoList;
     }
     
+    public ArrayList<String> getPlayerNames(){
+        ArrayList<String> playerNames = new ArrayList<String>();
+        for (int i = 0; i < playerInfoList.size(); i++) {  
+            PlayerInfo p = playerInfoList.get(i);
+            playerNames.add(p.getName());
+        }
+        return playerNames;
+    }
     
     public void setPlayerList(ArrayList<PlayerInfo> playerList) {
         this.playerInfoList = playerList;
@@ -51,6 +59,17 @@ public class Manager implements Serializable{
             }
         }
         return ok;
+    }
+    
+    public PlayerInfo getPlayer(String name) {
+        PlayerInfo player = null;
+        for (int i = 0; i < playerInfoList.size(); i++) {  
+            PlayerInfo p = playerInfoList.get(i);
+            if(p.getName().equals(name)){
+                player=p;
+            }
+        }
+        return player;
     }
    
 }

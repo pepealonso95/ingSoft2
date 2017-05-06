@@ -48,6 +48,10 @@ public class PlayerInfo implements Serializable{
     public void setGamesPlayed(int gamesPlayed) {
         this.gamesPlayed = gamesPlayed;
     }
+    
+     public void addGamePlayed() {
+        this.gamesPlayed++;
+    }
 
     public int getGamesWon() {
         return gamesWon;
@@ -58,9 +62,14 @@ public class PlayerInfo implements Serializable{
     }
     
     
+     public void addGameWon() {
+        this.gamesWon++;
+    }
+    
+    
     @Override
     public String toString() {
-        return name + " " +  picture +  " - Partidas jugadas: " + gamesPlayed + " - Partidas ganadas: " + gamesWon;
+        return name +" - Partidas jugadas: " + gamesPlayed + " - Partidas ganadas: " + gamesWon;
     }
     
     

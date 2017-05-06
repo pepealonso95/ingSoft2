@@ -1,10 +1,13 @@
 package edu.ncsu.monopoly;
 
+import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Iterator;
+import javax.swing.JOptionPane;
 
 public class GameMaster {
 
+    private Manager myManager;
     private static GameMaster gameMaster;
     static final public int MAX_PLAYER = 8;
     private Die[] dice;
@@ -15,6 +18,8 @@ public class GameMaster {
     private int turn = 0;
     private int utilDiceRoll;
     private boolean testMode;
+    private ArrayList losers = new ArrayList();
+    public boolean ended = false;
 
     public static GameMaster instance() {
         if (gameMaster == null) {
@@ -22,12 +27,26 @@ public class GameMaster {
         }
         return gameMaster;
     }
+    
+    public static GameMaster newInstance(Manager manager) {
+        if (gameMaster == null) {
+            gameMaster = new GameMaster(manager);
+        }
+        return gameMaster;
+    }
+
 
     public GameMaster() {
-        initAmountOfMoney = 0;
+        initAmountOfMoney = 1500;
         dice = new Die[]{new Die(), new Die()};
     }
 
+    public GameMaster(Manager manager) {
+        myManager = manager;
+        initAmountOfMoney = 1500;
+        dice = new Die[]{new Die(), new Die()};
+    }
+    
     public void btnBuyHouseClicked() {
         gui.showBuyHouseDialog(getCurrentPlayer());
     }
@@ -51,6 +70,9 @@ public class GameMaster {
         setAllButtonEnabled(false);
         getCurrentPlayer().getPosition().playAction();
         if (getCurrentPlayer().isBankrupt()) {
+            if(!this.losers.contains(this.turn)){
+                this.losers.add(this.turn);
+            }
             gui.setBuyHouseEnabled(false);
             gui.setDrawCardEnabled(false);
             gui.setEndTurnEnabled(false);
@@ -58,6 +80,7 @@ public class GameMaster {
             gui.setPurchasePropertyEnabled(false);
             gui.setRollDiceEnabled(false);
             gui.setTradeEnabled(getCurrentPlayerIndex(), false);
+            switchTurn();
             updateGUI();
         } else {
             switchTurn();
@@ -298,13 +321,18 @@ public class GameMaster {
     }
 
     public void switchTurn() {
-        turn = (turn + 1) % getNumberOfPlayers();
-        if (!getCurrentPlayer().isInJail()) {
-            gui.enablePlayerTurn(turn);
-            gui.setBuyHouseEnabled(getCurrentPlayer().canBuyHouse());
-            gui.setTradeEnabled(turn, true);
-        } else {
-            gui.setGetOutOfJailEnabled(true);
+        if(!checkEnd()){
+            turn = (turn + 1) % getNumberOfPlayers();
+            while(this.losers.contains(turn)){
+                turn = (turn + 1) % getNumberOfPlayers();
+            }
+            if (!getCurrentPlayer().isInJail()) {
+                gui.enablePlayerTurn(turn);
+                gui.setBuyHouseEnabled(getCurrentPlayer().canBuyHouse());
+                gui.setTradeEnabled(turn, true);
+            } else {
+                gui.setGetOutOfJailEnabled(true);
+            }
         }
     }
 
@@ -318,5 +346,26 @@ public class GameMaster {
 
     public void setTestMode(boolean b) {
         testMode = b;
+    }
+    
+    public void setWinner(String name){
+        myManager.getPlayer(name).addGameWon();
+        JOptionPane.showMessageDialog((Component) gui, "Fin de la partida, "+name+" ha ganado", "Advertencia", JOptionPane.WARNING_MESSAGE);
+    }
+    
+    public boolean checkEnd(){
+        if(this.losers.size()==(this.players.size()-1)){
+            gui.endGame();
+            gui.setBuyHouseEnabled(false);
+            gui.setDrawCardEnabled(false);
+            gui.setEndTurnEnabled(false);
+            gui.setGetOutOfJailEnabled(false);
+            gui.setPurchasePropertyEnabled(false);
+            gui.setRollDiceEnabled(false);
+            gui.setTradeEnabled(getCurrentPlayerIndex(), false);
+            return true;
+        } else{
+            return false;
+        }
     }
 }
