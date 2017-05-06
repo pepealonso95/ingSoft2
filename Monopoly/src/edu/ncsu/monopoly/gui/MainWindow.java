@@ -50,7 +50,8 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 		
 		this.addWindowListener(new WindowAdapter(){
 			public void windowClosing(WindowEvent e) {
-				System.exit(0);
+                                endGame();
+				//System.exit(0);
 			}
 		});
 	}
@@ -209,6 +210,21 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 		for(int i = 0; i < numberOfPlayers; i++) {
 			movePlayer(i, 0, 0);
 		}
+	}
+        
+        public void endGame() {
+		GameMaster master = GameMaster.instance();
+                if(!master.ended){
+                    Player player = master.getPlayer(0);
+                    for(int i = 1; i < master.getNumberOfPlayers(); i++) {
+                            Player rival = master.getPlayer(i);
+                            if(player.getMoney()<rival.getMoney()){
+                                player = rival;
+                            }
+                    }
+                    master.setWinner(player.getName());
+                    master.ended = true;
+                }
 	}
 
 	public void update() {

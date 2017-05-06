@@ -23,5 +23,6 @@ public interface MonopolyGUI {
     public void showMessage(String string);
 	public int showUtilDiceRoll();
 	public void startGame();
+	public void endGame();
 	public void update();
 }

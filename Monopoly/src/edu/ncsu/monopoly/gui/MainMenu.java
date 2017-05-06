@@ -184,7 +184,7 @@ public class MainMenu extends javax.swing.JFrame {
         panelMenuPrincipalLayout.setHorizontalGroup(
             panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuPrincipalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(151, Short.MAX_VALUE)
                 .addGroup(panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelMenuPrincipalLayout.createSequentialGroup()
                         .addGap(113, 113, 113)
@@ -211,7 +211,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(btnRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(240, Short.MAX_VALUE))
         );
 
         panelRegistrarJugador.setPreferredSize(new java.awt.Dimension(700, 650));
@@ -238,7 +238,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        btnCancelarJugador.setText("Cancelar");
+        btnCancelarJugador.setText("Volver");
         btnCancelarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarJugadorActionPerformed(evt);
@@ -780,6 +780,7 @@ public class MainMenu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e.toString());
         }
         this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnSalirRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirRankingActionPerformed
@@ -798,6 +799,8 @@ public class MainMenu extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.toString());
         }
+        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_formWindowClosing
 
     private void btnUploadFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadFileActionPerformed

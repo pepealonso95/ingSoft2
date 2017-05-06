@@ -62,6 +62,11 @@ public class PlayerInfo implements Serializable{
     }
     
     
+     public void addGameWon() {
+        this.gamesWon++;
+    }
+    
+    
     @Override
     public String toString() {
         return name +" - Partidas jugadas: " + gamesPlayed + " - Partidas ganadas: " + gamesWon;
