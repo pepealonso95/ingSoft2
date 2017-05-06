@@ -36,7 +36,9 @@ public class Manager implements Serializable{
     }
     
     public void addPlayerToList(PlayerInfo aPlayer){
-        this.playerInfoList.add(aPlayer);
+        if(aPlayer!=null){
+            this.playerInfoList.add(aPlayer);
+        }
     }
     
     public boolean playerAlreadyExists(String name) {
@@ -44,7 +46,7 @@ public class Manager implements Serializable{
 
         for (int i = 0; i < playerInfoList.size(); i++) {  
             PlayerInfo p = playerInfoList.get(i);
-            if(p.getName().equals(name)){
+            if(p.getName().toLowerCase().equals(name.toLowerCase())){
                 ok=true;
             }
         }

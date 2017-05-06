@@ -5,59 +5,62 @@
  */
 package edu.ncsu.monopoly;
 
+import java.io.Serializable;
 /**
  *
  * @author Dolores
  */
-public class PlayerInfo {
+public class PlayerInfo implements Serializable{
     	private String name;
         private String picture;    
         private int gamesPlayed;
         private int gamesWon;
 
-<span class="nc" id="L18">    public PlayerInfo(String name) {</span>
-<span class="nc" id="L19">        this.name = name;</span>
-<span class="nc" id="L20">        this.gamesPlayed = 0;</span>
-<span class="nc" id="L21">        this.gamesWon = 0;</span>
-<span class="nc" id="L22">    }</span>
 
+
+<span class="fc" id="L21">    public PlayerInfo(String name) {</span>
+<span class="fc" id="L22">        this.name = name;</span>
+<span class="fc" id="L23">        this.picture = &quot;/images/default.png&quot;;</span>
+<span class="fc" id="L24">        this.gamesPlayed = 0;</span>
+<span class="fc" id="L25">        this.gamesWon = 0;</span>
+<span class="fc" id="L26">    }</span>
 
     public String getName() {
-<span class="nc" id="L26">        return name;</span>
+<span class="fc" id="L29">        return name;</span>
     }
 
     public void setName(String name) {
-<span class="nc" id="L30">        this.name = name;</span>
-<span class="nc" id="L31">    }</span>
+<span class="fc" id="L33">        this.name = name;</span>
+<span class="fc" id="L34">    }</span>
 
     public String getPicture() {
-<span class="nc" id="L34">        return picture;</span>
+<span class="nc" id="L37">        return picture;</span>
     }
 
     public void setPicture(String picture) {
-<span class="nc" id="L38">        this.picture = picture;</span>
-<span class="nc" id="L39">    }</span>
+<span class="nc" id="L41">        this.picture = picture;</span>
+<span class="nc" id="L42">    }</span>
 
     public int getGamesPlayed() {
-<span class="nc" id="L42">        return gamesPlayed;</span>
+<span class="nc" id="L45">        return gamesPlayed;</span>
     }
 
     public void setGamesPlayed(int gamesPlayed) {
-<span class="nc" id="L46">        this.gamesPlayed = gamesPlayed;</span>
-<span class="nc" id="L47">    }</span>
+<span class="nc" id="L49">        this.gamesPlayed = gamesPlayed;</span>
+<span class="nc" id="L50">    }</span>
 
     public int getGamesWon() {
-<span class="nc" id="L50">        return gamesWon;</span>
+<span class="nc" id="L53">        return gamesWon;</span>
     }
 
     public void setGamesWon(int gamesWon) {
-<span class="nc" id="L54">        this.gamesWon = gamesWon;</span>
-<span class="nc" id="L55">    }</span>
+<span class="nc" id="L57">        this.gamesWon = gamesWon;</span>
+<span class="nc" id="L58">    }</span>
     
     
     @Override
     public String toString() {
-<span class="nc" id="L60">        return name;</span>
+<span class="nc" id="L63">        return name + &quot; &quot; +  picture +  &quot; - Partidas jugadas: &quot; + gamesPlayed + &quot; - Partidas ganadas: &quot; + gamesWon;</span>
     }
     
     

@@ -16,7 +16,7 @@ import java.io.ObjectOutputStream;
  *
  * @author Dolores
  */
-<span class="fc" id="L19">public class Persistencia {</span>
+<span class="nc" id="L19">public class Persistencia {</span>
     
     public boolean savePlayerInfo(Manager man) {
 <span class="nc" id="L22">        boolean ok = true;</span>
@@ -33,16 +33,16 @@ import java.io.ObjectOutputStream;
 
     public Manager loadPLayerInfo() {
 
-<span class="fc" id="L36">        Manager man = null;</span>
+<span class="nc" id="L36">        Manager man = null;</span>
 
         try {
-<span class="fc" id="L39">            ObjectInputStream in = new ObjectInputStream(new FileInputStream(&quot;salida&quot;));</span>
-<span class="fc" id="L40">            man = (Manager) in.readObject();</span>
+<span class="nc" id="L39">            ObjectInputStream in = new ObjectInputStream(new FileInputStream(&quot;salida&quot;));</span>
+<span class="nc" id="L40">            man = (Manager) in.readObject();</span>
 
 <span class="nc" id="L42">        } catch (Exception err) {</span>
 <span class="nc" id="L43">            man = new Manager();</span>
-<span class="fc" id="L44">        }</span>
-<span class="fc" id="L45">        return man;</span>
+<span class="nc" id="L44">        }</span>
+<span class="nc" id="L45">        return man;</span>
     } 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
