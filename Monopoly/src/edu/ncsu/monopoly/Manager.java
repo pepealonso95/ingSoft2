@@ -40,12 +40,12 @@ public class Manager implements Serializable{
     }
     
     public boolean playerAlreadyExists(String name) {
-        boolean ok = true;
+        boolean ok = false;
 
         for (int i = 0; i < playerInfoList.size(); i++) {  
             PlayerInfo p = playerInfoList.get(i);
             if(p.getName().equals(name)){
-                ok=false;
+                ok=true;
             }
         }
         return ok;

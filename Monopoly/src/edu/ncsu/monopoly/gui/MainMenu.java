@@ -4,6 +4,8 @@ import edu.ncsu.monopoly.*;
 import java.util.*;
 import java.awt.event.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import javax.swing.*;
 
 import java.text.DateFormat;
@@ -13,14 +15,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import javafx.stage.FileChooser;
+import javax.imageio.ImageIO;
 
 public class MainMenu extends javax.swing.JFrame {
 
     private Manager myManager;
-    
+    private String path;
+    private File imageFile = null;
+
     public MainMenu(Manager m) {
         initComponents();
-        
+
         this.myManager = m;
         this.panelRegistrarJugador.setVisible(false);
         this.panelRegistrarJugador.setEnabled(false);
@@ -63,6 +69,7 @@ public class MainMenu extends javax.swing.JFrame {
         btnRegistrar = new javax.swing.JButton();
         btnCancelarJugador = new javax.swing.JButton();
         btnUploadFile = new javax.swing.JButton();
+        pathLbl = new javax.swing.JLabel();
         panelReplay = new javax.swing.JPanel();
         lblReplay = new javax.swing.JLabel();
         btnSalirReplay = new javax.swing.JButton();
@@ -257,9 +264,12 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(lblImage))
                         .addGap(104, 104, 104)
                         .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnUploadFile)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(179, 179, 179))
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()
+                                .addComponent(btnUploadFile)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(pathLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(57, 57, 57))
         );
         panelRegistrarJugadorLayout.setVerticalGroup(
             panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,10 +281,15 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(lblName)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUploadFile)
-                    .addComponent(lblImage))
-                .addGap(18, 18, 18)
+                .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()
+                        .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnUploadFile)
+                            .addComponent(lblImage))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarJugadorLayout.createSequentialGroup()
+                        .addComponent(pathLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)))
                 .addComponent(lblRegistrado, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -644,11 +659,11 @@ public class MainMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfigurarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigurarPartidaActionPerformed
-      
+
     }//GEN-LAST:event_btnConfigurarPartidaActionPerformed
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
-       
+
     }//GEN-LAST:event_btnJugarActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -661,33 +676,46 @@ public class MainMenu extends javax.swing.JFrame {
         this.panelMenuPrincipal.setVisible(false);
         this.panelRegistrarJugador.setVisible(true);
         this.panelRegistrarJugador.setEnabled(true);
-       
+
         this.txtName.setText("");
- 
+
         this.lblRegistrado.setText("");
     }//GEN-LAST:event_btnRegistrarJugadorActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
-        String name = txtName.getText();
-        //Image img =     
+       
+        
+        String name = txtName.getText();     
 
         if (myManager.playerAlreadyExists(name)) {
+            lblRegistrado.setText("That name is in use!");
+            lblRegistrado.setForeground(Color.red);
+        } 
+        else if(isEmpty(name)){
+            lblRegistrado.setText("You need to enter a name");
+            lblRegistrado.setForeground(Color.red);
+        }       
+        else {
             PlayerInfo p = new PlayerInfo(name);
+            if(imageFile!=null){
+                saveImage(imageFile,name+"_pic");
+                p.setPicture("/images/" +name+"_pic" );
+                imageFile=null;
+            }
+            
             myManager.addPlayerToList(p);
             lblRegistrado.setText("Player " + name + " has been added!");
             txtName.setText("");
-        } else {
-            lblRegistrado.setText("That name is in use!");
-            lblRegistrado.setForeground(Color.red);
+            pathLbl.setText("");
         }
-        
+
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadorBActionPerformed
         // TODO add your handling code here:
         Object o = lstJugadores.getSelectedValue();
-        
+
     }//GEN-LAST:event_btnJugadorBActionPerformed
 
     private void btnJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadaActionPerformed
@@ -702,7 +730,7 @@ public class MainMenu extends javax.swing.JFrame {
         this.sldrCantidad.setMaximum(30);
         this.sldrCantidad.setMinimum(1);
         this.lblNumSlider.setText("" + this.sldrCantidad.getValue());
-       // configuracion.setObjetivo('j');
+        // configuracion.setObjetivo('j');
     }//GEN-LAST:event_btnJugadaActionPerformed
 
     private void btnTorreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTorreActionPerformed
@@ -713,7 +741,7 @@ public class MainMenu extends javax.swing.JFrame {
         this.lblNumSlider.setEnabled(false);
         this.sldrCantidad.setVisible(false);
         this.sldrCantidad.setEnabled(false);
-       // configuracion.setObjetivo('t');
+        // configuracion.setObjetivo('t');
     }//GEN-LAST:event_btnTorreActionPerformed
 
     private void sldrCantidadMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sldrCantidadMouseReleased
@@ -745,12 +773,12 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void btnDistLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDistLActionPerformed
         // TODO add your handling code here:
-       // configuracion.setOrden('l');
+        // configuracion.setOrden('l');
     }//GEN-LAST:event_btnDistLActionPerformed
 
     private void btnDistIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDistIActionPerformed
         // TODO add your handling code here:
-       // configuracion.setOrden('i');
+        // configuracion.setOrden('i');
     }//GEN-LAST:event_btnDistIActionPerformed
 
     private void btnDistAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDistAActionPerformed
@@ -759,7 +787,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDistAActionPerformed
 
     private void btnRegistrarConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarConfiguracionActionPerformed
-      /*  // TODO add your handling code here:
+        /*  // TODO add your handling code here:
         if (configuracion.getOrden() != 'x' && configuracion.getObjetivo() != 'x' && configuracion.getCuadrante() != -1 && configuracion.getJugadorB() != null && configuracion.getJugadorN() != null) {
             s.setUltimaPartida(configuracion);
             this.panelConfigurarPartida.setVisible(false);
@@ -775,7 +803,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void btnJugadorNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadorNActionPerformed
         // TODO add your handling code here:
         Object o = lstJugadores.getSelectedValue();
-      //  configuracion.setJugadorN(((Ranking) o).getAlias());
+        //  configuracion.setJugadorN(((Ranking) o).getAlias());
     }//GEN-LAST:event_btnJugadorNActionPerformed
 
     private void btnCancelarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarJugadorActionPerformed
@@ -797,11 +825,11 @@ public class MainMenu extends javax.swing.JFrame {
     private void sldrCuadranteMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sldrCuadranteMouseReleased
         // TODO add your handling code here:
         this.lblNumCuadrante.setText("" + this.sldrCuadrante.getValue());
-       // configuracion.setCuadrante(this.sldrCuadrante.getValue());
+        // configuracion.setCuadrante(this.sldrCuadrante.getValue());
     }//GEN-LAST:event_sldrCuadranteMouseReleased
 
     private void btnReplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReplayActionPerformed
-     
+
     }//GEN-LAST:event_btnReplayActionPerformed
 
     private void btnRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRankingActionPerformed
@@ -811,7 +839,7 @@ public class MainMenu extends javax.swing.JFrame {
             this.panelMenuPrincipal.setVisible(false);
             this.panelRanking.setVisible(true);
             this.panelRanking.setEnabled(true);
-            
+
             this.lstJugadores1.setListData(myManager.getPlayerList().toArray());
         } else {
             JOptionPane.showMessageDialog(this, "No hay jugadores registrados", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -848,7 +876,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirReplayActionPerformed
 
     private void btnReplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReplicarActionPerformed
-     
+
     }//GEN-LAST:event_btnReplicarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -858,7 +886,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("monopoly_data.dat"));
-             out.writeObject(myManager);
+            out.writeObject(myManager);
             out.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.toString());
@@ -866,8 +894,22 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void btnUploadFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadFileActionPerformed
-            
-        
+        JFileChooser fileChooser = new JFileChooser();
+        int res = fileChooser.showOpenDialog(this);
+
+        if (res == JFileChooser.APPROVE_OPTION) {
+
+            int width = 963;    //width of the image
+            int height = 640;   //height of the image
+            BufferedImage image = null;
+           
+            imageFile = fileChooser.getSelectedFile().getAbsoluteFile();   
+            pathLbl.setText(fileChooser.getSelectedFile().getAbsolutePath());
+            //saveImage(f);
+        }
+
+       
+
     }//GEN-LAST:event_btnUploadFileActionPerformed
 
     public boolean verificarQueSeaInt(String numero, int min, int max) {
@@ -882,6 +924,34 @@ public class MainMenu extends javax.swing.JFrame {
         return ok;
 
     }
+    
+    public boolean isEmpty(String aString){
+        boolean returnVal = false;
+        if(aString.trim().equals("") || aString.equals(null))
+            returnVal=true;
+        return returnVal;
+    }
+
+    public void saveImage(File f, String fileName) {
+        int width = 963;    //width of the image
+        int height = 640;   //height of the image
+        BufferedImage image = null;
+
+        try {
+            image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+            image = ImageIO.read(f);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error leyendo archivo", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+
+        try {
+            f = new File("images/" + fileName + ".jpg");  //output file path
+            ImageIO.write(image, "jpg", f);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error guardando imagen", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
@@ -934,6 +1004,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel panelRanking;
     private javax.swing.JPanel panelRegistrarJugador;
     private javax.swing.JPanel panelReplay;
+    private javax.swing.JLabel pathLbl;
     private javax.swing.JSlider sldrCantidad;
     private javax.swing.JSlider sldrCuadrante;
     private javax.swing.JTextField txtName;

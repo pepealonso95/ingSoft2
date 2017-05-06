@@ -16,12 +16,14 @@ public class PlayerInfo implements Serializable{
         private int gamesPlayed;
         private int gamesWon;
 
-    public PlayerInfo(String name) {
+
+
+     public PlayerInfo(String name) {
         this.name = name;
+        this.picture = "/images/default.png";
         this.gamesPlayed = 0;
         this.gamesWon = 0;
     }
-
 
     public String getName() {
         return name;
@@ -58,7 +60,7 @@ public class PlayerInfo implements Serializable{
     
     @Override
     public String toString() {
-        return name + " - Partidas jugadas: " + gamesPlayed + " - Partidas ganadas: " + gamesWon;
+        return name + " " +  picture +  " - Partidas jugadas: " + gamesPlayed + " - Partidas ganadas: " + gamesWon;
     }
     
     
