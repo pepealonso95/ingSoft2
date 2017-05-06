@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 public class GameMaster {
 
+    private Manager myManager;
     private static GameMaster gameMaster;
     static final public int MAX_PLAYER = 8;
     private Die[] dice;
@@ -22,12 +23,26 @@ public class GameMaster {
         }
         return gameMaster;
     }
+    
+    public static GameMaster newInstance(Manager manager) {
+        if (gameMaster == null) {
+            gameMaster = new GameMaster(manager);
+        }
+        return gameMaster;
+    }
+
 
     public GameMaster() {
         initAmountOfMoney = 0;
         dice = new Die[]{new Die(), new Die()};
     }
 
+    public GameMaster(Manager manager) {
+        myManager = manager;
+        initAmountOfMoney = 0;
+        dice = new Die[]{new Die(), new Die()};
+    }
+    
     public void btnBuyHouseClicked() {
         gui.showBuyHouseDialog(getCurrentPlayer());
     }

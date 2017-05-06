@@ -1,5 +1,6 @@
 package edu.ncsu.monopoly;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -12,7 +13,7 @@ public class Player {
 	private int money;
 	private String name;
         private String picture;
-        private int color;
+        private Color color;
 	private Cell position;    
         
                
@@ -122,7 +123,7 @@ public class Player {
                 return picture;
         }
         
-        public int getColor(){
+        public Color getColor(){
             return color;
         }
 
@@ -272,8 +273,24 @@ public class Player {
                 this.picture = picture;
         }
         
-        public void setColor(int color){
-                this.color = color;
+        public void setColor(String color){
+            if(color == "rojo"){
+                this.color = Color.red;
+            } else if(color == "azul"){
+                this.color = Color.blue;
+            } else if(color == "naranja"){
+                this.color = Color.orange;
+            } else if(color == "rosado"){
+                this.color = Color.PINK;
+            } else if(color == "amarillo"){
+                this.color = Color.yellow;
+            } else if(color == "verde"){
+                this.color = Color.green;
+            } else if(color == "negro"){
+                this.color = Color.black;
+            } else {
+                this.color = Color.white;
+            }
         }
 
     public String toString() {
