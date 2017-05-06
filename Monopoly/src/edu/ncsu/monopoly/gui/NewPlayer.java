@@ -109,7 +109,7 @@ public class NewPlayer extends javax.swing.JFrame {
         if (myManager.playerAlreadyExists(name)) {
             PlayerInfo p = new PlayerInfo(name);
             myManager.addPlayerToList(p);
-            messageLbl.setText("Player " + name + "has been added!");
+            messageLbl.setText("Player " + name + " has been added!");
             nameTF.setText("");
         } else {
             messageLbl.setText("That name is in use!");

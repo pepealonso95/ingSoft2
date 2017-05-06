@@ -16,65 +16,50 @@ import java.io.IOException;
  * @author Dolores
  */
 public class ArchivoLectura {
-    
-    private String linea;
+
+    private String linea = "";
     private BufferedReader in;
 
     public ArchivoLectura(String unNombre) {
         try {
             in = new BufferedReader(new FileReader(unNombre));
-        } catch (FileNotFoundException e) {
-
+        }
+        catch (FileNotFoundException e) {
+            // aca se deberia manejar “mejor” el error, como todavia no se dio excepciones se deja asi
+            System.out.println("no esta");
         }
     }
 
     public boolean hayMasLineas() {
-        try {
+        boolean hayMas;
+        try
+        {
             linea = in.readLine();
         } catch (IOException e) {
-            linea = null;
+            System.out.println("error io");
+            System.exit(0);
         }
-
-        return (linea != null);
+        // la forma de darme cuenta del final es porque devuelve null
+        hayMas = (linea != null);
+        return hayMas;
     }
-        
-    public String linea(){
+
+     // devuelve la linea actual, no avanza en el archivo
+    public String linea() {
         return linea;
     }
-        
-    public boolean cerrar(){
-    boolean ok = true;
-      try {
+
+    // podria ser boolean
+    public void cerrar()
+    {
+        try
+        {
             in.close();
-        } catch (Exception e) {
-            ok = false;
         }
-      return ok;
-    }
-    
-    public static boolean chequearLinea(String linea) {
-
-        boolean ok = true;
-
-        try {
-            String[] tokens = linea.split("#");
-            
-            if(tokens.length!=4){
-                ok=false;
-            }
-            else{
-                
-            String name = tokens[1];
-            String image = tokens[2];
-            int gamesPlayed =  Integer.parseInt(tokens[3]);
-            int gamesWon =  Integer.parseInt(tokens[4]);
-            
-            }      
-        } catch (Exception err) {
-            ok=false;
+        catch (Exception e)
+        {
+            // misma aclaracion de antes, si hay error lo mejor seria manejar la excepciónadecuadamente. Por ahora se deja asi
+            System.out.println("error close ");
         }
-
-        return ok;
     }
-    
 }

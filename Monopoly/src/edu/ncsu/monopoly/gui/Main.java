@@ -34,13 +34,14 @@ public class Main {
     public static void main(String[] args) {
 
         Manager myManager = null;
-          try {
+        try {
             ObjectInputStream in = new ObjectInputStream(new FileInputStream("monopoly_data.dat"));
             myManager = (Manager) in.readObject();
         } catch (Exception e) {
             myManager = new Manager();
         }
-        Menu mainMenu = new Menu(myManager);
+        MainMenu mainMenu = new MainMenu(myManager);
+        //MainMenu.setLocationRelativeTo(null);
         mainMenu.setVisible(true);
 
         /*

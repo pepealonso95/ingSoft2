@@ -55,16 +55,14 @@ public class MainMenu extends javax.swing.JFrame {
         btnRanking = new javax.swing.JButton();
         lblMenu = new javax.swing.JLabel();
         panelRegistrarJugador = new javax.swing.JPanel();
-        lblNombre = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
-        lblEdad = new javax.swing.JLabel();
-        lblAlias = new javax.swing.JLabel();
-        spnEdad = new javax.swing.JSpinner();
-        txtAlias = new javax.swing.JTextField();
+        lblName = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        lblImage = new javax.swing.JLabel();
         lblRegistrarJugador = new javax.swing.JLabel();
         lblRegistrado = new javax.swing.JLabel();
         btnRegistrar = new javax.swing.JButton();
         btnCancelarJugador = new javax.swing.JButton();
+        btnUploadFile = new javax.swing.JButton();
         panelReplay = new javax.swing.JPanel();
         lblReplay = new javax.swing.JLabel();
         btnSalirReplay = new javax.swing.JButton();
@@ -165,7 +163,7 @@ public class MainMenu extends javax.swing.JFrame {
         panelMenuPrincipalLayout.setHorizontalGroup(
             panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuPrincipalLayout.createSequentialGroup()
-                .addContainerGap(151, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelMenuPrincipalLayout.createSequentialGroup()
                         .addGap(113, 113, 113)
@@ -195,28 +193,20 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(btnReplay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
 
         panelRegistrarJugador.setPreferredSize(new java.awt.Dimension(700, 650));
 
-        lblNombre.setText("Nombre");
+        lblName.setText("Nombre");
 
-        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+        txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreActionPerformed(evt);
+                txtNameActionPerformed(evt);
             }
         });
 
-        lblEdad.setText("Edad");
-
-        lblAlias.setText("Alias");
-
-        txtAlias.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAliasActionPerformed(evt);
-            }
-        });
+        lblImage.setText("Imagen");
 
         lblRegistrarJugador.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblRegistrarJugador.setText("Registrar Jugador");
@@ -237,60 +227,60 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        btnUploadFile.setText("Upload file");
+        btnUploadFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUploadFileActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelRegistrarJugadorLayout = new javax.swing.GroupLayout(panelRegistrarJugador);
         panelRegistrarJugador.setLayout(panelRegistrarJugadorLayout);
         panelRegistrarJugadorLayout.setHorizontalGroup(
             panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()
-                .addGap(182, 182, 182)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarJugadorLayout.createSequentialGroup()
+                .addContainerGap(179, Short.MAX_VALUE)
                 .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(lblRegistrado, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()
-                            .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(lblAlias)
-                                .addComponent(lblEdad)
-                                .addComponent(lblNombre))
-                            .addGap(104, 104, 104)
-                            .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtNombre)
-                                .addComponent(txtAlias, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(spnEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
                         .addComponent(btnCancelarJugador)
-                        .addGap(81, 81, 81)
+                        .addGap(33, 33, 33)
                         .addComponent(btnRegistrar))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarJugadorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblRegistrarJugador)
-                        .addGap(65, 65, 65)))
-                .addContainerGap(187, Short.MAX_VALUE))
+                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(lblRegistrado, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(lblRegistrarJugador))
+                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()
+                        .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblName)
+                            .addComponent(lblImage))
+                        .addGap(104, 104, 104)
+                        .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnUploadFile)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(179, 179, 179))
         );
         panelRegistrarJugadorLayout.setVerticalGroup(
             panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()
-                .addGap(72, 72, 72)
+                .addGap(103, 103, 103)
                 .addComponent(lblRegistrarJugador)
-                .addGap(68, 68, 68)
+                .addGap(53, 53, 53)
                 .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombre)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(lblName)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEdad)
-                    .addComponent(spnEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAlias)
-                    .addComponent(txtAlias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnUploadFile)
+                    .addComponent(lblImage))
                 .addGap(18, 18, 18)
                 .addComponent(lblRegistrado, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrar)
                     .addComponent(btnCancelarJugador))
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addContainerGap(260, Short.MAX_VALUE))
         );
 
         panelReplay.setPreferredSize(new java.awt.Dimension(700, 700));
@@ -654,47 +644,16 @@ public class MainMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfigurarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigurarPartidaActionPerformed
-        configuracion = new Configuracion();
-        if (s.getRanking().size() > 1) {
-            this.panelMenuPrincipal.setEnabled(false);
-            this.panelMenuPrincipal.setVisible(false);
-            this.panelConfigurarPartida.setVisible(true);
-            this.panelConfigurarPartida.setEnabled(true);
-            this.lblSlider.setVisible(false);
-            this.lblSlider.setEnabled(false);
-            this.lblNumSlider.setVisible(false);
-            this.lblNumSlider.setEnabled(false);
-            this.sldrCantidad.setVisible(false);
-            this.sldrCantidad.setEnabled(false);
-            configuracion.setCantidad(-1);
-            configuracion.setCuadrante(-1);
-            configuracion.setObjetivo('x');
-            configuracion.setOrden('x');
-            configuracion.setJugadorB(null);
-            configuracion.setJugadorN(null);
-            lblJugadores.setText("Elija un jugador negro y un jugador blanco distintos");
-            this.lstJugadores.setListData(s.getRanking().toArray());
-        } else {
-            JOptionPane.showMessageDialog(this, "No se puede configurar una partida sin registrar al menos 2 jugadores antes", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+      
     }//GEN-LAST:event_btnConfigurarPartidaActionPerformed
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
-        int pos = 0;
-        if (s.getUltimaPartida().getOrden() != 'x') {
-            VentanaTablero ventana = new VentanaTablero(s, false, pos);
-        } else {
-            JOptionPane.showMessageDialog(this, "No se puede jugar sin configurar una partida antes", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+       
     }//GEN-LAST:event_btnJugarActionPerformed
 
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreActionPerformed
-
-    private void txtAliasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAliasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAliasActionPerformed
+    }//GEN-LAST:event_txtNameActionPerformed
 
     private void btnRegistrarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarJugadorActionPerformed
         // TODO add your handling code here:
@@ -702,36 +661,33 @@ public class MainMenu extends javax.swing.JFrame {
         this.panelMenuPrincipal.setVisible(false);
         this.panelRegistrarJugador.setVisible(true);
         this.panelRegistrarJugador.setEnabled(true);
-        this.txtAlias.setText("");
-        this.txtNombre.setText("");
-        this.spnEdad.setValue(0);
+       
+        this.txtName.setText("");
+ 
         this.lblRegistrado.setText("");
     }//GEN-LAST:event_btnRegistrarJugadorActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
-        int numero = (Integer) spnEdad.getValue();
-        if (numero < 1 || numero > 150) {
-            lblRegistrado.setText("El valor ingresado debe ser un entero entre: " + 1 + " y " + 150 + ", vuelva a ingresar");
-            lblRegistrado.setForeground(Color.red);
+        String name = txtName.getText();
+        //Image img =     
+
+        if (myManager.playerAlreadyExists(name)) {
+            PlayerInfo p = new PlayerInfo(name);
+            myManager.addPlayerToList(p);
+            lblRegistrado.setText("Player " + name + " has been added!");
+            txtName.setText("");
         } else {
-            if (registrarJugador(txtNombre.getText(), numero, txtAlias.getText())) {
-                lblRegistrado.setText("Se ha registrado con exito!");
-                this.panelRegistrarJugador.setVisible(false);
-                this.panelRegistrarJugador.setEnabled(false);
-                this.panelMenuPrincipal.setEnabled(true);
-                this.panelMenuPrincipal.setVisible(true);
-            } else {
-                lblRegistrado.setText("El alias debe de ser unico, vuelva a intentarlo");
-                lblRegistrado.setForeground(Color.red);
-            }
+            lblRegistrado.setText("That name is in use!");
+            lblRegistrado.setForeground(Color.red);
         }
+        
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadorBActionPerformed
         // TODO add your handling code here:
         Object o = lstJugadores.getSelectedValue();
-        configuracion.setJugadorB(((Ranking) o).getAlias());
+        
     }//GEN-LAST:event_btnJugadorBActionPerformed
 
     private void btnJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadaActionPerformed
@@ -746,7 +702,7 @@ public class MainMenu extends javax.swing.JFrame {
         this.sldrCantidad.setMaximum(30);
         this.sldrCantidad.setMinimum(1);
         this.lblNumSlider.setText("" + this.sldrCantidad.getValue());
-        configuracion.setObjetivo('j');
+       // configuracion.setObjetivo('j');
     }//GEN-LAST:event_btnJugadaActionPerformed
 
     private void btnTorreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTorreActionPerformed
@@ -757,18 +713,19 @@ public class MainMenu extends javax.swing.JFrame {
         this.lblNumSlider.setEnabled(false);
         this.sldrCantidad.setVisible(false);
         this.sldrCantidad.setEnabled(false);
-        configuracion.setObjetivo('t');
+       // configuracion.setObjetivo('t');
     }//GEN-LAST:event_btnTorreActionPerformed
 
     private void sldrCantidadMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sldrCantidadMouseReleased
         // TODO add your handling code here:
+        /*
         if (configuracion.getObjetivo() == 'j') {
             this.lblNumSlider.setText("" + this.sldrCantidad.getValue());
             configuracion.setCantidad(this.sldrCantidad.getValue());
         } else if (configuracion.getObjetivo() == 's') {
             this.lblNumSlider.setText("" + this.sldrCantidad.getValue());
             configuracion.setCantidad(this.sldrCantidad.getValue() * 60);
-        }
+        }*/
     }//GEN-LAST:event_sldrCantidadMouseReleased
 
     private void btnTiempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiempoActionPerformed
@@ -783,26 +740,26 @@ public class MainMenu extends javax.swing.JFrame {
         this.sldrCantidad.setMinimum(1);
         this.sldrCantidad.setMaximum(10);
         this.lblNumSlider.setText("" + this.sldrCantidad.getValue());
-        configuracion.setObjetivo('s');
+        //configuracion.setObjetivo('s');
     }//GEN-LAST:event_btnTiempoActionPerformed
 
     private void btnDistLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDistLActionPerformed
         // TODO add your handling code here:
-        configuracion.setOrden('l');
+       // configuracion.setOrden('l');
     }//GEN-LAST:event_btnDistLActionPerformed
 
     private void btnDistIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDistIActionPerformed
         // TODO add your handling code here:
-        configuracion.setOrden('i');
+       // configuracion.setOrden('i');
     }//GEN-LAST:event_btnDistIActionPerformed
 
     private void btnDistAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDistAActionPerformed
         // TODO add your handling code here:
-        configuracion.setOrden('a');
+        //configuracion.setOrden('a');
     }//GEN-LAST:event_btnDistAActionPerformed
 
     private void btnRegistrarConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarConfiguracionActionPerformed
-        // TODO add your handling code here:
+      /*  // TODO add your handling code here:
         if (configuracion.getOrden() != 'x' && configuracion.getObjetivo() != 'x' && configuracion.getCuadrante() != -1 && configuracion.getJugadorB() != null && configuracion.getJugadorN() != null) {
             s.setUltimaPartida(configuracion);
             this.panelConfigurarPartida.setVisible(false);
@@ -812,13 +769,13 @@ public class MainMenu extends javax.swing.JFrame {
         } else {
             lblJugadores.setText("Faltan datos por ingresar");
             lblJugadores.setForeground(Color.red);
-        }
+        }*/
     }//GEN-LAST:event_btnRegistrarConfiguracionActionPerformed
 
     private void btnJugadorNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadorNActionPerformed
         // TODO add your handling code here:
         Object o = lstJugadores.getSelectedValue();
-        configuracion.setJugadorN(((Ranking) o).getAlias());
+      //  configuracion.setJugadorN(((Ranking) o).getAlias());
     }//GEN-LAST:event_btnJugadorNActionPerformed
 
     private void btnCancelarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarJugadorActionPerformed
@@ -840,30 +797,22 @@ public class MainMenu extends javax.swing.JFrame {
     private void sldrCuadranteMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sldrCuadranteMouseReleased
         // TODO add your handling code here:
         this.lblNumCuadrante.setText("" + this.sldrCuadrante.getValue());
-        configuracion.setCuadrante(this.sldrCuadrante.getValue());
+       // configuracion.setCuadrante(this.sldrCuadrante.getValue());
     }//GEN-LAST:event_sldrCuadranteMouseReleased
 
     private void btnReplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReplayActionPerformed
-        // TODO add your handling code here:
-        if (!s.getReplay().isEmpty()) {
-            this.panelReplay.setVisible(true);
-            this.panelReplay.setEnabled(true);
-            this.panelMenuPrincipal.setEnabled(false);
-            this.panelMenuPrincipal.setVisible(false);
-            this.lstReplays.setListData(s.getReplay().toArray());
-        } else {
-            JOptionPane.showMessageDialog(this, "No hay partidas guardadas", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
+     
     }//GEN-LAST:event_btnReplayActionPerformed
 
     private void btnRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRankingActionPerformed
         // TODO add your handling code here:
-        if (!s.getRanking().isEmpty()) {
+        if (!myManager.getPlayerList().isEmpty()) {
             this.panelMenuPrincipal.setEnabled(false);
             this.panelMenuPrincipal.setVisible(false);
             this.panelRanking.setVisible(true);
             this.panelRanking.setEnabled(true);
-            this.lstJugadores1.setListData(s.getRanking().toArray());
+            
+            this.lstJugadores1.setListData(myManager.getPlayerList().toArray());
         } else {
             JOptionPane.showMessageDialog(this, "No hay jugadores registrados", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
@@ -872,8 +821,8 @@ public class MainMenu extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
         try {
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("arcoiris_data.dat"));
-            out.writeObject(s);
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("monopoly_data.dat"));
+            out.writeObject(myManager);
             out.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.toString());
@@ -899,54 +848,27 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirReplayActionPerformed
 
     private void btnReplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReplicarActionPerformed
-        // TODO add your handling code here:
-        if (!lstReplays.isSelectionEmpty()) {
-            int pos = lstReplays.getSelectedIndex();
-            VentanaTablero ventana = new VentanaTablero(s, true, pos);
-        } else {
-            JOptionPane.showMessageDialog(this, "Seleccione una partida para replicar", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
-
+     
     }//GEN-LAST:event_btnReplicarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
-        if (!lstReplays.isSelectionEmpty()) {
-            JFileChooser filechooser = new JFileChooser();
-            filechooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            if (filechooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
-                String path = filechooser.getSelectedFile().getPath();
-                Object o = lstReplays.getSelectedValue();
-                Replay elReplay = ((Replay) o);
-                ArrayList<String> partidaGuardar = elReplay.getLogPartida();
-                DateFormat dateFormat = new SimpleDateFormat("MMddHHmm");
-                Calendar cal = Calendar.getInstance();
-                ArchivoGrabacion grabar = new ArchivoGrabacion(path + "\\PARTIDA" + dateFormat.format(cal.getTime()) + ".txt");
-                for (int i = 0; i < partidaGuardar.size(); i++) {
-                    grabar.grabarLinea(partidaGuardar.get(i));
-                }
-                grabar.cerrar();
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Seleccione una partida para guardar", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
 
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         try {
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("arcoiris_data.dat"));
-            out.writeObject(s);
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("monopoly_data.dat"));
+             out.writeObject(myManager);
             out.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.toString());
         }
     }//GEN-LAST:event_formWindowClosing
 
-    public boolean registrarJugador(String nombre, int edad, String alias) {
-        Ranking j = new Ranking(nombre, alias, edad);
-        return s.addJugador(j);
-    }
+    private void btnUploadFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadFileActionPerformed
+            
+        
+    }//GEN-LAST:event_btnUploadFileActionPerformed
 
     public boolean verificarQueSeaInt(String numero, int min, int max) {
         boolean ok = true;
@@ -984,18 +906,18 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnSalirReplay;
     private javax.swing.JRadioButton btnTiempo;
     private javax.swing.JRadioButton btnTorre;
+    private javax.swing.JButton btnUploadFile;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JLabel lblAlias;
     private javax.swing.JLabel lblCuadrante;
     private javax.swing.JLabel lblDistribucion;
-    private javax.swing.JLabel lblEdad;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblJugadores;
     private javax.swing.JLabel lblMenu;
-    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNumCuadrante;
     private javax.swing.JLabel lblNumSlider;
     private javax.swing.JLabel lblOpcion;
@@ -1014,8 +936,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel panelReplay;
     private javax.swing.JSlider sldrCantidad;
     private javax.swing.JSlider sldrCuadrante;
-    private javax.swing.JSpinner spnEdad;
-    private javax.swing.JTextField txtAlias;
-    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }
