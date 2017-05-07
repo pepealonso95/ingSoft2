@@ -1,6 +1,7 @@
 package edu.ncsu.monopoly.gui;
 
 import edu.ncsu.monopoly.*;
+import edu.ncsu.monopoly.test.boardScenarios.GameBoardCCJail;
 import edu.ncsu.monopoly.test.boardScenarios.GameBoardFull;
 import java.util.*;
 import java.awt.event.*;
@@ -336,6 +337,7 @@ public class MainMenu extends javax.swing.JFrame {
         player2Lbl.setText("Jugador 2");
 
         color2ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color2ComboBox.setSelectedIndex(1);
 
         selectPlayer2Lbl.setText("Seleccionar existente:");
 
@@ -350,12 +352,14 @@ public class MainMenu extends javax.swing.JFrame {
         selectPlayer4Lbl.setText("Seleccionar existente:");
 
         color4ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color4ComboBox.setSelectedIndex(3);
 
         player4Lbl.setText("Jugador 4");
 
         player3Lbl.setText("Jugador 3");
 
         color3ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color3ComboBox.setSelectedIndex(2);
 
         selectPlayer3Lbl.setText("Seleccionar existente:");
 
@@ -370,12 +374,14 @@ public class MainMenu extends javax.swing.JFrame {
         selectPlayer6Lbl.setText("Seleccionar existente:");
 
         color6ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color6ComboBox.setSelectedIndex(5);
 
         player6Lbl.setText("Jugador 6");
 
         player5Lbl.setText("Jugador 5");
 
         color5ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color5ComboBox.setSelectedIndex(4);
 
         selectPlayer5Lbl.setText("Seleccionar existente:");
 
@@ -390,12 +396,14 @@ public class MainMenu extends javax.swing.JFrame {
         selectPlayer8Lbl.setText("Seleccionar existente:");
 
         color8ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color8ComboBox.setSelectedIndex(7);
 
         player8Lbl.setText("Jugador 8");
 
         player7Lbl.setText("Jugador 7");
 
         color7ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color7ComboBox.setSelectedIndex(6);
 
         selectPlayer7Lbl.setText("Seleccionar existente:");
 
@@ -679,7 +687,7 @@ public class MainMenu extends javax.swing.JFrame {
         if(this.configurado){
             GameMaster master = GameMaster.newInstance(this.myManager);
         MainWindow window = new MainWindow();
-        GameBoard gameBoard = new GameBoardFull();
+        GameBoard gameBoard = new GameBoardCCJail();
         master.setGameBoard(gameBoard);
         GameMaster.instance().setNumberOfPlayers(this.players);
            // String name1 = myManager.getPlayerList().get(CBplayer1.getSelectedIndex()).getName();

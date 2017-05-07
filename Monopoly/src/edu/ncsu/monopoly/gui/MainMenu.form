@@ -617,6 +617,7 @@
                 <StringItem index="7" value="blanco"/>
               </StringArray>
             </Property>
+            <Property name="selectedIndex" type="int" value="1"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -686,6 +687,7 @@
                 <StringItem index="7" value="blanco"/>
               </StringArray>
             </Property>
+            <Property name="selectedIndex" type="int" value="3"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -715,6 +717,7 @@
                 <StringItem index="7" value="blanco"/>
               </StringArray>
             </Property>
+            <Property name="selectedIndex" type="int" value="2"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -784,6 +787,7 @@
                 <StringItem index="7" value="blanco"/>
               </StringArray>
             </Property>
+            <Property name="selectedIndex" type="int" value="5"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -813,6 +817,7 @@
                 <StringItem index="7" value="blanco"/>
               </StringArray>
             </Property>
+            <Property name="selectedIndex" type="int" value="4"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -882,6 +887,7 @@
                 <StringItem index="7" value="blanco"/>
               </StringArray>
             </Property>
+            <Property name="selectedIndex" type="int" value="7"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -911,6 +917,7 @@
                 <StringItem index="7" value="blanco"/>
               </StringArray>
             </Property>
+            <Property name="selectedIndex" type="int" value="6"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
