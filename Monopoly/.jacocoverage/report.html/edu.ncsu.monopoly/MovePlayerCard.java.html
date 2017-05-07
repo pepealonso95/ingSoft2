@@ -21,7 +21,7 @@ public class MovePlayerCard extends Card {
 <span class="fc" id="L21">            diceValue = (GameMaster.instance().getGameBoard().getCellNumber() + </span>
                     (newCell - currentCell));
         }
-<span class="nc bnc" id="L24" title="All 2 branches missed.">        else if(currentCell &lt; newCell) {</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">        else if(currentCell &lt;= newCell) {</span>
 <span class="nc" id="L25">            diceValue = newCell - currentCell;</span>
         }
         //System.out.println(diceValue);

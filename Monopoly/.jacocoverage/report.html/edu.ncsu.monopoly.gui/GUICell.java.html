@@ -40,15 +40,15 @@ public class GUICell extends JPanel {
 <span class="nc" id="L40">        Player player = GameMaster.instance().getPlayer(index);</span>
 <span class="nc" id="L41">        lblPlayers[index].setText(player.getName().substring(0, 1));</span>
 <span class="nc" id="L42">        lblPlayers[index].setOpaque(true);</span>
+<span class="nc" id="L43">        lblPlayers[index].setBackground(player.getColor());</span>
                 //ImageIcon icon = new ImageIcon(getClass().getResource(&quot;/addIcon.png&quot;));
         //lblPlayers[index].setIcon(icon);
-<span class="nc" id="L45">    }</span>
+<span class="nc" id="L46">    }</span>
 
     private void createPlayerLabels(JPanel pnlPlayer) {
-<span class="nc bnc" id="L48" title="All 2 branches missed.">        for (int i = 0; i &lt; GameMaster.MAX_PLAYER; i++) {</span>
-<span class="nc" id="L49">            lblPlayers[i] = new JLabel();</span>
-<span class="nc" id="L50">            pnlPlayer.add(lblPlayers[i]);</span>
-<span class="nc" id="L51">            lblPlayers[i].setBackground(Color.red);</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">        for (int i = 0; i &lt; GameMaster.MAX_PLAYER; i++) {</span>
+<span class="nc" id="L50">            lblPlayers[i] = new JLabel();</span>
+<span class="nc" id="L51">            pnlPlayer.add(lblPlayers[i]);</span>
         }
 <span class="nc" id="L53">    }</span>
 

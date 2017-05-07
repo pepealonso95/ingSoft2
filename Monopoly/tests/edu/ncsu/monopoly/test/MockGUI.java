@@ -95,6 +95,9 @@ public class MockGUI implements MonopolyGUI {
 
     public void startGame() {
     }
+    
+    public void endGame() {
+    }
 
 	public void update() {
 	}

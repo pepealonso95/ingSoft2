@@ -6,7 +6,6 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import edu.ncsu.monopoly.*;
 import edu.ncsu.monopoly.test.boardScenarios.GameBoardFull;
-import persistencia.Persistencia;
 
 public class Main {
 

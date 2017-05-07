@@ -39,4 +39,7 @@ public class MovePlayerCardTest extends TestCase {
 		assertTrue(gameMaster.getGUI().isEndTurnButtonEnabled());
 		assertEquals(1700, gameMaster.getCurrentPlayer().getMoney());
     }
+    
+    
+    
 }
