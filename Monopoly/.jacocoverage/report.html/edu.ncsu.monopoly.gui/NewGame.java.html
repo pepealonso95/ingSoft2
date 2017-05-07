@@ -22,7 +22,7 @@ public class NewGame extends javax.swing.JFrame {
 <span class="nc" id="L22">    public NewGame(Manager m) {</span>
 <span class="nc" id="L23">        initComponents();</span>
 <span class="nc" id="L24">        myManager = m;</span>
-<span class="nc" id="L25">        String[] data = new String[]{&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;};</span>
+<span class="nc" id="L25">        String[] data = new String[]{&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;};</span>
         
 <span class="nc" id="L27">        playerlbl3.setVisible(false);</span>
 <span class="nc" id="L28">        playerlbl4.setVisible(false);</span>
@@ -59,21 +59,21 @@ public class NewGame extends javax.swing.JFrame {
 <span class="nc" id="L59">        jButton1 = new javax.swing.JButton();</span>
 <span class="nc" id="L60">        nbrPlayerLbl = new javax.swing.JLabel();</span>
 <span class="nc" id="L61">        numberOfPlayersCB = new javax.swing.JComboBox();</span>
-<span class="nc" id="L62">        CBplayer1 = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L62">        CBplayer1 = new javax.swing.JComboBox&lt;String&gt;();</span>
 <span class="nc" id="L63">        playerlbl1 = new javax.swing.JLabel();</span>
-<span class="nc" id="L64">        CBplayer5 = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L64">        CBplayer5 = new javax.swing.JComboBox&lt;String&gt;();</span>
 <span class="nc" id="L65">        playerlbl5 = new javax.swing.JLabel();</span>
-<span class="nc" id="L66">        CBplayer2 = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L66">        CBplayer2 = new javax.swing.JComboBox&lt;String&gt;();</span>
 <span class="nc" id="L67">        playerlbl2 = new javax.swing.JLabel();</span>
-<span class="nc" id="L68">        CBplayer6 = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L68">        CBplayer6 = new javax.swing.JComboBox&lt;String&gt;();</span>
 <span class="nc" id="L69">        playerlbl6 = new javax.swing.JLabel();</span>
-<span class="nc" id="L70">        CBplayer3 = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L70">        CBplayer3 = new javax.swing.JComboBox&lt;String&gt;();</span>
 <span class="nc" id="L71">        playerlbl3 = new javax.swing.JLabel();</span>
-<span class="nc" id="L72">        CBplayer7 = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L72">        CBplayer7 = new javax.swing.JComboBox&lt;String&gt;();</span>
 <span class="nc" id="L73">        playerlbl7 = new javax.swing.JLabel();</span>
-<span class="nc" id="L74">        CBplayer4 = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L74">        CBplayer4 = new javax.swing.JComboBox&lt;String&gt;();</span>
 <span class="nc" id="L75">        playerlbl4 = new javax.swing.JLabel();</span>
-<span class="nc" id="L76">        CBplayer8 = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L76">        CBplayer8 = new javax.swing.JComboBox&lt;String&gt;();</span>
 <span class="nc" id="L77">        playerlbl8 = new javax.swing.JLabel();</span>
 <span class="nc" id="L78">        startGameBtn = new javax.swing.JButton();</span>
 
@@ -83,181 +83,191 @@ public class NewGame extends javax.swing.JFrame {
 
 <span class="nc" id="L84">        nbrPlayerLbl.setText(&quot;Number of players:&quot;);</span>
 
-<span class="nc" id="L86">        numberOfPlayersCB.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L88">                numberOfPlayersCBActionPerformed(evt);</span>
+<span class="nc" id="L86">        numberOfPlayersCB.addFocusListener(new java.awt.event.FocusAdapter() {</span>
+            public void focusLost(java.awt.event.FocusEvent evt) {
+<span class="nc" id="L88">                numberOfPlayersCBFocusLost(evt);</span>
 <span class="nc" id="L89">            }</span>
         });
-
-<span class="nc" id="L92">        CBplayer1.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
-
-<span class="nc" id="L94">        playerlbl1.setText(&quot;Player 1:&quot;);</span>
-
-<span class="nc" id="L96">        CBplayer5.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
-
-<span class="nc" id="L98">        playerlbl5.setText(&quot;Player 5:&quot;);</span>
-
-<span class="nc" id="L100">        CBplayer2.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
-
-<span class="nc" id="L102">        playerlbl2.setText(&quot;Player 2:&quot;);</span>
-
-<span class="nc" id="L104">        CBplayer6.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
-
-<span class="nc" id="L106">        playerlbl6.setText(&quot;Player 6:&quot;);</span>
-
-<span class="nc" id="L108">        CBplayer3.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
-
-<span class="nc" id="L110">        playerlbl3.setText(&quot;Player 3:&quot;);</span>
-
-<span class="nc" id="L112">        CBplayer7.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
-
-<span class="nc" id="L114">        playerlbl7.setText(&quot;Player 7:&quot;);</span>
-
-<span class="nc" id="L116">        CBplayer4.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
-
-<span class="nc" id="L118">        playerlbl4.setText(&quot;Player 4:&quot;);</span>
-
-<span class="nc" id="L120">        CBplayer8.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
-
-<span class="nc" id="L122">        playerlbl8.setText(&quot;Player 8:&quot;);</span>
-
-<span class="nc" id="L124">        startGameBtn.setText(&quot;Start Game&quot;);</span>
-<span class="nc" id="L125">        startGameBtn.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L91">        numberOfPlayersCB.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L127">                startGameBtnActionPerformed(evt);</span>
-<span class="nc" id="L128">            }</span>
+<span class="nc" id="L93">                numberOfPlayersCBActionPerformed(evt);</span>
+<span class="nc" id="L94">            }</span>
         });
 
-<span class="nc" id="L131">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L132">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L133">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L134">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L135">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L136">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L137">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L138">                        .addGap(205, 205, 205)</span>
-<span class="nc" id="L139">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L140">                            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L141">                                .addComponent(playerlbl1)</span>
-<span class="nc" id="L142">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L143">                                .addComponent(CBplayer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L144">                            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L145">                                .addComponent(playerlbl2)</span>
-<span class="nc" id="L146">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L147">                                .addComponent(CBplayer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L148">                            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L149">                                .addComponent(playerlbl3)</span>
-<span class="nc" id="L150">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L151">                                .addComponent(CBplayer3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L152">                            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L153">                                .addComponent(playerlbl4)</span>
-<span class="nc" id="L154">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L155">                                .addComponent(CBplayer4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
-<span class="nc" id="L156">                        .addGap(163, 163, 163)</span>
-<span class="nc" id="L157">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L158">                            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L159">                                .addComponent(playerlbl5)</span>
-<span class="nc" id="L160">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L161">                                .addComponent(CBplayer5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L162">                            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L163">                                .addComponent(playerlbl6)</span>
-<span class="nc" id="L164">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L165">                                .addComponent(CBplayer6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L166">                            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L167">                                .addComponent(playerlbl7)</span>
-<span class="nc" id="L168">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L169">                                .addComponent(CBplayer7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L170">                            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L171">                                .addComponent(playerlbl8)</span>
-<span class="nc" id="L172">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L173">                                .addComponent(CBplayer8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
-<span class="nc" id="L174">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L175">                        .addGap(354, 354, 354)</span>
-<span class="nc" id="L176">                        .addComponent(nbrPlayerLbl)</span>
-<span class="nc" id="L177">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L178">                        .addComponent(numberOfPlayersCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L97">        CBplayer1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L99">        playerlbl1.setText(&quot;Player 1:&quot;);</span>
+
+<span class="nc" id="L101">        CBplayer5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L103">        playerlbl5.setText(&quot;Player 5:&quot;);</span>
+
+<span class="nc" id="L105">        CBplayer2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L107">        playerlbl2.setText(&quot;Player 2:&quot;);</span>
+
+<span class="nc" id="L109">        CBplayer6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L111">        playerlbl6.setText(&quot;Player 6:&quot;);</span>
+
+<span class="nc" id="L113">        CBplayer3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L115">        playerlbl3.setText(&quot;Player 3:&quot;);</span>
+
+<span class="nc" id="L117">        CBplayer7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L119">        playerlbl7.setText(&quot;Player 7:&quot;);</span>
+
+<span class="nc" id="L121">        CBplayer4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L123">        playerlbl4.setText(&quot;Player 4:&quot;);</span>
+
+<span class="nc" id="L125">        CBplayer8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L127">        playerlbl8.setText(&quot;Player 8:&quot;);</span>
+
+<span class="nc" id="L129">        startGameBtn.setText(&quot;Start Game&quot;);</span>
+<span class="nc" id="L130">        startGameBtn.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L132">                startGameBtnActionPerformed(evt);</span>
+<span class="nc" id="L133">            }</span>
+        });
+
+<span class="nc" id="L136">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L137">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L138">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L139">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L140">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L141">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L142">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L143">                        .addGap(205, 205, 205)</span>
+<span class="nc" id="L144">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L145">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L146">                                .addComponent(playerlbl1)</span>
+<span class="nc" id="L147">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L148">                                .addComponent(CBplayer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L149">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L150">                                .addComponent(playerlbl2)</span>
+<span class="nc" id="L151">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L152">                                .addComponent(CBplayer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L153">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L154">                                .addComponent(playerlbl3)</span>
+<span class="nc" id="L155">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L156">                                .addComponent(CBplayer3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L157">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L158">                                .addComponent(playerlbl4)</span>
+<span class="nc" id="L159">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L160">                                .addComponent(CBplayer4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L161">                        .addGap(163, 163, 163)</span>
+<span class="nc" id="L162">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L163">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L164">                                .addComponent(playerlbl5)</span>
+<span class="nc" id="L165">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L166">                                .addComponent(CBplayer5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L167">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L168">                                .addComponent(playerlbl6)</span>
+<span class="nc" id="L169">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L170">                                .addComponent(CBplayer6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L171">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L172">                                .addComponent(playerlbl7)</span>
+<span class="nc" id="L173">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L174">                                .addComponent(CBplayer7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L175">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L176">                                .addComponent(playerlbl8)</span>
+<span class="nc" id="L177">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L178">                                .addComponent(CBplayer8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
 <span class="nc" id="L179">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L180">                        .addGap(386, 386, 386)</span>
-<span class="nc" id="L181">                        .addComponent(startGameBtn)))</span>
-<span class="nc" id="L182">                .addContainerGap(236, Short.MAX_VALUE))</span>
+<span class="nc" id="L180">                        .addGap(354, 354, 354)</span>
+<span class="nc" id="L181">                        .addComponent(nbrPlayerLbl)</span>
+<span class="nc" id="L182">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L183">                        .addComponent(numberOfPlayersCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L184">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L185">                        .addGap(386, 386, 386)</span>
+<span class="nc" id="L186">                        .addComponent(startGameBtn)))</span>
+<span class="nc" id="L187">                .addContainerGap(236, Short.MAX_VALUE))</span>
         );
-<span class="nc" id="L184">        layout.setVerticalGroup(</span>
-<span class="nc" id="L185">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L186">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
-<span class="nc" id="L187">                .addGap(26, 26, 26)</span>
-<span class="nc" id="L188">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L189">                    .addComponent(nbrPlayerLbl)</span>
-<span class="nc" id="L190">                    .addComponent(numberOfPlayersCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L191">                .addGap(28, 28, 28)</span>
-<span class="nc" id="L192">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
-<span class="nc" id="L193">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L194">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L195">                            .addComponent(CBplayer5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L196">                            .addComponent(playerlbl5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L197">                        .addGap(67, 67, 67)</span>
-<span class="nc" id="L198">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L199">                            .addComponent(CBplayer6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L200">                            .addComponent(playerlbl6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L201">                        .addGap(74, 74, 74)</span>
-<span class="nc" id="L202">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L203">                            .addComponent(CBplayer7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L204">                            .addComponent(playerlbl7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L205">                        .addGap(84, 84, 84)</span>
-<span class="nc" id="L206">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L207">                            .addComponent(CBplayer8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L208">                            .addComponent(playerlbl8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
-<span class="nc" id="L209">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L210">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L211">                            .addComponent(CBplayer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L212">                            .addComponent(playerlbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L213">                        .addGap(67, 67, 67)</span>
-<span class="nc" id="L214">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L215">                            .addComponent(CBplayer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L216">                            .addComponent(playerlbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L217">                        .addGap(74, 74, 74)</span>
-<span class="nc" id="L218">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L219">                            .addComponent(CBplayer3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L220">                            .addComponent(playerlbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L221">                        .addGap(84, 84, 84)</span>
-<span class="nc" id="L222">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L223">                            .addComponent(CBplayer4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L224">                            .addComponent(playerlbl4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
-<span class="nc" id="L225">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)</span>
-<span class="nc" id="L226">                .addComponent(startGameBtn)</span>
-<span class="nc" id="L227">                .addGap(71, 71, 71))</span>
+<span class="nc" id="L189">        layout.setVerticalGroup(</span>
+<span class="nc" id="L190">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L191">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L192">                .addGap(26, 26, 26)</span>
+<span class="nc" id="L193">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L194">                    .addComponent(nbrPlayerLbl)</span>
+<span class="nc" id="L195">                    .addComponent(numberOfPlayersCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L196">                .addGap(28, 28, 28)</span>
+<span class="nc" id="L197">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L198">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L199">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L200">                            .addComponent(CBplayer5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L201">                            .addComponent(playerlbl5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L202">                        .addGap(67, 67, 67)</span>
+<span class="nc" id="L203">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L204">                            .addComponent(CBplayer6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L205">                            .addComponent(playerlbl6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L206">                        .addGap(74, 74, 74)</span>
+<span class="nc" id="L207">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L208">                            .addComponent(CBplayer7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L209">                            .addComponent(playerlbl7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L210">                        .addGap(84, 84, 84)</span>
+<span class="nc" id="L211">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L212">                            .addComponent(CBplayer8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L213">                            .addComponent(playerlbl8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L214">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L215">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L216">                            .addComponent(CBplayer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L217">                            .addComponent(playerlbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L218">                        .addGap(67, 67, 67)</span>
+<span class="nc" id="L219">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L220">                            .addComponent(CBplayer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L221">                            .addComponent(playerlbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L222">                        .addGap(74, 74, 74)</span>
+<span class="nc" id="L223">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L224">                            .addComponent(CBplayer3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L225">                            .addComponent(playerlbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L226">                        .addGap(84, 84, 84)</span>
+<span class="nc" id="L227">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L228">                            .addComponent(CBplayer4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L229">                            .addComponent(playerlbl4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L230">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)</span>
+<span class="nc" id="L231">                .addComponent(startGameBtn)</span>
+<span class="nc" id="L232">                .addGap(71, 71, 71))</span>
         );
 
-<span class="nc" id="L230">        pack();</span>
-<span class="nc" id="L231">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L235">        pack();</span>
+<span class="nc" id="L236">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void startGameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startGameBtnActionPerformed
-<span class="nc" id="L234">        GameMaster master = GameMaster.instance();</span>
-<span class="nc" id="L235">        MainWindow window = new MainWindow();</span>
-<span class="nc" id="L236">        GameBoard gameBoard = new GameBoardFull();</span>
-<span class="nc" id="L237">        master.setGameBoard(gameBoard);</span>
+<span class="nc" id="L239">        GameMaster master = GameMaster.instance();</span>
+<span class="nc" id="L240">        MainWindow window = new MainWindow();</span>
+<span class="nc" id="L241">        GameBoard gameBoard = new GameBoardFull();</span>
+<span class="nc" id="L242">        master.setGameBoard(gameBoard);</span>
         //int numPlayers = numberOfPlayersCB.getSelectedIndex() + 1;
-<span class="nc" id="L239">        int numPlayers = 2;</span>
-<span class="nc" id="L240">        GameMaster.instance().setNumberOfPlayers(numPlayers);</span>
+<span class="nc" id="L244">        int numPlayers = 2;</span>
+<span class="nc" id="L245">        GameMaster.instance().setNumberOfPlayers(numPlayers);</span>
            // String name1 = myManager.getPlayerList().get(CBplayer1.getSelectedIndex()).getName();
             //GameMaster.instance().getPlayer(1).setName(name1);
             //String name2 = myManager.getPlayerList().get(CBplayer2.getSelectedIndex()).getName();
             //GameMaster.instance().getPlayer(2).setName(name2);
           
-<span class="nc bnc" id="L246" title="All 2 branches missed.">            for(int i=0;i&lt;numPlayers;i++){</span>
-<span class="nc" id="L247">              GameMaster.instance().getPlayer(i).setName(&quot;a&quot;);</span>
+<span class="nc bnc" id="L251" title="All 2 branches missed.">            for(int i=0;i&lt;numPlayers;i++){</span>
+<span class="nc" id="L252">              GameMaster.instance().getPlayer(i).setName(&quot;a&quot;);</span>
             }
         
-<span class="nc" id="L250">        window.setupGameBoard(gameBoard);</span>
-<span class="nc" id="L251">        window.show();</span>
-<span class="nc" id="L252">        master.setGUI(window);</span>
-<span class="nc" id="L253">        master.startGame();</span>
+<span class="nc" id="L255">        window.setupGameBoard(gameBoard);</span>
+<span class="nc" id="L256">        window.show();</span>
+<span class="nc" id="L257">        master.setGUI(window);</span>
+<span class="nc" id="L258">        master.startGame();</span>
         
         
-<span class="nc" id="L256">    }//GEN-LAST:event_startGameBtnActionPerformed</span>
+<span class="nc" id="L261">    }//GEN-LAST:event_startGameBtnActionPerformed</span>
 
     private void numberOfPlayersCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberOfPlayersCBActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L260">    }//GEN-LAST:event_numberOfPlayersCBActionPerformed</span>
+<span class="nc" id="L265">    }//GEN-LAST:event_numberOfPlayersCBActionPerformed</span>
+
+    private void numberOfPlayersCBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_numberOfPlayersCBFocusLost
+        // TODO add your handling code here:
+        
+<span class="nc" id="L270">    }//GEN-LAST:event_numberOfPlayersCBFocusLost</span>
 
 
 

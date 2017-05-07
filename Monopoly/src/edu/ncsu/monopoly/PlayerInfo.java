@@ -18,7 +18,7 @@ public class PlayerInfo implements Serializable{
 
 
 
-     public PlayerInfo(String name) {
+    public PlayerInfo(String name) {
         this.name = name;
         this.picture = "/images/default.png";
         this.gamesPlayed = 0;

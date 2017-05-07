@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MainMenu.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Monopoly&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">edu.ncsu.monopoly.gui</a> &gt; <span class="el_source">MainMenu.java</span></div><h1>MainMenu.java</h1><pre class="source lang-java linenums">package edu.ncsu.monopoly.gui;
+
+import edu.ncsu.monopoly.*;
+import java.util.*;
+import java.awt.event.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.swing.*;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import javafx.stage.FileChooser;
+import javax.imageio.ImageIO;
+
+public class MainMenu extends javax.swing.JFrame {
+
+    private Manager myManager;
+    private String path;
+<span class="nc" id="L25">    private File imageFile = null;</span>
+
+<span class="nc" id="L27">    public MainMenu(Manager m) {</span>
+<span class="nc" id="L28">        initComponents();</span>
+
+<span class="nc" id="L30">        this.myManager = m;</span>
+<span class="nc" id="L31">        this.panelRegistrarJugador.setVisible(false);</span>
+<span class="nc" id="L32">        this.panelRegistrarJugador.setEnabled(false);</span>
+<span class="nc" id="L33">        this.panelConfigurarPartida.setVisible(false);</span>
+<span class="nc" id="L34">        this.panelConfigurarPartida.setEnabled(false);</span>
+<span class="nc" id="L35">        this.panelReplay.setVisible(false);</span>
+<span class="nc" id="L36">        this.panelReplay.setEnabled(false);</span>
+<span class="nc" id="L37">        this.panelRanking.setVisible(false);</span>
+<span class="nc" id="L38">        this.panelRanking.setEnabled(false);</span>
+<span class="nc" id="L39">        ButtonGroup groupObjetivo = new ButtonGroup();</span>
+<span class="nc" id="L40">        groupObjetivo.add(btnTorre);</span>
+<span class="nc" id="L41">        groupObjetivo.add(btnJugada);</span>
+<span class="nc" id="L42">        groupObjetivo.add(btnTiempo);</span>
+<span class="nc" id="L43">        ButtonGroup groupDistribucion = new ButtonGroup();</span>
+<span class="nc" id="L44">        groupDistribucion.add(btnDistL);</span>
+<span class="nc" id="L45">        groupDistribucion.add(btnDistI);</span>
+<span class="nc" id="L46">        groupDistribucion.add(btnDistA);</span>
+<span class="nc" id="L47">        this.setSize(700, 650);</span>
+<span class="nc" id="L48">    }</span>
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L54">        buttonGroup1 = new javax.swing.ButtonGroup();</span>
+<span class="nc" id="L55">        panelMenuPrincipal = new javax.swing.JPanel();</span>
+<span class="nc" id="L56">        btnRegistrarJugador = new javax.swing.JButton();</span>
+<span class="nc" id="L57">        btnConfigurarPartida = new javax.swing.JButton();</span>
+<span class="nc" id="L58">        btnJugar = new javax.swing.JButton();</span>
+<span class="nc" id="L59">        btnReplay = new javax.swing.JButton();</span>
+<span class="nc" id="L60">        btnSalir = new javax.swing.JButton();</span>
+<span class="nc" id="L61">        btnRanking = new javax.swing.JButton();</span>
+<span class="nc" id="L62">        lblMenu = new javax.swing.JLabel();</span>
+<span class="nc" id="L63">        panelRegistrarJugador = new javax.swing.JPanel();</span>
+<span class="nc" id="L64">        lblName = new javax.swing.JLabel();</span>
+<span class="nc" id="L65">        txtName = new javax.swing.JTextField();</span>
+<span class="nc" id="L66">        lblImage = new javax.swing.JLabel();</span>
+<span class="nc" id="L67">        lblRegistrarJugador = new javax.swing.JLabel();</span>
+<span class="nc" id="L68">        lblRegistrado = new javax.swing.JLabel();</span>
+<span class="nc" id="L69">        btnRegistrar = new javax.swing.JButton();</span>
+<span class="nc" id="L70">        btnCancelarJugador = new javax.swing.JButton();</span>
+<span class="nc" id="L71">        btnUploadFile = new javax.swing.JButton();</span>
+<span class="nc" id="L72">        pathLbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L73">        panelReplay = new javax.swing.JPanel();</span>
+<span class="nc" id="L74">        lblReplay = new javax.swing.JLabel();</span>
+<span class="nc" id="L75">        btnSalirReplay = new javax.swing.JButton();</span>
+<span class="nc" id="L76">        jScrollPane5 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L77">        lstReplays = new javax.swing.JList();</span>
+<span class="nc" id="L78">        btnReplicar = new javax.swing.JButton();</span>
+<span class="nc" id="L79">        btnGuardar = new javax.swing.JButton();</span>
+<span class="nc" id="L80">        panelConfigurarPartida = new javax.swing.JPanel();</span>
+<span class="nc" id="L81">        lblOpcion = new javax.swing.JLabel();</span>
+<span class="nc" id="L82">        btnTorre = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L83">        btnJugada = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L84">        btnTiempo = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L85">        sldrCantidad = new javax.swing.JSlider();</span>
+<span class="nc" id="L86">        lblSlider = new javax.swing.JLabel();</span>
+<span class="nc" id="L87">        lblNumSlider = new javax.swing.JLabel();</span>
+<span class="nc" id="L88">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L89">        lstJugadores = new javax.swing.JList();</span>
+<span class="nc" id="L90">        btnJugadorB = new javax.swing.JButton();</span>
+<span class="nc" id="L91">        btnJugadorN = new javax.swing.JButton();</span>
+<span class="nc" id="L92">        btnRegistrarConfiguracion = new javax.swing.JButton();</span>
+<span class="nc" id="L93">        btnDistL = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L94">        btnDistI = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L95">        btnDistA = new javax.swing.JRadioButton();</span>
+<span class="nc" id="L96">        lblDistribucion = new javax.swing.JLabel();</span>
+<span class="nc" id="L97">        lblJugadores = new javax.swing.JLabel();</span>
+<span class="nc" id="L98">        btnCancelar = new javax.swing.JButton();</span>
+<span class="nc" id="L99">        sldrCuadrante = new javax.swing.JSlider();</span>
+<span class="nc" id="L100">        lblCuadrante = new javax.swing.JLabel();</span>
+<span class="nc" id="L101">        lblNumCuadrante = new javax.swing.JLabel();</span>
+<span class="nc" id="L102">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L103">        panelRanking = new javax.swing.JPanel();</span>
+<span class="nc" id="L104">        lblRankingJugadores = new javax.swing.JLabel();</span>
+<span class="nc" id="L105">        btnSalirRanking = new javax.swing.JButton();</span>
+<span class="nc" id="L106">        jScrollPane4 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L107">        lstJugadores1 = new javax.swing.JList();</span>
+
+<span class="nc" id="L109">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L110">        setFocusable(false);</span>
+<span class="nc" id="L111">        setLocationByPlatform(true);</span>
+<span class="nc" id="L112">        setMinimumSize(new java.awt.Dimension(500, 500));</span>
+<span class="nc" id="L113">        setResizable(false);</span>
+<span class="nc" id="L114">        addWindowListener(new java.awt.event.WindowAdapter() {</span>
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+<span class="nc" id="L116">                formWindowClosing(evt);</span>
+<span class="nc" id="L117">            }</span>
+        });
+
+<span class="nc" id="L120">        panelMenuPrincipal.setFocusCycleRoot(true);</span>
+<span class="nc" id="L121">        panelMenuPrincipal.setPreferredSize(new java.awt.Dimension(550, 550));</span>
+
+<span class="nc" id="L123">        btnRegistrarJugador.setText(&quot;Registrar jugador&quot;);</span>
+<span class="nc" id="L124">        btnRegistrarJugador.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L126">                btnRegistrarJugadorActionPerformed(evt);</span>
+<span class="nc" id="L127">            }</span>
+        });
+
+<span class="nc" id="L130">        btnConfigurarPartida.setText(&quot;Configurar partida&quot;);</span>
+<span class="nc" id="L131">        btnConfigurarPartida.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L133">                btnConfigurarPartidaActionPerformed(evt);</span>
+<span class="nc" id="L134">            }</span>
+        });
+
+<span class="nc" id="L137">        btnJugar.setText(&quot;Jugar&quot;);</span>
+<span class="nc" id="L138">        btnJugar.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L140">                btnJugarActionPerformed(evt);</span>
+<span class="nc" id="L141">            }</span>
+        });
+
+<span class="nc" id="L144">        btnReplay.setText(&quot;Replay&quot;);</span>
+<span class="nc" id="L145">        btnReplay.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L147">                btnReplayActionPerformed(evt);</span>
+<span class="nc" id="L148">            }</span>
+        });
+
+<span class="nc" id="L151">        btnSalir.setText(&quot;Salir&quot;);</span>
+<span class="nc" id="L152">        btnSalir.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L154">                btnSalirActionPerformed(evt);</span>
+<span class="nc" id="L155">            }</span>
+        });
+
+<span class="nc" id="L158">        btnRanking.setText(&quot;Ranking&quot;);</span>
+<span class="nc" id="L159">        btnRanking.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L161">                btnRankingActionPerformed(evt);</span>
+<span class="nc" id="L162">            }</span>
+        });
+
+<span class="nc" id="L165">        lblMenu.setFont(new java.awt.Font(&quot;Tahoma&quot;, 1, 24)); // NOI18N</span>
+<span class="nc" id="L166">        lblMenu.setText(&quot;Menu Principal&quot;);</span>
+
+<span class="nc" id="L168">        javax.swing.GroupLayout panelMenuPrincipalLayout = new javax.swing.GroupLayout(panelMenuPrincipal);</span>
+<span class="nc" id="L169">        panelMenuPrincipal.setLayout(panelMenuPrincipalLayout);</span>
+<span class="nc" id="L170">        panelMenuPrincipalLayout.setHorizontalGroup(</span>
+<span class="nc" id="L171">            panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L172">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuPrincipalLayout.createSequentialGroup()</span>
+<span class="nc" id="L173">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L174">                .addGroup(panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L175">                    .addGroup(panelMenuPrincipalLayout.createSequentialGroup()</span>
+<span class="nc" id="L176">                        .addGap(113, 113, 113)</span>
+<span class="nc" id="L177">                        .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L178">                    .addComponent(btnRegistrarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L179">                    .addComponent(btnConfigurarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L180">                    .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L181">                    .addComponent(btnRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L182">                    .addComponent(btnReplay, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L183">                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L184">                .addGap(124, 124, 124))</span>
+        );
+<span class="nc" id="L186">        panelMenuPrincipalLayout.setVerticalGroup(</span>
+<span class="nc" id="L187">            panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L188">            .addGroup(panelMenuPrincipalLayout.createSequentialGroup()</span>
+<span class="nc" id="L189">                .addGap(66, 66, 66)</span>
+<span class="nc" id="L190">                .addComponent(lblMenu)</span>
+<span class="nc" id="L191">                .addGap(38, 38, 38)</span>
+<span class="nc" id="L192">                .addComponent(btnRegistrarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L193">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L194">                .addComponent(btnConfigurarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L195">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L196">                .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L197">                .addGap(11, 11, 11)</span>
+<span class="nc" id="L198">                .addComponent(btnRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L199">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L200">                .addComponent(btnReplay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L201">                .addGap(11, 11, 11)</span>
+<span class="nc" id="L202">                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L203">                .addContainerGap(89, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L206">        panelRegistrarJugador.setPreferredSize(new java.awt.Dimension(700, 650));</span>
+
+<span class="nc" id="L208">        lblName.setText(&quot;Nombre&quot;);</span>
+
+<span class="nc" id="L210">        txtName.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L212">                txtNameActionPerformed(evt);</span>
+<span class="nc" id="L213">            }</span>
+        });
+
+<span class="nc" id="L216">        lblImage.setText(&quot;Imagen&quot;);</span>
+
+<span class="nc" id="L218">        lblRegistrarJugador.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L219">        lblRegistrarJugador.setText(&quot;Registrar Jugador&quot;);</span>
+
+<span class="nc" id="L221">        lblRegistrado.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 10)); // NOI18N</span>
+
+<span class="nc" id="L223">        btnRegistrar.setText(&quot;Registrar&quot;);</span>
+<span class="nc" id="L224">        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L226">                btnRegistrarActionPerformed(evt);</span>
+<span class="nc" id="L227">            }</span>
+        });
+
+<span class="nc" id="L230">        btnCancelarJugador.setText(&quot;Cancelar&quot;);</span>
+<span class="nc" id="L231">        btnCancelarJugador.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L233">                btnCancelarJugadorActionPerformed(evt);</span>
+<span class="nc" id="L234">            }</span>
+        });
+
+<span class="nc" id="L237">        btnUploadFile.setText(&quot;Upload file&quot;);</span>
+<span class="nc" id="L238">        btnUploadFile.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L240">                btnUploadFileActionPerformed(evt);</span>
+<span class="nc" id="L241">            }</span>
+        });
+
+<span class="nc" id="L244">        javax.swing.GroupLayout panelRegistrarJugadorLayout = new javax.swing.GroupLayout(panelRegistrarJugador);</span>
+<span class="nc" id="L245">        panelRegistrarJugador.setLayout(panelRegistrarJugadorLayout);</span>
+<span class="nc" id="L246">        panelRegistrarJugadorLayout.setHorizontalGroup(</span>
+<span class="nc" id="L247">            panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L248">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L249">                .addContainerGap(179, Short.MAX_VALUE)</span>
+<span class="nc" id="L250">                .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L251">                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L252">                        .addComponent(btnCancelarJugador)</span>
+<span class="nc" id="L253">                        .addGap(33, 33, 33)</span>
+<span class="nc" id="L254">                        .addComponent(btnRegistrar))</span>
+<span class="nc" id="L255">                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L256">                        .addGap(17, 17, 17)</span>
+<span class="nc" id="L257">                        .addComponent(lblRegistrado, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L258">                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L259">                        .addGap(62, 62, 62)</span>
+<span class="nc" id="L260">                        .addComponent(lblRegistrarJugador))</span>
+<span class="nc" id="L261">                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L262">                        .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L263">                            .addComponent(lblName)</span>
+<span class="nc" id="L264">                            .addComponent(lblImage))</span>
+<span class="nc" id="L265">                        .addGap(104, 104, 104)</span>
+<span class="nc" id="L266">                        .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L267">                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L268">                            .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L269">                                .addComponent(btnUploadFile)</span>
+<span class="nc" id="L270">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L271">                                .addComponent(pathLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))))</span>
+<span class="nc" id="L272">                .addGap(57, 57, 57))</span>
+        );
+<span class="nc" id="L274">        panelRegistrarJugadorLayout.setVerticalGroup(</span>
+<span class="nc" id="L275">            panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L276">            .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L277">                .addGap(103, 103, 103)</span>
+<span class="nc" id="L278">                .addComponent(lblRegistrarJugador)</span>
+<span class="nc" id="L279">                .addGap(53, 53, 53)</span>
+<span class="nc" id="L280">                .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L281">                    .addComponent(lblName)</span>
+<span class="nc" id="L282">                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L283">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L284">                .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L285">                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L286">                        .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L287">                            .addComponent(btnUploadFile)</span>
+<span class="nc" id="L288">                            .addComponent(lblImage))</span>
+<span class="nc" id="L289">                        .addGap(18, 18, 18))</span>
+<span class="nc" id="L290">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L291">                        .addComponent(pathLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L292">                        .addGap(28, 28, 28)))</span>
+<span class="nc" id="L293">                .addComponent(lblRegistrado, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L294">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L295">                .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L296">                    .addComponent(btnRegistrar)</span>
+<span class="nc" id="L297">                    .addComponent(btnCancelarJugador))</span>
+<span class="nc" id="L298">                .addContainerGap(260, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L301">        panelReplay.setPreferredSize(new java.awt.Dimension(700, 700));</span>
+
+<span class="nc" id="L303">        lblReplay.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 22)); // NOI18N</span>
+<span class="nc" id="L304">        lblReplay.setText(&quot;Replicar Partidas&quot;);</span>
+
+<span class="nc" id="L306">        btnSalirReplay.setText(&quot;Salir&quot;);</span>
+<span class="nc" id="L307">        btnSalirReplay.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L309">                btnSalirReplayActionPerformed(evt);</span>
+<span class="nc" id="L310">            }</span>
+        });
+
+<span class="nc" id="L313">        lstReplays.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);</span>
+<span class="nc" id="L314">        jScrollPane5.setViewportView(lstReplays);</span>
+
+<span class="nc" id="L316">        btnReplicar.setText(&quot;Replicar&quot;);</span>
+<span class="nc" id="L317">        btnReplicar.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L319">                btnReplicarActionPerformed(evt);</span>
+<span class="nc" id="L320">            }</span>
+        });
+
+<span class="nc" id="L323">        btnGuardar.setText(&quot;Guardar&quot;);</span>
+<span class="nc" id="L324">        btnGuardar.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L326">                btnGuardarActionPerformed(evt);</span>
+<span class="nc" id="L327">            }</span>
+        });
+
+<span class="nc" id="L330">        javax.swing.GroupLayout panelReplayLayout = new javax.swing.GroupLayout(panelReplay);</span>
+<span class="nc" id="L331">        panelReplay.setLayout(panelReplayLayout);</span>
+<span class="nc" id="L332">        panelReplayLayout.setHorizontalGroup(</span>
+<span class="nc" id="L333">            panelReplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L334">            .addGroup(panelReplayLayout.createSequentialGroup()</span>
+<span class="nc" id="L335">                .addGap(155, 155, 155)</span>
+<span class="nc" id="L336">                .addGroup(panelReplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L337">                    .addGroup(panelReplayLayout.createSequentialGroup()</span>
+<span class="nc" id="L338">                        .addGap(31, 31, 31)</span>
+<span class="nc" id="L339">                        .addComponent(btnSalirReplay, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L340">                        .addGap(41, 41, 41)</span>
+<span class="nc" id="L341">                        .addComponent(btnGuardar)</span>
+<span class="nc" id="L342">                        .addGap(43, 43, 43)</span>
+<span class="nc" id="L343">                        .addComponent(btnReplicar))</span>
+<span class="nc" id="L344">                    .addGroup(panelReplayLayout.createSequentialGroup()</span>
+<span class="nc" id="L345">                        .addGap(99, 99, 99)</span>
+<span class="nc" id="L346">                        .addComponent(lblReplay))</span>
+<span class="nc" id="L347">                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L348">                .addContainerGap(158, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L350">        panelReplayLayout.setVerticalGroup(</span>
+<span class="nc" id="L351">            panelReplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L352">            .addGroup(panelReplayLayout.createSequentialGroup()</span>
+<span class="nc" id="L353">                .addGap(24, 24, 24)</span>
+<span class="nc" id="L354">                .addComponent(lblReplay)</span>
+<span class="nc" id="L355">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L356">                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L357">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L358">                .addGroup(panelReplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L359">                    .addComponent(btnSalirReplay)</span>
+<span class="nc" id="L360">                    .addComponent(btnReplicar)</span>
+<span class="nc" id="L361">                    .addComponent(btnGuardar))</span>
+<span class="nc" id="L362">                .addContainerGap(129, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L365">        lblOpcion.setFont(new java.awt.Font(&quot;Tahoma&quot;, 1, 12)); // NOI18N</span>
+<span class="nc" id="L366">        lblOpcion.setText(&quot;Elija tipo de partida&quot;);</span>
+<span class="nc" id="L367">        lblOpcion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
+
+<span class="nc" id="L369">        btnTorre.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L370">        btnTorre.setText(&quot;Partida a formar torre&quot;);</span>
+<span class="nc" id="L371">        btnTorre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
+<span class="nc" id="L372">        btnTorre.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L374">                btnTorreActionPerformed(evt);</span>
+<span class="nc" id="L375">            }</span>
+        });
+
+<span class="nc" id="L378">        btnJugada.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L379">        btnJugada.setText(&quot;Partida por jugadas&quot;);</span>
+<span class="nc" id="L380">        btnJugada.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
+<span class="nc" id="L381">        btnJugada.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L383">                btnJugadaActionPerformed(evt);</span>
+<span class="nc" id="L384">            }</span>
+        });
+
+<span class="nc" id="L387">        btnTiempo.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L388">        btnTiempo.setText(&quot;Partida por tiempo&quot;);</span>
+<span class="nc" id="L389">        btnTiempo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
+<span class="nc" id="L390">        btnTiempo.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L392">                btnTiempoActionPerformed(evt);</span>
+<span class="nc" id="L393">            }</span>
+        });
+
+<span class="nc" id="L396">        sldrCantidad.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L398">                sldrCantidadMouseReleased(evt);</span>
+<span class="nc" id="L399">            }</span>
+        });
+
+<span class="nc" id="L402">        lblSlider.setFont(new java.awt.Font(&quot;Tahoma&quot;, 1, 12)); // NOI18N</span>
+
+<span class="nc" id="L404">        lstJugadores.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);</span>
+<span class="nc" id="L405">        jScrollPane1.setViewportView(lstJugadores);</span>
+
+<span class="nc" id="L407">        btnJugadorB.setText(&quot;Jugador Blanco&quot;);</span>
+<span class="nc" id="L408">        btnJugadorB.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L410">                btnJugadorBActionPerformed(evt);</span>
+<span class="nc" id="L411">            }</span>
+        });
+
+<span class="nc" id="L414">        btnJugadorN.setText(&quot;Jugador Negro&quot;);</span>
+<span class="nc" id="L415">        btnJugadorN.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L417">                btnJugadorNActionPerformed(evt);</span>
+<span class="nc" id="L418">            }</span>
+        });
+
+<span class="nc" id="L421">        btnRegistrarConfiguracion.setText(&quot;Registrar&quot;);</span>
+<span class="nc" id="L422">        btnRegistrarConfiguracion.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L424">                btnRegistrarConfiguracionActionPerformed(evt);</span>
+<span class="nc" id="L425">            }</span>
+        });
+
+<span class="nc" id="L428">        btnDistL.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L429">        btnDistL.setText(&quot;Distribucion en L&quot;);</span>
+<span class="nc" id="L430">        btnDistL.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
+<span class="nc" id="L431">        btnDistL.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L433">                btnDistLActionPerformed(evt);</span>
+<span class="nc" id="L434">            }</span>
+        });
+
+<span class="nc" id="L437">        btnDistI.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L438">        btnDistI.setText(&quot;Distribucion en I&quot;);</span>
+<span class="nc" id="L439">        btnDistI.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
+<span class="nc" id="L440">        btnDistI.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L442">                btnDistIActionPerformed(evt);</span>
+<span class="nc" id="L443">            }</span>
+        });
+
+<span class="nc" id="L446">        btnDistA.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 12)); // NOI18N</span>
+<span class="nc" id="L447">        btnDistA.setText(&quot;Distribucion al azar&quot;);</span>
+<span class="nc" id="L448">        btnDistA.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
+<span class="nc" id="L449">        btnDistA.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L451">                btnDistAActionPerformed(evt);</span>
+<span class="nc" id="L452">            }</span>
+        });
+
+<span class="nc" id="L455">        lblDistribucion.setFont(new java.awt.Font(&quot;Tahoma&quot;, 1, 12)); // NOI18N</span>
+<span class="nc" id="L456">        lblDistribucion.setText(&quot;Elija una distribución&quot;);</span>
+<span class="nc" id="L457">        lblDistribucion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
+
+<span class="nc" id="L459">        lblJugadores.setFont(new java.awt.Font(&quot;Tahoma&quot;, 1, 12)); // NOI18N</span>
+<span class="nc" id="L460">        lblJugadores.setText(&quot;Elija un jugador negro y un jugador blanco distintos&quot;);</span>
+
+<span class="nc" id="L462">        btnCancelar.setText(&quot;Cancelar&quot;);</span>
+<span class="nc" id="L463">        btnCancelar.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L465">                btnCancelarActionPerformed(evt);</span>
+<span class="nc" id="L466">            }</span>
+        });
+
+<span class="nc" id="L469">        sldrCuadrante.setMaximum(4);</span>
+<span class="nc" id="L470">        sldrCuadrante.setMinimum(1);</span>
+<span class="nc" id="L471">        sldrCuadrante.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L473">                sldrCuadranteMouseReleased(evt);</span>
+<span class="nc" id="L474">            }</span>
+        });
+
+<span class="nc" id="L477">        lblCuadrante.setFont(new java.awt.Font(&quot;Tahoma&quot;, 1, 12)); // NOI18N</span>
+<span class="nc" id="L478">        lblCuadrante.setText(&quot;Eliga el cuadrante (1-4)&quot;);</span>
+
+<span class="nc" id="L480">        lblNumCuadrante.setText(&quot;4&quot;);</span>
+
+<span class="nc" id="L482">        javax.swing.GroupLayout panelConfigurarPartidaLayout = new javax.swing.GroupLayout(panelConfigurarPartida);</span>
+<span class="nc" id="L483">        panelConfigurarPartida.setLayout(panelConfigurarPartidaLayout);</span>
+<span class="nc" id="L484">        panelConfigurarPartidaLayout.setHorizontalGroup(</span>
+<span class="nc" id="L485">            panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L486">            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L487">                .addGap(58, 58, 58)</span>
+<span class="nc" id="L488">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L489">                    .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L490">                        .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L491">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L492">                                .addGap(4, 4, 4)</span>
+<span class="nc" id="L493">                                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L494">                                    .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L495">                                        .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L496">                                            .addComponent(sldrCuadrante, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L497">                                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L498">                                                .addGap(8, 8, 8)</span>
+<span class="nc" id="L499">                                                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L500">                                                    .addComponent(lblOpcion)</span>
+<span class="nc" id="L501">                                                    .addComponent(btnTorre)</span>
+<span class="nc" id="L502">                                                    .addComponent(btnJugada)</span>
+<span class="nc" id="L503">                                                    .addComponent(btnTiempo)</span>
+<span class="nc" id="L504">                                                    .addComponent(lblSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L505">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L506">                                        .addComponent(lblNumCuadrante, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L507">                                    .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L508">                                        .addComponent(sldrCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L509">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L510">                                        .addComponent(lblNumSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L511">                                    .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L512">                                        .addGap(9, 9, 9)</span>
+<span class="nc" id="L513">                                        .addComponent(lblCuadrante))))</span>
+<span class="nc" id="L514">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L515">                                .addGap(14, 14, 14)</span>
+<span class="nc" id="L516">                                .addComponent(lblJugadores)))</span>
+<span class="nc" id="L517">                        .addContainerGap())</span>
+<span class="nc" id="L518">                    .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L519">                        .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L520">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L521">                                .addGap(356, 356, 356)</span>
+<span class="nc" id="L522">                                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L523">                                    .addComponent(btnDistI)</span>
+<span class="nc" id="L524">                                    .addComponent(btnDistA)</span>
+<span class="nc" id="L525">                                    .addComponent(btnDistL)</span>
+<span class="nc" id="L526">                                    .addComponent(lblDistribucion)))</span>
+<span class="nc" id="L527">                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L528">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L529">                        .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L530">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L531">                                .addComponent(btnCancelar)</span>
+<span class="nc" id="L532">                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L533">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L534">                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L535">                                .addGap(0, 1, Short.MAX_VALUE))))))</span>
+<span class="nc" id="L536">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L537">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L538">                .addComponent(btnJugadorN)</span>
+<span class="nc" id="L539">                .addGap(73, 73, 73)</span>
+<span class="nc" id="L540">                .addComponent(btnJugadorB)</span>
+<span class="nc" id="L541">                .addGap(101, 101, 101)</span>
+<span class="nc" id="L542">                .addComponent(btnRegistrarConfiguracion, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L543">                .addGap(23, 23, 23))</span>
+        );
+<span class="nc" id="L545">        panelConfigurarPartidaLayout.setVerticalGroup(</span>
+<span class="nc" id="L546">            panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L547">            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L548">                .addGap(50, 50, 50)</span>
+<span class="nc" id="L549">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L550">                    .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L551">                        .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L552">                            .addComponent(lblDistribucion)</span>
+<span class="nc" id="L553">                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L554">                            .addComponent(btnDistL)</span>
+<span class="nc" id="L555">                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L556">                            .addComponent(btnDistI)</span>
+<span class="nc" id="L557">                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L558">                            .addComponent(btnDistA))</span>
+<span class="nc" id="L559">                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L560">                            .addComponent(lblOpcion)</span>
+<span class="nc" id="L561">                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L562">                            .addComponent(btnTorre)</span>
+<span class="nc" id="L563">                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L564">                            .addComponent(btnJugada)</span>
+<span class="nc" id="L565">                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L566">                            .addComponent(btnTiempo)))</span>
+<span class="nc" id="L567">                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L568">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L569">                .addComponent(lblSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L570">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L571">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L572">                    .addComponent(sldrCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L573">                    .addComponent(lblNumSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L574">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)</span>
+<span class="nc" id="L575">                .addComponent(lblCuadrante)</span>
+<span class="nc" id="L576">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L577">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L578">                    .addComponent(sldrCuadrante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L579">                    .addComponent(lblNumCuadrante, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L580">                .addGap(32, 32, 32)</span>
+<span class="nc" id="L581">                .addComponent(lblJugadores)</span>
+<span class="nc" id="L582">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L583">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L584">                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L585">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L586">                        .addComponent(btnCancelar)</span>
+<span class="nc" id="L587">                        .addGap(52, 52, 52)))</span>
+<span class="nc" id="L588">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L589">                    .addComponent(btnRegistrarConfiguracion, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L590">                    .addComponent(btnJugadorB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L591">                    .addComponent(btnJugadorN))</span>
+<span class="nc" id="L592">                .addGap(45, 45, 45))</span>
+        );
+
+<span class="nc" id="L595">        panelRanking.setPreferredSize(new java.awt.Dimension(700, 700));</span>
+
+<span class="nc" id="L597">        lblRankingJugadores.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L598">        lblRankingJugadores.setText(&quot;Ranking Jugadores&quot;);</span>
+
+<span class="nc" id="L600">        btnSalirRanking.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 13)); // NOI18N</span>
+<span class="nc" id="L601">        btnSalirRanking.setText(&quot;Salir&quot;);</span>
+<span class="nc" id="L602">        btnSalirRanking.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L604">                btnSalirRankingActionPerformed(evt);</span>
+<span class="nc" id="L605">            }</span>
+        });
+
+<span class="nc" id="L608">        lstJugadores1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);</span>
+<span class="nc" id="L609">        jScrollPane4.setViewportView(lstJugadores1);</span>
+
+<span class="nc" id="L611">        javax.swing.GroupLayout panelRankingLayout = new javax.swing.GroupLayout(panelRanking);</span>
+<span class="nc" id="L612">        panelRanking.setLayout(panelRankingLayout);</span>
+<span class="nc" id="L613">        panelRankingLayout.setHorizontalGroup(</span>
+<span class="nc" id="L614">            panelRankingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L615">            .addGroup(panelRankingLayout.createSequentialGroup()</span>
+<span class="nc" id="L616">                .addGap(139, 139, 139)</span>
+<span class="nc" id="L617">                .addGroup(panelRankingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L618">                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L619">                    .addGroup(panelRankingLayout.createSequentialGroup()</span>
+<span class="nc" id="L620">                        .addGap(111, 111, 111)</span>
+<span class="nc" id="L621">                        .addComponent(lblRankingJugadores))</span>
+<span class="nc" id="L622">                    .addGroup(panelRankingLayout.createSequentialGroup()</span>
+<span class="nc" id="L623">                        .addGap(166, 166, 166)</span>
+<span class="nc" id="L624">                        .addComponent(btnSalirRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L625">                .addContainerGap(139, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L627">        panelRankingLayout.setVerticalGroup(</span>
+<span class="nc" id="L628">            panelRankingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L629">            .addGroup(panelRankingLayout.createSequentialGroup()</span>
+<span class="nc" id="L630">                .addGap(59, 59, 59)</span>
+<span class="nc" id="L631">                .addComponent(lblRankingJugadores)</span>
+<span class="nc" id="L632">                .addGap(31, 31, 31)</span>
+<span class="nc" id="L633">                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L634">                .addGap(32, 32, 32)</span>
+<span class="nc" id="L635">                .addComponent(btnSalirRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L636">                .addContainerGap(195, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L639">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L640">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L641">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L642">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L643">            .addComponent(panelRanking, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L644">            .addComponent(panelReplay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L645">            .addComponent(panelMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L646">            .addComponent(panelRegistrarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L647">            .addComponent(panelConfigurarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+        );
+<span class="nc" id="L649">        layout.setVerticalGroup(</span>
+<span class="nc" id="L650">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L651">            .addComponent(panelRanking, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L652">            .addComponent(panelReplay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L653">            .addComponent(panelMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L654">            .addComponent(panelRegistrarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L655">            .addComponent(panelConfigurarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+        );
+
+<span class="nc" id="L658">        pack();</span>
+<span class="nc" id="L659">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnConfigurarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigurarPartidaActionPerformed
+
+<span class="nc" id="L663">    }//GEN-LAST:event_btnConfigurarPartidaActionPerformed</span>
+
+    private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
+
+<span class="nc" id="L667">    }//GEN-LAST:event_btnJugarActionPerformed</span>
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L671">    }//GEN-LAST:event_txtNameActionPerformed</span>
+
+    private void btnRegistrarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarJugadorActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L675">        this.panelMenuPrincipal.setEnabled(false);</span>
+<span class="nc" id="L676">        this.panelMenuPrincipal.setVisible(false);</span>
+<span class="nc" id="L677">        this.panelRegistrarJugador.setVisible(true);</span>
+<span class="nc" id="L678">        this.panelRegistrarJugador.setEnabled(true);</span>
+
+<span class="nc" id="L680">        this.txtName.setText(&quot;&quot;);</span>
+
+<span class="nc" id="L682">        this.lblRegistrado.setText(&quot;&quot;);</span>
+<span class="nc" id="L683">    }//GEN-LAST:event_btnRegistrarJugadorActionPerformed</span>
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+       
+        
+<span class="nc" id="L689">        String name = txtName.getText();     </span>
+
+<span class="nc bnc" id="L691" title="All 2 branches missed.">        if (myManager.playerAlreadyExists(name)) {</span>
+<span class="nc" id="L692">            lblRegistrado.setText(&quot;That name is in use!&quot;);</span>
+<span class="nc" id="L693">            lblRegistrado.setForeground(Color.red);</span>
+        } 
+<span class="nc bnc" id="L695" title="All 2 branches missed.">        else if(isEmpty(name)){</span>
+<span class="nc" id="L696">            lblRegistrado.setText(&quot;You need to enter a name&quot;);</span>
+<span class="nc" id="L697">            lblRegistrado.setForeground(Color.red);</span>
+        }       
+        else {
+<span class="nc" id="L700">            PlayerInfo p = new PlayerInfo(name);</span>
+<span class="nc bnc" id="L701" title="All 2 branches missed.">            if(imageFile!=null){</span>
+<span class="nc" id="L702">                saveImage(imageFile,name+&quot;_pic&quot;);</span>
+<span class="nc" id="L703">                p.setPicture(&quot;/images/&quot; +name+&quot;_pic&quot; );</span>
+<span class="nc" id="L704">                imageFile=null;</span>
+            }
+            
+<span class="nc" id="L707">            myManager.addPlayerToList(p);</span>
+<span class="nc" id="L708">            lblRegistrado.setText(&quot;Player &quot; + name + &quot; has been added!&quot;);</span>
+<span class="nc" id="L709">            txtName.setText(&quot;&quot;);</span>
+<span class="nc" id="L710">            pathLbl.setText(&quot;&quot;);</span>
+        }
+
+<span class="nc" id="L713">    }//GEN-LAST:event_btnRegistrarActionPerformed</span>
+
+    private void btnJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadorBActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L717">        Object o = lstJugadores.getSelectedValue();</span>
+
+<span class="nc" id="L719">    }//GEN-LAST:event_btnJugadorBActionPerformed</span>
+
+    private void btnJugadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadaActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L723">        this.lblSlider.setVisible(true);</span>
+<span class="nc" id="L724">        this.lblSlider.setEnabled(true);</span>
+<span class="nc" id="L725">        this.lblNumSlider.setVisible(true);</span>
+<span class="nc" id="L726">        this.lblNumSlider.setEnabled(true);</span>
+<span class="nc" id="L727">        this.sldrCantidad.setVisible(true);</span>
+<span class="nc" id="L728">        this.sldrCantidad.setEnabled(true);</span>
+<span class="nc" id="L729">        this.lblSlider.setText(&quot;Elija la cantidad de jugadas&quot;);</span>
+<span class="nc" id="L730">        this.sldrCantidad.setMaximum(30);</span>
+<span class="nc" id="L731">        this.sldrCantidad.setMinimum(1);</span>
+<span class="nc" id="L732">        this.lblNumSlider.setText(&quot;&quot; + this.sldrCantidad.getValue());</span>
+        // configuracion.setObjetivo('j');
+<span class="nc" id="L734">    }//GEN-LAST:event_btnJugadaActionPerformed</span>
+
+    private void btnTorreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTorreActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L738">        this.lblSlider.setVisible(false);</span>
+<span class="nc" id="L739">        this.lblSlider.setEnabled(false);</span>
+<span class="nc" id="L740">        this.lblNumSlider.setVisible(false);</span>
+<span class="nc" id="L741">        this.lblNumSlider.setEnabled(false);</span>
+<span class="nc" id="L742">        this.sldrCantidad.setVisible(false);</span>
+<span class="nc" id="L743">        this.sldrCantidad.setEnabled(false);</span>
+        // configuracion.setObjetivo('t');
+<span class="nc" id="L745">    }//GEN-LAST:event_btnTorreActionPerformed</span>
+
+    private void sldrCantidadMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sldrCantidadMouseReleased
+        // TODO add your handling code here:
+        /*
+        if (configuracion.getObjetivo() == 'j') {
+            this.lblNumSlider.setText(&quot;&quot; + this.sldrCantidad.getValue());
+            configuracion.setCantidad(this.sldrCantidad.getValue());
+        } else if (configuracion.getObjetivo() == 's') {
+            this.lblNumSlider.setText(&quot;&quot; + this.sldrCantidad.getValue());
+            configuracion.setCantidad(this.sldrCantidad.getValue() * 60);
+        }*/
+<span class="nc" id="L757">    }//GEN-LAST:event_sldrCantidadMouseReleased</span>
+
+    private void btnTiempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTiempoActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L761">        this.lblSlider.setVisible(true);</span>
+<span class="nc" id="L762">        this.lblSlider.setEnabled(true);</span>
+<span class="nc" id="L763">        this.lblNumSlider.setVisible(true);</span>
+<span class="nc" id="L764">        this.lblNumSlider.setEnabled(true);</span>
+<span class="nc" id="L765">        this.sldrCantidad.setVisible(true);</span>
+<span class="nc" id="L766">        this.sldrCantidad.setEnabled(true);</span>
+<span class="nc" id="L767">        this.lblSlider.setText(&quot;Elija la duracion (1-10)&quot;);</span>
+<span class="nc" id="L768">        this.sldrCantidad.setMinimum(1);</span>
+<span class="nc" id="L769">        this.sldrCantidad.setMaximum(10);</span>
+<span class="nc" id="L770">        this.lblNumSlider.setText(&quot;&quot; + this.sldrCantidad.getValue());</span>
+        //configuracion.setObjetivo('s');
+<span class="nc" id="L772">    }//GEN-LAST:event_btnTiempoActionPerformed</span>
+
+    private void btnDistLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDistLActionPerformed
+        // TODO add your handling code here:
+        // configuracion.setOrden('l');
+<span class="nc" id="L777">    }//GEN-LAST:event_btnDistLActionPerformed</span>
+
+    private void btnDistIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDistIActionPerformed
+        // TODO add your handling code here:
+        // configuracion.setOrden('i');
+<span class="nc" id="L782">    }//GEN-LAST:event_btnDistIActionPerformed</span>
+
+    private void btnDistAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDistAActionPerformed
+        // TODO add your handling code here:
+        //configuracion.setOrden('a');
+<span class="nc" id="L787">    }//GEN-LAST:event_btnDistAActionPerformed</span>
+
+    private void btnRegistrarConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarConfiguracionActionPerformed
+        /*  // TODO add your handling code here:
+        if (configuracion.getOrden() != 'x' &amp;&amp; configuracion.getObjetivo() != 'x' &amp;&amp; configuracion.getCuadrante() != -1 &amp;&amp; configuracion.getJugadorB() != null &amp;&amp; configuracion.getJugadorN() != null) {
+            s.setUltimaPartida(configuracion);
+            this.panelConfigurarPartida.setVisible(false);
+            this.panelConfigurarPartida.setEnabled(false);
+            this.panelMenuPrincipal.setEnabled(true);
+            this.panelMenuPrincipal.setVisible(true);
+        } else {
+            lblJugadores.setText(&quot;Faltan datos por ingresar&quot;);
+            lblJugadores.setForeground(Color.red);
+        }*/
+<span class="nc" id="L801">    }//GEN-LAST:event_btnRegistrarConfiguracionActionPerformed</span>
+
+    private void btnJugadorNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadorNActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L805">        Object o = lstJugadores.getSelectedValue();</span>
+        //  configuracion.setJugadorN(((Ranking) o).getAlias());
+<span class="nc" id="L807">    }//GEN-LAST:event_btnJugadorNActionPerformed</span>
+
+    private void btnCancelarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarJugadorActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L811">        this.panelRegistrarJugador.setVisible(false);</span>
+<span class="nc" id="L812">        this.panelRegistrarJugador.setEnabled(false);</span>
+<span class="nc" id="L813">        this.panelMenuPrincipal.setEnabled(true);</span>
+<span class="nc" id="L814">        this.panelMenuPrincipal.setVisible(true);</span>
+<span class="nc" id="L815">    }//GEN-LAST:event_btnCancelarJugadorActionPerformed</span>
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L819">        this.panelConfigurarPartida.setVisible(false);</span>
+<span class="nc" id="L820">        this.panelConfigurarPartida.setEnabled(false);</span>
+<span class="nc" id="L821">        this.panelMenuPrincipal.setEnabled(true);</span>
+<span class="nc" id="L822">        this.panelMenuPrincipal.setVisible(true);</span>
+<span class="nc" id="L823">    }//GEN-LAST:event_btnCancelarActionPerformed</span>
+
+    private void sldrCuadranteMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sldrCuadranteMouseReleased
+        // TODO add your handling code here:
+<span class="nc" id="L827">        this.lblNumCuadrante.setText(&quot;&quot; + this.sldrCuadrante.getValue());</span>
+        // configuracion.setCuadrante(this.sldrCuadrante.getValue());
+<span class="nc" id="L829">    }//GEN-LAST:event_sldrCuadranteMouseReleased</span>
+
+    private void btnReplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReplayActionPerformed
+
+<span class="nc" id="L833">    }//GEN-LAST:event_btnReplayActionPerformed</span>
+
+    private void btnRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRankingActionPerformed
+        // TODO add your handling code here:
+<span class="nc bnc" id="L837" title="All 2 branches missed.">        if (!myManager.getPlayerList().isEmpty()) {</span>
+<span class="nc" id="L838">            this.panelMenuPrincipal.setEnabled(false);</span>
+<span class="nc" id="L839">            this.panelMenuPrincipal.setVisible(false);</span>
+<span class="nc" id="L840">            this.panelRanking.setVisible(true);</span>
+<span class="nc" id="L841">            this.panelRanking.setEnabled(true);</span>
+
+<span class="nc" id="L843">            this.lstJugadores1.setListData(myManager.getPlayerList().toArray());</span>
+        } else {
+<span class="nc" id="L845">            JOptionPane.showMessageDialog(this, &quot;No hay jugadores registrados&quot;, &quot;Advertencia&quot;, JOptionPane.WARNING_MESSAGE);</span>
+        }
+<span class="nc" id="L847">    }//GEN-LAST:event_btnRankingActionPerformed</span>
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        try {
+<span class="nc" id="L852">            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(&quot;monopoly_data.dat&quot;));</span>
+<span class="nc" id="L853">            out.writeObject(myManager);</span>
+<span class="nc" id="L854">            out.close();</span>
+<span class="nc" id="L855">        } catch (Exception e) {</span>
+<span class="nc" id="L856">            JOptionPane.showMessageDialog(null, e.toString());</span>
+<span class="nc" id="L857">        }</span>
+<span class="nc" id="L858">        this.dispose();</span>
+<span class="nc" id="L859">    }//GEN-LAST:event_btnSalirActionPerformed</span>
+
+    private void btnSalirRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirRankingActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L863">        this.panelRanking.setVisible(false);</span>
+<span class="nc" id="L864">        this.panelRanking.setEnabled(false);</span>
+<span class="nc" id="L865">        this.panelMenuPrincipal.setEnabled(true);</span>
+<span class="nc" id="L866">        this.panelMenuPrincipal.setVisible(true);</span>
+<span class="nc" id="L867">    }//GEN-LAST:event_btnSalirRankingActionPerformed</span>
+
+    private void btnSalirReplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirReplayActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L871">        this.panelReplay.setVisible(false);</span>
+<span class="nc" id="L872">        this.panelReplay.setEnabled(false);</span>
+<span class="nc" id="L873">        this.panelMenuPrincipal.setEnabled(true);</span>
+<span class="nc" id="L874">        this.panelMenuPrincipal.setVisible(true);</span>
+
+<span class="nc" id="L876">    }//GEN-LAST:event_btnSalirReplayActionPerformed</span>
+
+    private void btnReplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReplicarActionPerformed
+
+<span class="nc" id="L880">    }//GEN-LAST:event_btnReplicarActionPerformed</span>
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+
+<span class="nc" id="L884">    }//GEN-LAST:event_btnGuardarActionPerformed</span>
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try {
+<span class="nc" id="L888">            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(&quot;monopoly_data.dat&quot;));</span>
+<span class="nc" id="L889">            out.writeObject(myManager);</span>
+<span class="nc" id="L890">            out.close();</span>
+<span class="nc" id="L891">        } catch (Exception e) {</span>
+<span class="nc" id="L892">            JOptionPane.showMessageDialog(null, e.toString());</span>
+<span class="nc" id="L893">        }</span>
+<span class="nc" id="L894">    }//GEN-LAST:event_formWindowClosing</span>
+
+    private void btnUploadFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadFileActionPerformed
+<span class="nc" id="L897">        JFileChooser fileChooser = new JFileChooser();</span>
+<span class="nc" id="L898">        int res = fileChooser.showOpenDialog(this);</span>
+
+<span class="nc bnc" id="L900" title="All 2 branches missed.">        if (res == JFileChooser.APPROVE_OPTION) {</span>
+
+<span class="nc" id="L902">            int width = 963;    //width of the image</span>
+<span class="nc" id="L903">            int height = 640;   //height of the image</span>
+<span class="nc" id="L904">            BufferedImage image = null;</span>
+           
+<span class="nc" id="L906">            imageFile = fileChooser.getSelectedFile().getAbsoluteFile();   </span>
+<span class="nc" id="L907">            pathLbl.setText(fileChooser.getSelectedFile().getAbsolutePath());</span>
+            //saveImage(f);
+        }
+
+       
+
+<span class="nc" id="L913">    }//GEN-LAST:event_btnUploadFileActionPerformed</span>
+
+    public boolean verificarQueSeaInt(String numero, int min, int max) {
+<span class="nc" id="L916">        boolean ok = true;</span>
+        try {
+<span class="nc bnc" id="L918" title="All 4 branches missed.">            if (Integer.parseInt(numero) &lt; min &amp;&amp; Integer.parseInt(numero) &gt; max) {</span>
+<span class="nc" id="L919">                ok = false;</span>
+            }
+<span class="nc" id="L921">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L922">            ok = false;</span>
+<span class="nc" id="L923">        }</span>
+<span class="nc" id="L924">        return ok;</span>
+
+    }
+    
+    public boolean isEmpty(String aString){
+<span class="nc" id="L929">        boolean returnVal = false;</span>
+<span class="nc bnc" id="L930" title="All 4 branches missed.">        if(aString.trim().equals(&quot;&quot;) || aString.equals(null))</span>
+<span class="nc" id="L931">            returnVal=true;</span>
+<span class="nc" id="L932">        return returnVal;</span>
+    }
+
+    public void saveImage(File f, String fileName) {
+<span class="nc" id="L936">        int width = 963;    //width of the image</span>
+<span class="nc" id="L937">        int height = 640;   //height of the image</span>
+<span class="nc" id="L938">        BufferedImage image = null;</span>
+
+        try {
+<span class="nc" id="L941">            image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);</span>
+<span class="nc" id="L942">            image = ImageIO.read(f);</span>
+<span class="nc" id="L943">        } catch (IOException e) {</span>
+<span class="nc" id="L944">            JOptionPane.showMessageDialog(this, &quot;Error leyendo archivo&quot;, &quot;Advertencia&quot;, JOptionPane.WARNING_MESSAGE);</span>
+<span class="nc" id="L945">        }</span>
+
+        try {
+<span class="nc" id="L948">            f = new File(&quot;images/&quot; + fileName + &quot;.jpg&quot;);  //output file path</span>
+<span class="nc" id="L949">            ImageIO.write(image, &quot;jpg&quot;, f);</span>
+<span class="nc" id="L950">        } catch (IOException e) {</span>
+<span class="nc" id="L951">            JOptionPane.showMessageDialog(this, &quot;Error guardando imagen&quot;, &quot;Advertencia&quot;, JOptionPane.WARNING_MESSAGE);</span>
+<span class="nc" id="L952">        }</span>
+<span class="nc" id="L953">    }</span>
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnCancelarJugador;
+    private javax.swing.JButton btnConfigurarPartida;
+    private javax.swing.JRadioButton btnDistA;
+    private javax.swing.JRadioButton btnDistI;
+    private javax.swing.JRadioButton btnDistL;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JRadioButton btnJugada;
+    private javax.swing.JButton btnJugadorB;
+    private javax.swing.JButton btnJugadorN;
+    private javax.swing.JButton btnJugar;
+    private javax.swing.JButton btnRanking;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnRegistrarConfiguracion;
+    private javax.swing.JButton btnRegistrarJugador;
+    private javax.swing.JButton btnReplay;
+    private javax.swing.JButton btnReplicar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnSalirRanking;
+    private javax.swing.JButton btnSalirReplay;
+    private javax.swing.JRadioButton btnTiempo;
+    private javax.swing.JRadioButton btnTorre;
+    private javax.swing.JButton btnUploadFile;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JLabel lblCuadrante;
+    private javax.swing.JLabel lblDistribucion;
+    private javax.swing.JLabel lblImage;
+    private javax.swing.JLabel lblJugadores;
+    private javax.swing.JLabel lblMenu;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblNumCuadrante;
+    private javax.swing.JLabel lblNumSlider;
+    private javax.swing.JLabel lblOpcion;
+    private javax.swing.JLabel lblRankingJugadores;
+    private javax.swing.JLabel lblRegistrado;
+    private javax.swing.JLabel lblRegistrarJugador;
+    private javax.swing.JLabel lblReplay;
+    private javax.swing.JLabel lblSlider;
+    private javax.swing.JList lstJugadores;
+    private javax.swing.JList lstJugadores1;
+    private javax.swing.JList lstReplays;
+    private javax.swing.JPanel panelConfigurarPartida;
+    private javax.swing.JPanel panelMenuPrincipal;
+    private javax.swing.JPanel panelRanking;
+    private javax.swing.JPanel panelRegistrarJugador;
+    private javax.swing.JPanel panelReplay;
+    private javax.swing.JLabel pathLbl;
+    private javax.swing.JSlider sldrCantidad;
+    private javax.swing.JSlider sldrCuadrante;
+    private javax.swing.JTextField txtName;
+    // End of variables declaration//GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
