@@ -122,6 +122,7 @@ public class MainMenu extends javax.swing.JFrame {
         btnSalirRanking = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         lstJugadores1 = new javax.swing.JList();
+        playerImgLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
@@ -582,7 +583,6 @@ public class MainMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(9, 9, 9)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(selectPlayer5Lbl)
                     .addComponent(selectPlayer5ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -629,6 +629,11 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         lstJugadores1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        lstJugadores1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                lstJugadores1ValueChanged(evt);
+            }
+        });
         jScrollPane4.setViewportView(lstJugadores1);
 
         javax.swing.GroupLayout panelRankingLayout = new javax.swing.GroupLayout(panelRanking);
@@ -636,27 +641,35 @@ public class MainMenu extends javax.swing.JFrame {
         panelRankingLayout.setHorizontalGroup(
             panelRankingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRankingLayout.createSequentialGroup()
-                .addGap(139, 139, 139)
                 .addGroup(panelRankingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelRankingLayout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(lblRankingJugadores))
+                        .addGap(299, 299, 299)
+                        .addComponent(btnSalirRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelRankingLayout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(btnSalirRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(139, Short.MAX_VALUE))
+                        .addGap(122, 122, 122)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRankingLayout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(lblRankingJugadores)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                        .addComponent(playerImgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(42, 42, 42))
         );
         panelRankingLayout.setVerticalGroup(
             panelRankingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRankingLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(lblRankingJugadores)
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(btnSalirRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addGroup(panelRankingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRankingLayout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(lblRankingJugadores)
+                        .addGap(63, 63, 63)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalirRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRankingLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(playerImgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -744,7 +757,7 @@ public class MainMenu extends javax.swing.JFrame {
             PlayerInfo p = new PlayerInfo(name);
             if(imageFile!=null){
                 saveImage(imageFile,name+"_pic");
-                p.setPicture("/images/" +name+"_pic" );
+                p.setPicture("/images/" +name+"_pic.jpg" );
                 imageFile=null;
             }
             
@@ -877,6 +890,15 @@ public class MainMenu extends javax.swing.JFrame {
         this.panelMenuPrincipal.setEnabled(true);
         this.panelMenuPrincipal.setVisible(true);
     }//GEN-LAST:event_cancelBtnActionPerformed
+
+    private void lstJugadores1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstJugadores1ValueChanged
+        // TODO add your handling code here:
+        PlayerInfo player = (PlayerInfo)this.lstJugadores1.getSelectedValue();
+        ImageIcon oImageIcon = new ImageIcon(getClass().getResource(player.getPicture()));
+        Image oImage = oImageIcon.getImage();
+        Image newImage = oImage.getScaledInstance(187, 160,  java.awt.Image.SCALE_SMOOTH);
+        this.playerImgLbl.setIcon(new ImageIcon(newImage));
+    }//GEN-LAST:event_lstJugadores1ValueChanged
 
     public boolean addPlayersToParty(){
         boolean flag = true;
@@ -1126,7 +1148,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
 
         try {
-            f = new File("images/" + fileName + ".jpg");  //output file path
+            f = new File("build/classes/images/" + fileName + ".jpg");  //output file path
             ImageIO.write(image, "jpg", f);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error guardando imagen", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -1186,6 +1208,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel player6Lbl;
     private javax.swing.JLabel player7Lbl;
     private javax.swing.JLabel player8Lbl;
+    private javax.swing.JLabel playerImgLbl;
     private javax.swing.JComboBox<String> selectPlayer1ComboBox;
     private javax.swing.JLabel selectPlayer1Lbl;
     private javax.swing.JComboBox<String> selectPlayer2ComboBox;
@@ -1205,4 +1228,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton setBtn;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
+
+    private void setIcon(ImageIcon imageIcon) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
