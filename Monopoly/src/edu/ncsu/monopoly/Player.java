@@ -244,7 +244,7 @@ public class Player {
 	            railroads.remove(property);
 	        }
 	        if(property instanceof UtilityCell) {
-	            railroads.remove(property);
+	            utilities.remove(property);
 	        }
         }
         catch(Exception e){
