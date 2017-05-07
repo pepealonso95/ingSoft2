@@ -5,7 +5,7 @@ package edu.ncsu.monopoly.test;
 import edu.ncsu.monopoly.Card;
 import edu.ncsu.monopoly.GameMaster;
 import edu.ncsu.monopoly.MoneyCard;
-import edu.ncsu.monopoly.test.boardScenarios.GameBoardCCGainMoney;
+import edu.ncsu.monopoly.boardScenarios.GameBoardCCGainMoney;
 import junit.framework.TestCase;
 
 public class CardsTest extends TestCase {

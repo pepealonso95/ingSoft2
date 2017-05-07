@@ -73,9 +73,9 @@ public class Player {
 <span class="fc bfc" id="L73" title="All 2 branches covered.">		for(int i = 0; i &lt; getPropertyNumber(); i++ ) {</span>
 <span class="fc" id="L74">			PropertyCell cell = getProperty(i);</span>
 <span class="fc" id="L75">			cell.setOwner(player);</span>
-<span class="pc bpc" id="L76" title="1 of 2 branches missed.">			if(player == null) {</span>
-<span class="nc" id="L77">				cell.setAvailable(true);</span>
-<span class="nc" id="L78">				cell.setNumHouses(0);</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">			if(player == null) {</span>
+<span class="fc" id="L77">				cell.setAvailable(true);</span>
+<span class="fc" id="L78">				cell.setNumHouses(0);</span>
 			}
 			else {
 <span class="fc" id="L81">				player.properties.add(cell);</span>
@@ -244,7 +244,7 @@ public class Player {
 <span class="nc" id="L244">	            railroads.remove(property);</span>
 	        }
 <span class="pc bpc" id="L246" title="1 of 2 branches missed.">	        if(property instanceof UtilityCell) {</span>
-<span class="nc" id="L247">	            railroads.remove(property);</span>
+<span class="nc" id="L247">	            utilities.remove(property);</span>
 	        }
         }
 <span class="nc" id="L250">        catch(Exception e){</span>

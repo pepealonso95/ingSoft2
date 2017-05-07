@@ -6,7 +6,7 @@ import edu.ncsu.monopoly.Card;
 import edu.ncsu.monopoly.Cell;
 import edu.ncsu.monopoly.GameMaster;
 import edu.ncsu.monopoly.MovePlayerCard;
-import edu.ncsu.monopoly.test.boardScenarios.GameBoardCCMovePlayer;
+import edu.ncsu.monopoly.boardScenarios.GameBoardCCMovePlayer;
 import junit.framework.TestCase;
 
 public class MovePlayerCardTest extends TestCase {

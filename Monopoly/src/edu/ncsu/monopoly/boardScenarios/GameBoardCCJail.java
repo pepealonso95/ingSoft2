@@ -1,4 +1,4 @@
-package edu.ncsu.monopoly.test.boardScenarios;
+package edu.ncsu.monopoly.boardScenarios;
 
 import edu.ncsu.monopoly.Card;
 import edu.ncsu.monopoly.CardCell;

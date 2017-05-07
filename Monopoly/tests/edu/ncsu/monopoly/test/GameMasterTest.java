@@ -10,7 +10,7 @@ import edu.ncsu.monopoly.Player;
 import edu.ncsu.monopoly.RespondDialog;
 import edu.ncsu.monopoly.TradeDeal;
 import edu.ncsu.monopoly.TradeDialog;
-import edu.ncsu.monopoly.test.boardScenarios.GameBoardFull;
+import edu.ncsu.monopoly.boardScenarios.GameBoardFull;
 
 import junit.framework.TestCase;
 

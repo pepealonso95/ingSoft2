@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import edu.ncsu.monopoly.*;
-import edu.ncsu.monopoly.test.boardScenarios.GameBoardFull;
+import edu.ncsu.monopoly.boardScenarios.GameBoardFull;
 
 public class Main {
 

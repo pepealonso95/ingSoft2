@@ -1,8 +1,8 @@
 package edu.ncsu.monopoly.gui;
 
 import edu.ncsu.monopoly.*;
-import edu.ncsu.monopoly.test.boardScenarios.GameBoardCCJail;
-import edu.ncsu.monopoly.test.boardScenarios.GameBoardFull;
+import edu.ncsu.monopoly.boardScenarios.GameBoardCCJail;
+import edu.ncsu.monopoly.boardScenarios.GameBoardFull;
 import java.util.*;
 import java.awt.event.*;
 import java.awt.*;

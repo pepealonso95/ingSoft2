@@ -6,7 +6,7 @@
 package edu.ncsu.monopoly.gui;
 
 import edu.ncsu.monopoly.*;
-import edu.ncsu.monopoly.test.boardScenarios.GameBoardFull;
+import edu.ncsu.monopoly.boardScenarios.GameBoardFull;
 import javax.swing.DefaultComboBoxModel;
 
 /**

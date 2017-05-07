@@ -1,5 +1,5 @@
 
-package edu.ncsu.monopoly.test.boardScenarios;
+package edu.ncsu.monopoly.boardScenarios;
 
 import edu.ncsu.monopoly.FreeParkingCell;
 import edu.ncsu.monopoly.GameBoard;

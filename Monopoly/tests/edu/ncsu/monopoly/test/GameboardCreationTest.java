@@ -10,7 +10,7 @@ import junit.framework.TestCase;
 import edu.ncsu.monopoly.GameBoard;
 import edu.ncsu.monopoly.SimpleGameBoard;
 import edu.ncsu.monopoly.gui.GameBoardUtil;
-import edu.ncsu.monopoly.test.boardScenarios.GameBoard14;
+import edu.ncsu.monopoly.boardScenarios.GameBoard14;
 
 public class GameboardCreationTest extends TestCase{
 	
