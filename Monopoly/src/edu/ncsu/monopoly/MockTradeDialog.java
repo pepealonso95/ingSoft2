@@ -8,5 +8,5 @@ public class MockTradeDialog implements TradeDialog {
         deal.setSellerIndex(0);
         deal.setPropertyName(GameMaster.instance().getGameBoard().getCell(1).toString());
         return deal;
-    }
+    }    
 }

@@ -47,6 +47,7 @@ public class MainMenu extends javax.swing.JFrame {
         this.configurado = false;
         this.playerNames = new ArrayList<String>();
         this.playerColors = new ArrayList<String>();
+
     }
 
     @SuppressWarnings("unchecked")
@@ -73,47 +74,47 @@ public class MainMenu extends javax.swing.JFrame {
         pathLbl = new javax.swing.JLabel();
         panelConfigurarPartida = new javax.swing.JPanel();
         nrLabel = new javax.swing.JLabel();
-        nrComboBox = new javax.swing.JComboBox<String>();
+        nrComboBox = new javax.swing.JComboBox<>();
         selectPlayer1Lbl = new javax.swing.JLabel();
-        selectPlayer1ComboBox = new javax.swing.JComboBox<String>();
+        selectPlayer1ComboBox = new javax.swing.JComboBox<>();
         color1Lbl = new javax.swing.JLabel();
-        color1ComboBox = new javax.swing.JComboBox<String>();
+        color1ComboBox = new javax.swing.JComboBox<>();
         player1Lbl = new javax.swing.JLabel();
         player2Lbl = new javax.swing.JLabel();
-        color2ComboBox = new javax.swing.JComboBox<String>();
+        color2ComboBox = new javax.swing.JComboBox<>();
         selectPlayer2Lbl = new javax.swing.JLabel();
         color2Lbl = new javax.swing.JLabel();
-        selectPlayer2ComboBox = new javax.swing.JComboBox<String>();
-        selectPlayer4ComboBox = new javax.swing.JComboBox<String>();
+        selectPlayer2ComboBox = new javax.swing.JComboBox<>();
+        selectPlayer4ComboBox = new javax.swing.JComboBox<>();
         color4Lbl = new javax.swing.JLabel();
         selectPlayer4Lbl = new javax.swing.JLabel();
-        color4ComboBox = new javax.swing.JComboBox<String>();
+        color4ComboBox = new javax.swing.JComboBox<>();
         player4Lbl = new javax.swing.JLabel();
         player3Lbl = new javax.swing.JLabel();
-        color3ComboBox = new javax.swing.JComboBox<String>();
+        color3ComboBox = new javax.swing.JComboBox<>();
         selectPlayer3Lbl = new javax.swing.JLabel();
         color3Lbl = new javax.swing.JLabel();
-        selectPlayer3ComboBox = new javax.swing.JComboBox<String>();
-        selectPlayer6ComboBox = new javax.swing.JComboBox<String>();
+        selectPlayer3ComboBox = new javax.swing.JComboBox<>();
+        selectPlayer6ComboBox = new javax.swing.JComboBox<>();
         color6Lbl = new javax.swing.JLabel();
         selectPlayer6Lbl = new javax.swing.JLabel();
-        color6ComboBox = new javax.swing.JComboBox<String>();
+        color6ComboBox = new javax.swing.JComboBox<>();
         player6Lbl = new javax.swing.JLabel();
         player5Lbl = new javax.swing.JLabel();
-        color5ComboBox = new javax.swing.JComboBox<String>();
+        color5ComboBox = new javax.swing.JComboBox<>();
         selectPlayer5Lbl = new javax.swing.JLabel();
         color5Lbl = new javax.swing.JLabel();
-        selectPlayer5ComboBox = new javax.swing.JComboBox<String>();
-        selectPlayer8ComboBox = new javax.swing.JComboBox<String>();
+        selectPlayer5ComboBox = new javax.swing.JComboBox<>();
+        selectPlayer8ComboBox = new javax.swing.JComboBox<>();
         color8Lbl = new javax.swing.JLabel();
         selectPlayer8Lbl = new javax.swing.JLabel();
-        color8ComboBox = new javax.swing.JComboBox<String>();
+        color8ComboBox = new javax.swing.JComboBox<>();
         player8Lbl = new javax.swing.JLabel();
         player7Lbl = new javax.swing.JLabel();
-        color7ComboBox = new javax.swing.JComboBox<String>();
+        color7ComboBox = new javax.swing.JComboBox<>();
         selectPlayer7Lbl = new javax.swing.JLabel();
         color7Lbl = new javax.swing.JLabel();
-        selectPlayer7ComboBox = new javax.swing.JComboBox<String>();
+        selectPlayer7ComboBox = new javax.swing.JComboBox<>();
         setBtn = new javax.swing.JButton();
         cancelBtn = new javax.swing.JButton();
         configurarLbl = new javax.swing.JLabel();
@@ -178,41 +179,40 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         lblMenu.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblMenu.setText("Menu Principal");
+        lblMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/ncsu/monopoly/gui/monopolyLogo.png"))); // NOI18N
 
         javax.swing.GroupLayout panelMenuPrincipalLayout = new javax.swing.GroupLayout(panelMenuPrincipal);
         panelMenuPrincipal.setLayout(panelMenuPrincipalLayout);
         panelMenuPrincipalLayout.setHorizontalGroup(
             panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuPrincipalLayout.createSequentialGroup()
-                .addContainerGap(151, Short.MAX_VALUE)
-                .addGroup(panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelMenuPrincipalLayout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnRegistrarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnConfigurarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(124, 124, 124))
+                .addContainerGap(123, Short.MAX_VALUE)
+                .addGroup(panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnRegistrarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnConfigurarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(112, 112, 112))
         );
         panelMenuPrincipalLayout.setVerticalGroup(
             panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuPrincipalLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(lblMenu)
-                .addGap(38, 38, 38)
+                .addGap(34, 34, 34)
+                .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
                 .addComponent(btnRegistrarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(btnConfigurarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(btnRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(btnRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addContainerGap(588, Short.MAX_VALUE))
         );
 
         panelRegistrarJugador.setPreferredSize(new java.awt.Dimension(700, 650));
@@ -258,7 +258,7 @@ public class MainMenu extends javax.swing.JFrame {
         panelRegistrarJugadorLayout.setHorizontalGroup(
             panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarJugadorLayout.createSequentialGroup()
-                .addContainerGap(172, Short.MAX_VALUE)
+                .addContainerGap(179, Short.MAX_VALUE)
                 .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()
                         .addComponent(btnCancelarJugador)
@@ -312,7 +312,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         nrLabel.setText("Cantidad jugadores:");
 
-        nrComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2", "3", "4", "5", "6", "7", "8" }));
+        nrComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3", "4", "5", "6", "7", "8" }));
         nrComboBox.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 nrComboBoxFocusLost(evt);
@@ -326,90 +326,90 @@ public class MainMenu extends javax.swing.JFrame {
 
         selectPlayer1Lbl.setText("Seleccionar existente:");
 
-        selectPlayer1ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectPlayer1ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         color1Lbl.setText("Color:");
 
-        color1ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color1ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
 
         player1Lbl.setText("Jugador 1");
 
         player2Lbl.setText("Jugador 2");
 
-        color2ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color2ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
         color2ComboBox.setSelectedIndex(1);
 
         selectPlayer2Lbl.setText("Seleccionar existente:");
 
         color2Lbl.setText("Color:");
 
-        selectPlayer2ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectPlayer2ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        selectPlayer4ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectPlayer4ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         color4Lbl.setText("Color:");
 
         selectPlayer4Lbl.setText("Seleccionar existente:");
 
-        color4ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color4ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
         color4ComboBox.setSelectedIndex(3);
 
         player4Lbl.setText("Jugador 4");
 
         player3Lbl.setText("Jugador 3");
 
-        color3ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color3ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
         color3ComboBox.setSelectedIndex(2);
 
         selectPlayer3Lbl.setText("Seleccionar existente:");
 
         color3Lbl.setText("Color:");
 
-        selectPlayer3ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectPlayer3ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        selectPlayer6ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectPlayer6ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         color6Lbl.setText("Color:");
 
         selectPlayer6Lbl.setText("Seleccionar existente:");
 
-        color6ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color6ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
         color6ComboBox.setSelectedIndex(5);
 
         player6Lbl.setText("Jugador 6");
 
         player5Lbl.setText("Jugador 5");
 
-        color5ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color5ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
         color5ComboBox.setSelectedIndex(4);
 
         selectPlayer5Lbl.setText("Seleccionar existente:");
 
         color5Lbl.setText("Color:");
 
-        selectPlayer5ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectPlayer5ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        selectPlayer8ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectPlayer8ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         color8Lbl.setText("Color:");
 
         selectPlayer8Lbl.setText("Seleccionar existente:");
 
-        color8ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color8ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
         color8ComboBox.setSelectedIndex(7);
 
         player8Lbl.setText("Jugador 8");
 
         player7Lbl.setText("Jugador 7");
 
-        color7ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
+        color7ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rojo", "azul", "amarillo", "verde", "naranja", "rosado", "negro", "blanco" }));
         color7ComboBox.setSelectedIndex(6);
 
         selectPlayer7Lbl.setText("Seleccionar existente:");
 
         color7Lbl.setText("Color:");
 
-        selectPlayer7ComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        selectPlayer7ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setBtn.setText("Aceptar");
         setBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -582,7 +582,6 @@ public class MainMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(9, 9, 9)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(selectPlayer5Lbl)
                     .addComponent(selectPlayer5ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -684,27 +683,27 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConfigurarPartidaActionPerformed
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
-        if(this.configurado){
+        if (this.configurado) {
             GameMaster master = GameMaster.newInstance(this.myManager);
-        MainWindow window = new MainWindow();
-        GameBoard gameBoard = new GameBoardCCJail();
-        master.setGameBoard(gameBoard);
-        GameMaster.instance().setNumberOfPlayers(this.players);
-           // String name1 = myManager.getPlayerList().get(CBplayer1.getSelectedIndex()).getName();
+            MainWindow window = new MainWindow();
+            GameBoard gameBoard = new GameBoardCCJail();
+            master.setGameBoard(gameBoard);
+            GameMaster.instance().setNumberOfPlayers(this.players);
+            // String name1 = myManager.getPlayerList().get(CBplayer1.getSelectedIndex()).getName();
             //GameMaster.instance().getPlayer(1).setName(name1);
             //String name2 = myManager.getPlayerList().get(CBplayer2.getSelectedIndex()).getName();
             //GameMaster.instance().getPlayer(2).setName(name2);
-          
-            for(int i=0;i<this.players;i++){
-              GameMaster.instance().getPlayer(i).setName(playerNames.get(i));
-              GameMaster.instance().getPlayer(i).setColor(playerColors.get(i));
-              this.myManager.getPlayer(playerNames.get(i)).addGamePlayed();
+
+            for (int i = 0; i < this.players; i++) {
+                GameMaster.instance().getPlayer(i).setName(playerNames.get(i));
+                GameMaster.instance().getPlayer(i).setColor(playerColors.get(i));
+                this.myManager.getPlayer(playerNames.get(i)).addGamePlayed();
             }
-        
-        window.setupGameBoard(gameBoard);
-        window.show();
-        master.setGUI(window);
-        master.startGame();
+
+            window.setupGameBoard(gameBoard);
+            window.show();
+            master.setGUI(window);
+            master.startGame();
         } else {
             JOptionPane.showMessageDialog(this, "Configure una partida para jugar", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
@@ -728,26 +727,23 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
-       
-        
-        String name = txtName.getText();     
+
+        String name = txtName.getText();
 
         if (myManager.playerAlreadyExists(name)) {
             lblRegistrado.setText("Ese nombre se encuentra en uso!");
             lblRegistrado.setForeground(Color.red);
-        } 
-        else if(isEmpty(name)){
+        } else if (isEmpty(name)) {
             lblRegistrado.setText("Debes ingresar un nombre");
             lblRegistrado.setForeground(Color.red);
-        }       
-        else {
+        } else {
             PlayerInfo p = new PlayerInfo(name);
-            if(imageFile!=null){
-                saveImage(imageFile,name+"_pic");
-                p.setPicture("/images/" +name+"_pic" );
-                imageFile=null;
+            if (imageFile != null) {
+                saveImage(imageFile, name + "_pic");
+                p.setPicture("/images/" + name + "_pic");
+                imageFile = null;
             }
-            
+
             myManager.addPlayerToList(p);
             lblRegistrado.setText("El jugador " + name + " fue agregado!");
             txtName.setText("");
@@ -820,19 +816,18 @@ public class MainMenu extends javax.swing.JFrame {
             int width = 963;    //width of the image
             int height = 640;   //height of the image
             BufferedImage image = null;
-           
-            imageFile = fileChooser.getSelectedFile().getAbsoluteFile();   
+
+            imageFile = fileChooser.getSelectedFile().getAbsoluteFile();
             pathLbl.setText(fileChooser.getSelectedFile().getAbsolutePath());
             //saveImage(f);
         }
 
-       
 
     }//GEN-LAST:event_btnUploadFileActionPerformed
 
     private void nrComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nrComboBoxActionPerformed
         // TODO add your handling code here:
-        this.players = Integer.parseInt((String)this.nrComboBox.getSelectedItem());
+        this.players = Integer.parseInt((String) this.nrComboBox.getSelectedItem());
         setPlayerValues();
     }//GEN-LAST:event_nrComboBoxActionPerformed
 
@@ -852,19 +847,19 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void nrComboBoxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nrComboBoxFocusLost
         // TODO add your handling code here:
-        this.players = Integer.parseInt((String)this.nrComboBox.getSelectedItem());
+        this.players = Integer.parseInt((String) this.nrComboBox.getSelectedItem());
         setPlayerValues();
     }//GEN-LAST:event_nrComboBoxFocusLost
 
     private void setBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setBtnActionPerformed
         // TODO add your handling code here:
-        if(addPlayersToParty()){
+        if (addPlayersToParty()) {
             this.configurado = true;
             this.panelConfigurarPartida.setVisible(false);
             this.panelConfigurarPartida.setEnabled(false);
             this.panelMenuPrincipal.setEnabled(true);
             this.panelMenuPrincipal.setVisible(true);
-        }else{
+        } else {
             this.configurado = false;
             JOptionPane.showMessageDialog(this, "Todos los jugadores deben de ser distintos con colores distintos", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
@@ -878,70 +873,70 @@ public class MainMenu extends javax.swing.JFrame {
         this.panelMenuPrincipal.setVisible(true);
     }//GEN-LAST:event_cancelBtnActionPerformed
 
-    public boolean addPlayersToParty(){
+    public boolean addPlayersToParty() {
         boolean flag = true;
         this.playerNames.clear();
         this.playerColors.clear();
-        this.playerNames.add((String)selectPlayer1ComboBox.getSelectedItem());
-        this.playerColors.add((String)color1ComboBox.getSelectedItem());
-        if(this.playerNames.contains((String)selectPlayer2ComboBox.getSelectedItem())||this.playerColors.contains((String)color2ComboBox.getSelectedItem())){
+        this.playerNames.add((String) selectPlayer1ComboBox.getSelectedItem());
+        this.playerColors.add((String) color1ComboBox.getSelectedItem());
+        if (this.playerNames.contains((String) selectPlayer2ComboBox.getSelectedItem()) || this.playerColors.contains((String) color2ComboBox.getSelectedItem())) {
             flag = false;
-        }else{
-            this.playerNames.add((String)selectPlayer2ComboBox.getSelectedItem());
-            this.playerColors.add((String)color2ComboBox.getSelectedItem());
+        } else {
+            this.playerNames.add((String) selectPlayer2ComboBox.getSelectedItem());
+            this.playerColors.add((String) color2ComboBox.getSelectedItem());
         }
-        if(this.players>=3){
-            if(this.playerNames.contains((String)selectPlayer3ComboBox.getSelectedItem())||this.playerColors.contains((String)color3ComboBox.getSelectedItem())){
+        if (this.players >= 3) {
+            if (this.playerNames.contains((String) selectPlayer3ComboBox.getSelectedItem()) || this.playerColors.contains((String) color3ComboBox.getSelectedItem())) {
                 flag = false;
-            }else{
-                this.playerNames.add((String)selectPlayer3ComboBox.getSelectedItem());
-                this.playerColors.add((String)color3ComboBox.getSelectedItem());
+            } else {
+                this.playerNames.add((String) selectPlayer3ComboBox.getSelectedItem());
+                this.playerColors.add((String) color3ComboBox.getSelectedItem());
             }
         }
-        if(this.players>=4){
-            if(this.playerNames.contains((String)selectPlayer4ComboBox.getSelectedItem())||this.playerColors.contains((String)color4ComboBox.getSelectedItem())){
+        if (this.players >= 4) {
+            if (this.playerNames.contains((String) selectPlayer4ComboBox.getSelectedItem()) || this.playerColors.contains((String) color4ComboBox.getSelectedItem())) {
                 flag = false;
-            }else{
-                this.playerNames.add((String)selectPlayer4ComboBox.getSelectedItem());
-                this.playerColors.add((String)color4ComboBox.getSelectedItem());
+            } else {
+                this.playerNames.add((String) selectPlayer4ComboBox.getSelectedItem());
+                this.playerColors.add((String) color4ComboBox.getSelectedItem());
             }
         }
-        if(this.players>=5){
-            if(this.playerNames.contains((String)selectPlayer5ComboBox.getSelectedItem())||this.playerColors.contains((String)color5ComboBox.getSelectedItem())){
+        if (this.players >= 5) {
+            if (this.playerNames.contains((String) selectPlayer5ComboBox.getSelectedItem()) || this.playerColors.contains((String) color5ComboBox.getSelectedItem())) {
                 flag = false;
-            }else{
-                this.playerNames.add((String)selectPlayer5ComboBox.getSelectedItem());
-                this.playerColors.add((String)color5ComboBox.getSelectedItem());
+            } else {
+                this.playerNames.add((String) selectPlayer5ComboBox.getSelectedItem());
+                this.playerColors.add((String) color5ComboBox.getSelectedItem());
             }
         }
-        if(this.players>=6){
-            if(this.playerNames.contains((String)selectPlayer6ComboBox.getSelectedItem())||this.playerColors.contains((String)color6ComboBox.getSelectedItem())){
+        if (this.players >= 6) {
+            if (this.playerNames.contains((String) selectPlayer6ComboBox.getSelectedItem()) || this.playerColors.contains((String) color6ComboBox.getSelectedItem())) {
                 flag = false;
-            }else{
-                this.playerNames.add((String)selectPlayer6ComboBox.getSelectedItem());
-                this.playerColors.add((String)color6ComboBox.getSelectedItem());
+            } else {
+                this.playerNames.add((String) selectPlayer6ComboBox.getSelectedItem());
+                this.playerColors.add((String) color6ComboBox.getSelectedItem());
             }
         }
-        if(this.players>=7){
-            if(this.playerNames.contains((String)selectPlayer7ComboBox.getSelectedItem())||this.playerColors.contains((String)color7ComboBox.getSelectedItem())){
+        if (this.players >= 7) {
+            if (this.playerNames.contains((String) selectPlayer7ComboBox.getSelectedItem()) || this.playerColors.contains((String) color7ComboBox.getSelectedItem())) {
                 flag = false;
-            }else{
-                this.playerNames.add((String)selectPlayer7ComboBox.getSelectedItem());
-                this.playerColors.add((String)color7ComboBox.getSelectedItem());
+            } else {
+                this.playerNames.add((String) selectPlayer7ComboBox.getSelectedItem());
+                this.playerColors.add((String) color7ComboBox.getSelectedItem());
             }
         }
-        if(this.players>=8){
-            if(this.playerNames.contains((String)selectPlayer8ComboBox.getSelectedItem())||this.playerColors.contains((String)color8ComboBox.getSelectedItem())){
+        if (this.players >= 8) {
+            if (this.playerNames.contains((String) selectPlayer8ComboBox.getSelectedItem()) || this.playerColors.contains((String) color8ComboBox.getSelectedItem())) {
                 flag = false;
-            }else{
-                this.playerNames.add((String)selectPlayer8ComboBox.getSelectedItem());
-                this.playerColors.add((String)color8ComboBox.getSelectedItem());
+            } else {
+                this.playerNames.add((String) selectPlayer8ComboBox.getSelectedItem());
+                this.playerColors.add((String) color8ComboBox.getSelectedItem());
             }
         }
         return flag;
     }
-    
-    public void setPlayersToSelect(){
+
+    public void setPlayersToSelect() {
         this.selectPlayer1ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));
         this.selectPlayer2ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));
         this.selectPlayer3ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));
@@ -951,9 +946,9 @@ public class MainMenu extends javax.swing.JFrame {
         this.selectPlayer7ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));
         this.selectPlayer8ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));
     }
-    
-    public void setPlayerValues(){
-        if(this.players<3){
+
+    public void setPlayerValues() {
+        if (this.players < 3) {
             this.player3Lbl.setVisible(false);
             this.player3Lbl.setEnabled(false);
             this.selectPlayer3Lbl.setVisible(false);
@@ -964,7 +959,7 @@ public class MainMenu extends javax.swing.JFrame {
             this.color3Lbl.setEnabled(false);
             this.color3ComboBox.setVisible(false);
             this.color3ComboBox.setEnabled(false);
-        }else{
+        } else {
             this.player3Lbl.setVisible(true);
             this.player3Lbl.setEnabled(true);
             this.selectPlayer3Lbl.setVisible(true);
@@ -976,7 +971,7 @@ public class MainMenu extends javax.swing.JFrame {
             this.color3ComboBox.setVisible(true);
             this.color3ComboBox.setEnabled(true);
         }
-        if(this.players<4){
+        if (this.players < 4) {
             this.player4Lbl.setVisible(false);
             this.player4Lbl.setEnabled(false);
             this.selectPlayer4Lbl.setVisible(false);
@@ -987,7 +982,7 @@ public class MainMenu extends javax.swing.JFrame {
             this.color4Lbl.setEnabled(false);
             this.color4ComboBox.setVisible(false);
             this.color4ComboBox.setEnabled(false);
-        }else{
+        } else {
             this.player4Lbl.setVisible(true);
             this.player4Lbl.setEnabled(true);
             this.selectPlayer4Lbl.setVisible(true);
@@ -999,7 +994,7 @@ public class MainMenu extends javax.swing.JFrame {
             this.color4ComboBox.setVisible(true);
             this.color4ComboBox.setEnabled(true);
         }
-        if(this.players<5){
+        if (this.players < 5) {
             this.player5Lbl.setVisible(false);
             this.player5Lbl.setEnabled(false);
             this.selectPlayer5Lbl.setVisible(false);
@@ -1010,8 +1005,8 @@ public class MainMenu extends javax.swing.JFrame {
             this.color5Lbl.setEnabled(false);
             this.color5ComboBox.setVisible(false);
             this.color5ComboBox.setEnabled(false);
-        }else{
-             this.player5Lbl.setVisible(true);
+        } else {
+            this.player5Lbl.setVisible(true);
             this.player5Lbl.setEnabled(true);
             this.selectPlayer5Lbl.setVisible(true);
             this.selectPlayer5Lbl.setEnabled(true);
@@ -1022,7 +1017,7 @@ public class MainMenu extends javax.swing.JFrame {
             this.color5ComboBox.setVisible(true);
             this.color5ComboBox.setEnabled(true);
         }
-        if(this.players<6){
+        if (this.players < 6) {
             this.player6Lbl.setVisible(false);
             this.player6Lbl.setEnabled(false);
             this.selectPlayer6Lbl.setVisible(false);
@@ -1033,7 +1028,7 @@ public class MainMenu extends javax.swing.JFrame {
             this.color6Lbl.setEnabled(false);
             this.color6ComboBox.setVisible(false);
             this.color6ComboBox.setEnabled(false);
-        }else{
+        } else {
             this.player6Lbl.setVisible(true);
             this.player6Lbl.setEnabled(true);
             this.selectPlayer6Lbl.setVisible(true);
@@ -1045,7 +1040,7 @@ public class MainMenu extends javax.swing.JFrame {
             this.color6ComboBox.setVisible(true);
             this.color6ComboBox.setEnabled(true);
         }
-        if(this.players<7){
+        if (this.players < 7) {
             this.player7Lbl.setVisible(false);
             this.player7Lbl.setEnabled(false);
             this.selectPlayer7Lbl.setVisible(false);
@@ -1056,7 +1051,7 @@ public class MainMenu extends javax.swing.JFrame {
             this.color7Lbl.setEnabled(false);
             this.color7ComboBox.setVisible(false);
             this.color7ComboBox.setEnabled(false);
-        }else{
+        } else {
             this.player7Lbl.setVisible(true);
             this.player7Lbl.setEnabled(true);
             this.selectPlayer7Lbl.setVisible(true);
@@ -1068,7 +1063,7 @@ public class MainMenu extends javax.swing.JFrame {
             this.color7ComboBox.setVisible(true);
             this.color7ComboBox.setEnabled(true);
         }
-        if(this.players<8){
+        if (this.players < 8) {
             this.player8Lbl.setVisible(false);
             this.player8Lbl.setEnabled(false);
             this.selectPlayer8Lbl.setVisible(false);
@@ -1079,7 +1074,7 @@ public class MainMenu extends javax.swing.JFrame {
             this.color8Lbl.setEnabled(false);
             this.color8ComboBox.setVisible(false);
             this.color8ComboBox.setEnabled(false);
-        }else{
+        } else {
             this.player8Lbl.setVisible(true);
             this.player8Lbl.setEnabled(true);
             this.selectPlayer8Lbl.setVisible(true);
@@ -1092,7 +1087,7 @@ public class MainMenu extends javax.swing.JFrame {
             this.color8ComboBox.setEnabled(true);
         }
     }
-    
+
     public boolean verificarQueSeaInt(String numero, int min, int max) {
         boolean ok = true;
         try {
@@ -1105,11 +1100,12 @@ public class MainMenu extends javax.swing.JFrame {
         return ok;
 
     }
-    
-    public boolean isEmpty(String aString){
+
+    public boolean isEmpty(String aString) {
         boolean returnVal = false;
-        if(aString.trim().equals("") || aString.equals(null))
-            returnVal=true;
+        if (aString.trim().equals("") || aString.equals(null)) {
+            returnVal = true;
+        }
         return returnVal;
     }
 
