@@ -46,6 +46,24 @@ public class PlayerInfoTest extends TestCase{
         String result = instance.getName();
         assertEquals(expResult, result);
     }
+    
+     @Test
+    public void testGetPicture() {
+        PlayerInfo instance = new PlayerInfo("dolo");
+        String expResult = "/images/default.png";
+        String result = instance.getName();
+        assertEquals(expResult, result);
+    }
+
+    
+    @Test
+    public void testSetPicture() {
+         PlayerInfo instance = new PlayerInfo("dolo");
+        String expResult = "foto.jpg";
+        instance.setPicture(expResult);
+        String result = instance.getPicture();
+        assertEquals(expResult, result);
+    }
 
     
 }

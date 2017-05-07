@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MainMenu.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Monopoly&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">edu.ncsu.monopoly.gui</a> &gt; <span class="el_source">MainMenu.java</span></div><h1>MainMenu.java</h1><pre class="source lang-java linenums">package edu.ncsu.monopoly.gui;
 
 import edu.ncsu.monopoly.*;
+<<<<<<< HEAD
 import edu.ncsu.monopoly.boardScenarios.GameBoardCCJail;
 import edu.ncsu.monopoly.boardScenarios.GameBoardFull;
+=======
+import edu.ncsu.monopoly.test.boardScenarios.GameBoardCCJail;
+import edu.ncsu.monopoly.test.boardScenarios.GameBoardFull;
+>>>>>>> d9fcaaba0d33d776b4fcebbd4c2eec9149968548
 import java.util.*;
 import java.awt.event.*;
 import java.awt.*;
@@ -47,12 +52,18 @@ public class MainMenu extends javax.swing.JFrame {
 <span class="nc" id="L47">        this.configurado = false;</span>
 <span class="nc" id="L48">        this.playerNames = new ArrayList&lt;String&gt;();</span>
 <span class="nc" id="L49">        this.playerColors = new ArrayList&lt;String&gt;();</span>
+<<<<<<< HEAD
 <span class="nc" id="L50">    }</span>
+=======
+
+<span class="nc" id="L51">    }</span>
+>>>>>>> d9fcaaba0d33d776b4fcebbd4c2eec9149968548
 
     @SuppressWarnings(&quot;unchecked&quot;)
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
 <span class="nc" id="L56">        buttonGroup1 = new javax.swing.ButtonGroup();</span>
 <span class="nc" id="L57">        panelMenuPrincipal = new javax.swing.JPanel();</span>
 <span class="nc" id="L58">        btnRegistrarJugador = new javax.swing.JButton();</span>
@@ -123,6 +134,77 @@ public class MainMenu extends javax.swing.JFrame {
 <span class="nc" id="L123">        jScrollPane4 = new javax.swing.JScrollPane();</span>
 <span class="nc" id="L124">        lstJugadores1 = new javax.swing.JList();</span>
 <span class="nc" id="L125">        playerImgLbl = new javax.swing.JLabel();</span>
+=======
+<span class="nc" id="L57">        buttonGroup1 = new javax.swing.ButtonGroup();</span>
+<span class="nc" id="L58">        panelMenuPrincipal = new javax.swing.JPanel();</span>
+<span class="nc" id="L59">        btnRegistrarJugador = new javax.swing.JButton();</span>
+<span class="nc" id="L60">        btnConfigurarPartida = new javax.swing.JButton();</span>
+<span class="nc" id="L61">        btnJugar = new javax.swing.JButton();</span>
+<span class="nc" id="L62">        btnSalir = new javax.swing.JButton();</span>
+<span class="nc" id="L63">        btnRanking = new javax.swing.JButton();</span>
+<span class="nc" id="L64">        lblMenu = new javax.swing.JLabel();</span>
+<span class="nc" id="L65">        panelRegistrarJugador = new javax.swing.JPanel();</span>
+<span class="nc" id="L66">        lblName = new javax.swing.JLabel();</span>
+<span class="nc" id="L67">        txtName = new javax.swing.JTextField();</span>
+<span class="nc" id="L68">        lblImage = new javax.swing.JLabel();</span>
+<span class="nc" id="L69">        lblRegistrarJugador = new javax.swing.JLabel();</span>
+<span class="nc" id="L70">        lblRegistrado = new javax.swing.JLabel();</span>
+<span class="nc" id="L71">        btnRegistrar = new javax.swing.JButton();</span>
+<span class="nc" id="L72">        btnCancelarJugador = new javax.swing.JButton();</span>
+<span class="nc" id="L73">        btnUploadFile = new javax.swing.JButton();</span>
+<span class="nc" id="L74">        pathLbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L75">        panelConfigurarPartida = new javax.swing.JPanel();</span>
+<span class="nc" id="L76">        nrLabel = new javax.swing.JLabel();</span>
+<span class="nc" id="L77">        nrComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L78">        selectPlayer1Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L79">        selectPlayer1ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L80">        color1Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L81">        color1ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L82">        player1Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L83">        player2Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L84">        color2ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L85">        selectPlayer2Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L86">        color2Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L87">        selectPlayer2ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L88">        selectPlayer4ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L89">        color4Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L90">        selectPlayer4Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L91">        color4ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L92">        player4Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L93">        player3Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L94">        color3ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L95">        selectPlayer3Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L96">        color3Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L97">        selectPlayer3ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L98">        selectPlayer6ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L99">        color6Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L100">        selectPlayer6Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L101">        color6ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L102">        player6Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L103">        player5Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L104">        color5ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L105">        selectPlayer5Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L106">        color5Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L107">        selectPlayer5ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L108">        selectPlayer8ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L109">        color8Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L110">        selectPlayer8Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L111">        color8ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L112">        player8Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L113">        player7Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L114">        color7ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L115">        selectPlayer7Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L116">        color7Lbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L117">        selectPlayer7ComboBox = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L118">        setBtn = new javax.swing.JButton();</span>
+<span class="nc" id="L119">        cancelBtn = new javax.swing.JButton();</span>
+<span class="nc" id="L120">        configurarLbl = new javax.swing.JLabel();</span>
+<span class="nc" id="L121">        panelRanking = new javax.swing.JPanel();</span>
+<span class="nc" id="L122">        lblRankingJugadores = new javax.swing.JLabel();</span>
+<span class="nc" id="L123">        btnSalirRanking = new javax.swing.JButton();</span>
+<span class="nc" id="L124">        jScrollPane4 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L125">        lstJugadores1 = new javax.swing.JList();</span>
+>>>>>>> d9fcaaba0d33d776b4fcebbd4c2eec9149968548
 
 <span class="nc" id="L127">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
 <span class="nc" id="L128">        setFocusable(false);</span>
@@ -179,13 +261,18 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
 <span class="nc" id="L181">        lblMenu.setFont(new java.awt.Font(&quot;Tahoma&quot;, 1, 24)); // NOI18N</span>
+<<<<<<< HEAD
 <span class="nc" id="L182">        lblMenu.setText(&quot;Menu Principal&quot;);</span>
+=======
+<span class="nc" id="L182">        lblMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/edu/ncsu/monopoly/gui/monopolyLogo.png&quot;))); // NOI18N</span>
+>>>>>>> d9fcaaba0d33d776b4fcebbd4c2eec9149968548
 
 <span class="nc" id="L184">        javax.swing.GroupLayout panelMenuPrincipalLayout = new javax.swing.GroupLayout(panelMenuPrincipal);</span>
 <span class="nc" id="L185">        panelMenuPrincipal.setLayout(panelMenuPrincipalLayout);</span>
 <span class="nc" id="L186">        panelMenuPrincipalLayout.setHorizontalGroup(</span>
 <span class="nc" id="L187">            panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
 <span class="nc" id="L188">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuPrincipalLayout.createSequentialGroup()</span>
+<<<<<<< HEAD
 <span class="nc" id="L189">                .addContainerGap(151, Short.MAX_VALUE)</span>
 <span class="nc" id="L190">                .addGroup(panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
 <span class="nc" id="L191">                    .addGroup(panelMenuPrincipalLayout.createSequentialGroup()</span>
@@ -687,8 +774,498 @@ public class MainMenu extends javax.swing.JFrame {
 <span class="nc" id="L687">            .addComponent(panelMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
 <span class="nc" id="L688">            .addComponent(panelRegistrarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
 <span class="nc" id="L689">            .addComponent(panelConfigurarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+=======
+<span class="nc" id="L189">                .addContainerGap(123, Short.MAX_VALUE)</span>
+<span class="nc" id="L190">                .addGroup(panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L191">                    .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L192">                    .addGroup(panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L193">                        .addComponent(btnRegistrarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L194">                        .addComponent(btnConfigurarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L195">                        .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L196">                        .addComponent(btnRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L197">                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L198">                .addGap(112, 112, 112))</span>
+        );
+<span class="nc" id="L200">        panelMenuPrincipalLayout.setVerticalGroup(</span>
+<span class="nc" id="L201">            panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L202">            .addGroup(panelMenuPrincipalLayout.createSequentialGroup()</span>
+<span class="nc" id="L203">                .addGap(34, 34, 34)</span>
+<span class="nc" id="L204">                .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L205">                .addGap(34, 34, 34)</span>
+<span class="nc" id="L206">                .addComponent(btnRegistrarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L207">                .addGap(27, 27, 27)</span>
+<span class="nc" id="L208">                .addComponent(btnConfigurarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L209">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L210">                .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L211">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L212">                .addComponent(btnRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L213">                .addGap(27, 27, 27)</span>
+<span class="nc" id="L214">                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L215">                .addContainerGap(588, Short.MAX_VALUE))</span>
         );
 
+<span class="nc" id="L218">        panelRegistrarJugador.setPreferredSize(new java.awt.Dimension(700, 650));</span>
+
+<span class="nc" id="L220">        lblName.setText(&quot;Nombre&quot;);</span>
+
+<span class="nc" id="L222">        txtName.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L224">                txtNameActionPerformed(evt);</span>
+<span class="nc" id="L225">            }</span>
+        });
+
+<span class="nc" id="L228">        lblImage.setText(&quot;Imagen&quot;);</span>
+
+<span class="nc" id="L230">        lblRegistrarJugador.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L231">        lblRegistrarJugador.setText(&quot;Registrar Jugador&quot;);</span>
+
+<span class="nc" id="L233">        lblRegistrado.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 10)); // NOI18N</span>
+
+<span class="nc" id="L235">        btnRegistrar.setText(&quot;Registrar&quot;);</span>
+<span class="nc" id="L236">        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L238">                btnRegistrarActionPerformed(evt);</span>
+<span class="nc" id="L239">            }</span>
+        });
+
+<span class="nc" id="L242">        btnCancelarJugador.setText(&quot;Volver&quot;);</span>
+<span class="nc" id="L243">        btnCancelarJugador.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L245">                btnCancelarJugadorActionPerformed(evt);</span>
+<span class="nc" id="L246">            }</span>
+        });
+
+<span class="nc" id="L249">        btnUploadFile.setText(&quot;Upload file&quot;);</span>
+<span class="nc" id="L250">        btnUploadFile.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L252">                btnUploadFileActionPerformed(evt);</span>
+<span class="nc" id="L253">            }</span>
+        });
+
+<span class="nc" id="L256">        javax.swing.GroupLayout panelRegistrarJugadorLayout = new javax.swing.GroupLayout(panelRegistrarJugador);</span>
+<span class="nc" id="L257">        panelRegistrarJugador.setLayout(panelRegistrarJugadorLayout);</span>
+<span class="nc" id="L258">        panelRegistrarJugadorLayout.setHorizontalGroup(</span>
+<span class="nc" id="L259">            panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L260">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L261">                .addContainerGap(179, Short.MAX_VALUE)</span>
+<span class="nc" id="L262">                .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L263">                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L264">                        .addComponent(btnCancelarJugador)</span>
+<span class="nc" id="L265">                        .addGap(33, 33, 33)</span>
+<span class="nc" id="L266">                        .addComponent(btnRegistrar))</span>
+<span class="nc" id="L267">                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L268">                        .addGap(17, 17, 17)</span>
+<span class="nc" id="L269">                        .addComponent(lblRegistrado, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L270">                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L271">                        .addGap(62, 62, 62)</span>
+<span class="nc" id="L272">                        .addComponent(lblRegistrarJugador))</span>
+<span class="nc" id="L273">                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L274">                        .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L275">                            .addComponent(lblName)</span>
+<span class="nc" id="L276">                            .addComponent(lblImage))</span>
+<span class="nc" id="L277">                        .addGap(104, 104, 104)</span>
+<span class="nc" id="L278">                        .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L279">                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L280">                            .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L281">                                .addComponent(btnUploadFile)</span>
+<span class="nc" id="L282">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L283">                                .addComponent(pathLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))))</span>
+<span class="nc" id="L284">                .addGap(57, 57, 57))</span>
+        );
+<span class="nc" id="L286">        panelRegistrarJugadorLayout.setVerticalGroup(</span>
+<span class="nc" id="L287">            panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L288">            .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L289">                .addGap(103, 103, 103)</span>
+<span class="nc" id="L290">                .addComponent(lblRegistrarJugador)</span>
+<span class="nc" id="L291">                .addGap(53, 53, 53)</span>
+<span class="nc" id="L292">                .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L293">                    .addComponent(lblName)</span>
+<span class="nc" id="L294">                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L295">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L296">                .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L297">                    .addGroup(panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L298">                        .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L299">                            .addComponent(btnUploadFile)</span>
+<span class="nc" id="L300">                            .addComponent(lblImage))</span>
+<span class="nc" id="L301">                        .addGap(18, 18, 18))</span>
+<span class="nc" id="L302">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarJugadorLayout.createSequentialGroup()</span>
+<span class="nc" id="L303">                        .addComponent(pathLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L304">                        .addGap(28, 28, 28)))</span>
+<span class="nc" id="L305">                .addComponent(lblRegistrado, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L306">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L307">                .addGroup(panelRegistrarJugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L308">                    .addComponent(btnRegistrar)</span>
+<span class="nc" id="L309">                    .addComponent(btnCancelarJugador))</span>
+<span class="nc" id="L310">                .addContainerGap(260, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L313">        nrLabel.setText(&quot;Cantidad jugadores:&quot;);</span>
+
+<span class="nc" id="L315">        nrComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot; }));</span>
+<span class="nc" id="L316">        nrComboBox.addFocusListener(new java.awt.event.FocusAdapter() {</span>
+            public void focusLost(java.awt.event.FocusEvent evt) {
+<span class="nc" id="L318">                nrComboBoxFocusLost(evt);</span>
+<span class="nc" id="L319">            }</span>
+        });
+<span class="nc" id="L321">        nrComboBox.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L323">                nrComboBoxActionPerformed(evt);</span>
+<span class="nc" id="L324">            }</span>
+        });
+
+<span class="nc" id="L327">        selectPlayer1Lbl.setText(&quot;Seleccionar existente:&quot;);</span>
+
+<span class="nc" id="L329">        selectPlayer1ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L331">        color1Lbl.setText(&quot;Color:&quot;);</span>
+
+<span class="nc" id="L333">        color1ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;rojo&quot;, &quot;azul&quot;, &quot;amarillo&quot;, &quot;verde&quot;, &quot;naranja&quot;, &quot;rosado&quot;, &quot;negro&quot;, &quot;blanco&quot; }));</span>
+
+<span class="nc" id="L335">        player1Lbl.setText(&quot;Jugador 1&quot;);</span>
+
+<span class="nc" id="L337">        player2Lbl.setText(&quot;Jugador 2&quot;);</span>
+
+<span class="nc" id="L339">        color2ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;rojo&quot;, &quot;azul&quot;, &quot;amarillo&quot;, &quot;verde&quot;, &quot;naranja&quot;, &quot;rosado&quot;, &quot;negro&quot;, &quot;blanco&quot; }));</span>
+<span class="nc" id="L340">        color2ComboBox.setSelectedIndex(1);</span>
+
+<span class="nc" id="L342">        selectPlayer2Lbl.setText(&quot;Seleccionar existente:&quot;);</span>
+
+<span class="nc" id="L344">        color2Lbl.setText(&quot;Color:&quot;);</span>
+
+<span class="nc" id="L346">        selectPlayer2ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L348">        selectPlayer4ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L350">        color4Lbl.setText(&quot;Color:&quot;);</span>
+
+<span class="nc" id="L352">        selectPlayer4Lbl.setText(&quot;Seleccionar existente:&quot;);</span>
+
+<span class="nc" id="L354">        color4ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;rojo&quot;, &quot;azul&quot;, &quot;amarillo&quot;, &quot;verde&quot;, &quot;naranja&quot;, &quot;rosado&quot;, &quot;negro&quot;, &quot;blanco&quot; }));</span>
+<span class="nc" id="L355">        color4ComboBox.setSelectedIndex(3);</span>
+
+<span class="nc" id="L357">        player4Lbl.setText(&quot;Jugador 4&quot;);</span>
+
+<span class="nc" id="L359">        player3Lbl.setText(&quot;Jugador 3&quot;);</span>
+
+<span class="nc" id="L361">        color3ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;rojo&quot;, &quot;azul&quot;, &quot;amarillo&quot;, &quot;verde&quot;, &quot;naranja&quot;, &quot;rosado&quot;, &quot;negro&quot;, &quot;blanco&quot; }));</span>
+<span class="nc" id="L362">        color3ComboBox.setSelectedIndex(2);</span>
+
+<span class="nc" id="L364">        selectPlayer3Lbl.setText(&quot;Seleccionar existente:&quot;);</span>
+
+<span class="nc" id="L366">        color3Lbl.setText(&quot;Color:&quot;);</span>
+
+<span class="nc" id="L368">        selectPlayer3ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L370">        selectPlayer6ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L372">        color6Lbl.setText(&quot;Color:&quot;);</span>
+
+<span class="nc" id="L374">        selectPlayer6Lbl.setText(&quot;Seleccionar existente:&quot;);</span>
+
+<span class="nc" id="L376">        color6ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;rojo&quot;, &quot;azul&quot;, &quot;amarillo&quot;, &quot;verde&quot;, &quot;naranja&quot;, &quot;rosado&quot;, &quot;negro&quot;, &quot;blanco&quot; }));</span>
+<span class="nc" id="L377">        color6ComboBox.setSelectedIndex(5);</span>
+
+<span class="nc" id="L379">        player6Lbl.setText(&quot;Jugador 6&quot;);</span>
+
+<span class="nc" id="L381">        player5Lbl.setText(&quot;Jugador 5&quot;);</span>
+
+<span class="nc" id="L383">        color5ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;rojo&quot;, &quot;azul&quot;, &quot;amarillo&quot;, &quot;verde&quot;, &quot;naranja&quot;, &quot;rosado&quot;, &quot;negro&quot;, &quot;blanco&quot; }));</span>
+<span class="nc" id="L384">        color5ComboBox.setSelectedIndex(4);</span>
+
+<span class="nc" id="L386">        selectPlayer5Lbl.setText(&quot;Seleccionar existente:&quot;);</span>
+
+<span class="nc" id="L388">        color5Lbl.setText(&quot;Color:&quot;);</span>
+
+<span class="nc" id="L390">        selectPlayer5ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L392">        selectPlayer8ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+<span class="nc" id="L393"></span>
+<span class="nc" id="L394">        color8Lbl.setText(&quot;Color:&quot;);</span>
+
+<span class="nc" id="L396">        selectPlayer8Lbl.setText(&quot;Seleccionar existente:&quot;);</span>
+
+<span class="nc" id="L398">        color8ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;rojo&quot;, &quot;azul&quot;, &quot;amarillo&quot;, &quot;verde&quot;, &quot;naranja&quot;, &quot;rosado&quot;, &quot;negro&quot;, &quot;blanco&quot; }));</span>
+<span class="nc" id="L399">        color8ComboBox.setSelectedIndex(7);</span>
+
+<span class="nc" id="L401">        player8Lbl.setText(&quot;Jugador 8&quot;);</span>
+
+<span class="nc" id="L403">        player7Lbl.setText(&quot;Jugador 7&quot;);</span>
+
+<span class="nc" id="L405">        color7ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;rojo&quot;, &quot;azul&quot;, &quot;amarillo&quot;, &quot;verde&quot;, &quot;naranja&quot;, &quot;rosado&quot;, &quot;negro&quot;, &quot;blanco&quot; }));</span>
+<span class="nc" id="L406">        color7ComboBox.setSelectedIndex(6);</span>
+
+<span class="nc" id="L408">        selectPlayer7Lbl.setText(&quot;Seleccionar existente:&quot;);</span>
+
+<span class="nc" id="L410">        color7Lbl.setText(&quot;Color:&quot;);</span>
+<span class="nc" id="L411"></span>
+<span class="nc" id="L412">        selectPlayer7ComboBox.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+
+<span class="nc" id="L414">        setBtn.setText(&quot;Aceptar&quot;);</span>
+<span class="nc" id="L415">        setBtn.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L417">                setBtnActionPerformed(evt);</span>
+<span class="nc" id="L418">            }</span>
+        });
+
+<span class="nc" id="L421">        cancelBtn.setText(&quot;Cancelar&quot;);</span>
+<span class="nc" id="L422">        cancelBtn.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L424">                cancelBtnActionPerformed(evt);</span>
+<span class="nc" id="L425">            }</span>
+        });
+
+<span class="nc" id="L428">        configurarLbl.setText(&quot;CONFIGURAR PARTIDA&quot;);</span>
+
+<span class="nc" id="L430">        javax.swing.GroupLayout panelConfigurarPartidaLayout = new javax.swing.GroupLayout(panelConfigurarPartida);</span>
+<span class="nc" id="L431">        panelConfigurarPartida.setLayout(panelConfigurarPartidaLayout);</span>
+<span class="nc" id="L432">        panelConfigurarPartidaLayout.setHorizontalGroup(</span>
+<span class="nc" id="L433">            panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L434">            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L435">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L436">                    .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L437">                        .addGap(51, 51, 51)</span>
+<span class="nc" id="L438">                        .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L439">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L440">                                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L441">                                    .addComponent(selectPlayer8Lbl)</span>
+<span class="nc" id="L442">                                    .addComponent(player8Lbl))</span>
+<span class="nc" id="L443">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L444">                                .addComponent(selectPlayer8ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L445">                                .addGap(36, 36, 36)</span>
+<span class="nc" id="L446">                                .addComponent(color8Lbl)</span>
+<span class="nc" id="L447">                                .addGap(18, 18, 18)</span>
+<span class="nc" id="L448">                                .addComponent(color8ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L449">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L450">                                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L451">                                    .addComponent(selectPlayer7Lbl)</span>
+<span class="nc" id="L452">                                    .addComponent(player7Lbl))</span>
+<span class="nc" id="L453">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L454">                                .addComponent(selectPlayer7ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L455">                                .addGap(36, 36, 36)</span>
+<span class="nc" id="L456">                                .addComponent(color7Lbl)</span>
+<span class="nc" id="L457">                                .addGap(18, 18, 18)</span>
+<span class="nc" id="L458">                                .addComponent(color7ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L459">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L460">                                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L461">                                    .addComponent(selectPlayer6Lbl)</span>
+<span class="nc" id="L462">                                    .addComponent(player6Lbl))</span>
+<span class="nc" id="L463">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L464">                                .addComponent(selectPlayer6ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L465">                                .addGap(36, 36, 36)</span>
+<span class="nc" id="L466">                                .addComponent(color6Lbl)</span>
+<span class="nc" id="L467">                                .addGap(18, 18, 18)</span>
+<span class="nc" id="L468">                                .addComponent(color6ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L469">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L470">                                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L471">                                    .addComponent(selectPlayer5Lbl)</span>
+<span class="nc" id="L472">                                    .addComponent(player5Lbl))</span>
+<span class="nc" id="L473">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L474">                                .addComponent(selectPlayer5ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L475">                                .addGap(36, 36, 36)</span>
+<span class="nc" id="L476">                                .addComponent(color5Lbl)</span>
+<span class="nc" id="L477">                                .addGap(18, 18, 18)</span>
+<span class="nc" id="L478">                                .addComponent(color5ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L479">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L480">                                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L481">                                    .addComponent(selectPlayer4Lbl)</span>
+<span class="nc" id="L482">                                    .addComponent(player4Lbl))</span>
+<span class="nc" id="L483">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L484">                                .addComponent(selectPlayer4ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L485">                                .addGap(36, 36, 36)</span>
+<span class="nc" id="L486">                                .addComponent(color4Lbl)</span>
+<span class="nc" id="L487">                                .addGap(18, 18, 18)</span>
+<span class="nc" id="L488">                                .addComponent(color4ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L489">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L490">                                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L491">                                    .addComponent(selectPlayer3Lbl)</span>
+<span class="nc" id="L492">                                    .addComponent(player3Lbl))</span>
+<span class="nc" id="L493">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L494">                                .addComponent(selectPlayer3ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L495">                                .addGap(36, 36, 36)</span>
+<span class="nc" id="L496">                                .addComponent(color3Lbl)</span>
+<span class="nc" id="L497">                                .addGap(18, 18, 18)</span>
+<span class="nc" id="L498">                                .addComponent(color3ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L499">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L500">                                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L501">                                    .addComponent(selectPlayer2Lbl)</span>
+<span class="nc" id="L502">                                    .addComponent(player2Lbl))</span>
+<span class="nc" id="L503">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L504">                                .addComponent(selectPlayer2ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L505">                                .addGap(36, 36, 36)</span>
+<span class="nc" id="L506">                                .addComponent(color2Lbl)</span>
+<span class="nc" id="L507">                                .addGap(18, 18, 18)</span>
+<span class="nc" id="L508">                                .addComponent(color2ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L509">                            .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L510">                                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
+<span class="nc" id="L511">                                    .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L512">                                        .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L513">                                            .addComponent(selectPlayer1Lbl)</span>
+<span class="nc" id="L514">                                            .addComponent(player1Lbl))</span>
+<span class="nc" id="L515">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L516">                                        .addComponent(selectPlayer1ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L517">                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L518">                                        .addComponent(nrLabel)</span>
+<span class="nc" id="L519">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L520">                                        .addComponent(nrComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L521">                                        .addGap(22, 22, 22)))</span>
+<span class="nc" id="L522">                                .addGap(36, 36, 36)</span>
+<span class="nc" id="L523">                                .addComponent(color1Lbl)</span>
+<span class="nc" id="L524">                                .addGap(18, 18, 18)</span>
+<span class="nc" id="L525">                                .addComponent(color1ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L526">                        .addGap(70, 70, 70)</span>
+<span class="nc" id="L527">                        .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L528">                            .addComponent(setBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L529">                            .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L530">                    .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L531">                        .addGap(282, 282, 282)</span>
+<span class="nc" id="L532">                        .addComponent(configurarLbl)))</span>
+<span class="nc" id="L533">                .addContainerGap(68, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L535">        panelConfigurarPartidaLayout.setVerticalGroup(</span>
+<span class="nc" id="L536">            panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L537">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L538">                .addGap(37, 37, 37)</span>
+<span class="nc" id="L539">                .addComponent(configurarLbl)</span>
+<span class="nc" id="L540">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)</span>
+<span class="nc" id="L541">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L542">                    .addComponent(nrLabel)</span>
+<span class="nc" id="L543">                    .addComponent(nrComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L544">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L545">                .addComponent(player1Lbl)</span>
+<span class="nc" id="L546">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L547">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L548">                    .addComponent(selectPlayer1Lbl)</span>
+<span class="nc" id="L549">                    .addComponent(selectPlayer1ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L550">                    .addComponent(color1Lbl)</span>
+<span class="nc" id="L551">                    .addComponent(color1ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L552">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L553">                .addComponent(player2Lbl)</span>
+<span class="nc" id="L554">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L555">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L556">                    .addComponent(selectPlayer2Lbl)</span>
+<span class="nc" id="L557">                    .addComponent(selectPlayer2ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L558">                    .addComponent(color2Lbl)</span>
+<span class="nc" id="L559">                    .addComponent(color2ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L560">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L561">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L562">                    .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L563">                        .addComponent(player3Lbl)</span>
+<span class="nc" id="L564">                        .addGap(18, 18, 18)</span>
+<span class="nc" id="L565">                        .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L566">                            .addComponent(selectPlayer3Lbl)</span>
+<span class="nc" id="L567">                            .addComponent(selectPlayer3ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L568">                            .addComponent(color3Lbl)</span>
+<span class="nc" id="L569">                            .addComponent(color3ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L570">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L571">                        .addComponent(player4Lbl)</span>
+<span class="nc" id="L572">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L573">                        .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L574">                            .addComponent(selectPlayer4Lbl)</span>
+<span class="nc" id="L575">                            .addComponent(selectPlayer4ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L576">                            .addComponent(color4Lbl)</span>
+<span class="nc" id="L577">                            .addComponent(color4ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L578">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L579">                        .addComponent(player5Lbl))</span>
+<span class="nc" id="L580">                    .addGroup(panelConfigurarPartidaLayout.createSequentialGroup()</span>
+<span class="nc" id="L581">                        .addComponent(setBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L582">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L583">                        .addComponent(cancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L584">                        .addGap(9, 9, 9)))</span>
+<span class="nc" id="L585">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L586">                    .addComponent(selectPlayer5Lbl)</span>
+<span class="nc" id="L587">                    .addComponent(selectPlayer5ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L588">                    .addComponent(color5Lbl)</span>
+<span class="nc" id="L589">                    .addComponent(color5ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L590">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L591">                .addComponent(player6Lbl)</span>
+<span class="nc" id="L592">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L593">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L594">                    .addComponent(selectPlayer6Lbl)</span>
+<span class="nc" id="L595">                    .addComponent(selectPlayer6ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L596">                    .addComponent(color6Lbl)</span>
+<span class="nc" id="L597">                    .addComponent(color6ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L598">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L599">                .addComponent(player7Lbl)</span>
+<span class="nc" id="L600">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L601">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L602">                    .addComponent(selectPlayer7Lbl)</span>
+<span class="nc" id="L603">                    .addComponent(selectPlayer7ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L604">                    .addComponent(color7Lbl)</span>
+<span class="nc" id="L605">                    .addComponent(color7ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L606">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L607">                .addComponent(player8Lbl)</span>
+<span class="nc" id="L608">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L609">                .addGroup(panelConfigurarPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L610">                    .addComponent(selectPlayer8Lbl)</span>
+<span class="nc" id="L611">                    .addComponent(selectPlayer8ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L612">                    .addComponent(color8Lbl)</span>
+<span class="nc" id="L613">                    .addComponent(color8ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L614">                .addGap(30, 30, 30))</span>
+        );
+
+<span class="nc" id="L617">        panelRanking.setPreferredSize(new java.awt.Dimension(700, 700));</span>
+
+<span class="nc" id="L619">        lblRankingJugadores.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L620">        lblRankingJugadores.setText(&quot;Ranking Jugadores&quot;);</span>
+
+<span class="nc" id="L622">        btnSalirRanking.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 13)); // NOI18N</span>
+<span class="nc" id="L623">        btnSalirRanking.setText(&quot;Salir&quot;);</span>
+<span class="nc" id="L624">        btnSalirRanking.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L626">                btnSalirRankingActionPerformed(evt);</span>
+<span class="nc" id="L627">            }</span>
+        });
+
+<span class="nc" id="L630">        lstJugadores1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);</span>
+<span class="nc" id="L631">        jScrollPane4.setViewportView(lstJugadores1);</span>
+
+<span class="nc" id="L633">        javax.swing.GroupLayout panelRankingLayout = new javax.swing.GroupLayout(panelRanking);</span>
+<span class="nc" id="L634">        panelRanking.setLayout(panelRankingLayout);</span>
+<span class="nc" id="L635">        panelRankingLayout.setHorizontalGroup(</span>
+<span class="nc" id="L636">            panelRankingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L637">            .addGroup(panelRankingLayout.createSequentialGroup()</span>
+<span class="nc" id="L638">                .addGap(139, 139, 139)</span>
+<span class="nc" id="L639">                .addGroup(panelRankingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L640">                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L641">                    .addGroup(panelRankingLayout.createSequentialGroup()</span>
+<span class="nc" id="L642">                        .addGap(111, 111, 111)</span>
+<span class="nc" id="L643">                        .addComponent(lblRankingJugadores))</span>
+<span class="nc" id="L644">                    .addGroup(panelRankingLayout.createSequentialGroup()</span>
+<span class="nc" id="L645">                        .addGap(166, 166, 166)</span>
+<span class="nc" id="L646">                        .addComponent(btnSalirRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L647">                .addContainerGap(139, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L649">        panelRankingLayout.setVerticalGroup(</span>
+<span class="nc" id="L650">            panelRankingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L651">            .addGroup(panelRankingLayout.createSequentialGroup()</span>
+<span class="nc" id="L652">                .addGap(59, 59, 59)</span>
+<span class="nc" id="L653">                .addComponent(lblRankingJugadores)</span>
+<span class="nc" id="L654">                .addGap(31, 31, 31)</span>
+<span class="nc" id="L655">                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L656">                .addGap(32, 32, 32)</span>
+<span class="nc" id="L657">                .addComponent(btnSalirRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L658">                .addContainerGap(195, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L661">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L662">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L663">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L664">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L665">            .addComponent(panelRanking, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L666">            .addComponent(panelMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L667">            .addComponent(panelRegistrarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L668">            .addComponent(panelConfigurarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+>>>>>>> d9fcaaba0d33d776b4fcebbd4c2eec9149968548
+        );
+<span class="nc" id="L670">        layout.setVerticalGroup(</span>
+<span class="nc" id="L671">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L672">            .addComponent(panelRanking, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L673">            .addComponent(panelMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L674">            .addComponent(panelRegistrarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L675">            .addComponent(panelConfigurarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+        );
+
+<<<<<<< HEAD
 <span class="nc" id="L692">        pack();</span>
 <span class="nc" id="L693">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
@@ -790,10 +1367,111 @@ public class MainMenu extends javax.swing.JFrame {
 <span class="nc" id="L790">            JOptionPane.showMessageDialog(this, &quot;No hay jugadores registrados&quot;, &quot;Advertencia&quot;, JOptionPane.WARNING_MESSAGE);</span>
         }
 <span class="nc" id="L792">    }//GEN-LAST:event_btnRankingActionPerformed</span>
+=======
+<span class="nc" id="L678">        pack();</span>
+<span class="nc" id="L679">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void btnConfigurarPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigurarPartidaActionPerformed
+
+<span class="nc" id="L683">    }//GEN-LAST:event_btnConfigurarPartidaActionPerformed</span>
+
+    private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
+<span class="nc bnc" id="L686" title="All 2 branches missed.">        if (this.configurado) {</span>
+<span class="nc" id="L687">            GameMaster master = GameMaster.newInstance(this.myManager);</span>
+<span class="nc" id="L688">            MainWindow window = new MainWindow();</span>
+<span class="nc" id="L689">            GameBoard gameBoard = new GameBoardCCJail();</span>
+<span class="nc" id="L690">            master.setGameBoard(gameBoard);</span>
+<span class="nc" id="L691">            GameMaster.instance().setNumberOfPlayers(this.players);</span>
+            // String name1 = myManager.getPlayerList().get(CBplayer1.getSelectedIndex()).getName();
+            //GameMaster.instance().getPlayer(1).setName(name1);
+            //String name2 = myManager.getPlayerList().get(CBplayer2.getSelectedIndex()).getName();
+            //GameMaster.instance().getPlayer(2).setName(name2);
+
+<span class="nc bnc" id="L697" title="All 2 branches missed.">            for (int i = 0; i &lt; this.players; i++) {</span>
+<span class="nc" id="L698">                GameMaster.instance().getPlayer(i).setName(playerNames.get(i));</span>
+<span class="nc" id="L699">                GameMaster.instance().getPlayer(i).setColor(playerColors.get(i));</span>
+<span class="nc" id="L700">                this.myManager.getPlayer(playerNames.get(i)).addGamePlayed();</span>
+            }
+
+<span class="nc" id="L703">            window.setupGameBoard(gameBoard);</span>
+<span class="nc" id="L704">            window.show();</span>
+<span class="nc" id="L705">            master.setGUI(window);</span>
+<span class="nc" id="L706">            master.startGame();</span>
+<span class="nc" id="L707">        } else {</span>
+<span class="nc" id="L708">            JOptionPane.showMessageDialog(this, &quot;Configure una partida para jugar&quot;, &quot;Advertencia&quot;, JOptionPane.WARNING_MESSAGE);</span>
+        }
+<span class="nc" id="L710">    }//GEN-LAST:event_btnJugarActionPerformed</span>
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L714">    }//GEN-LAST:event_txtNameActionPerformed</span>
+
+    private void btnRegistrarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarJugadorActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L718">        this.panelMenuPrincipal.setEnabled(false);</span>
+<span class="nc" id="L719">        this.panelMenuPrincipal.setVisible(false);</span>
+<span class="nc" id="L720">        this.panelRegistrarJugador.setVisible(true);</span>
+<span class="nc" id="L721">        this.panelRegistrarJugador.setEnabled(true);</span>
+
+<span class="nc" id="L723">        this.txtName.setText(&quot;&quot;);</span>
+
+<span class="nc" id="L725">        this.lblRegistrado.setText(&quot;&quot;);</span>
+<span class="nc" id="L726">    }//GEN-LAST:event_btnRegistrarJugadorActionPerformed</span>
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+
+<span class="nc" id="L731">        String name = txtName.getText();</span>
+
+<span class="nc bnc" id="L733" title="All 2 branches missed.">        if (myManager.playerAlreadyExists(name)) {</span>
+<span class="nc" id="L734">            lblRegistrado.setText(&quot;Ese nombre se encuentra en uso!&quot;);</span>
+<span class="nc" id="L735">            lblRegistrado.setForeground(Color.red);</span>
+<span class="nc bnc" id="L736" title="All 2 branches missed.">        } else if (isEmpty(name)) {</span>
+<span class="nc" id="L737">            lblRegistrado.setText(&quot;Debes ingresar un nombre&quot;);</span>
+<span class="nc" id="L738">            lblRegistrado.setForeground(Color.red);</span>
+        } else {
+<span class="nc" id="L740">            PlayerInfo p = new PlayerInfo(name);</span>
+<span class="nc bnc" id="L741" title="All 2 branches missed.">            if (imageFile != null) {</span>
+<span class="nc" id="L742">                saveImage(imageFile, name + &quot;_pic&quot;);</span>
+<span class="nc" id="L743">                p.setPicture(&quot;/images/&quot; + name + &quot;_pic&quot;);</span>
+<span class="nc" id="L744">                imageFile = null;</span>
+            }
+
+<span class="nc" id="L747">            myManager.addPlayerToList(p);</span>
+<span class="nc" id="L748">            lblRegistrado.setText(&quot;El jugador &quot; + name + &quot; fue agregado!&quot;);</span>
+<span class="nc" id="L749">            txtName.setText(&quot;&quot;);</span>
+<span class="nc" id="L750">            pathLbl.setText(&quot;&quot;);</span>
+        }
+
+<span class="nc" id="L753">    }//GEN-LAST:event_btnRegistrarActionPerformed</span>
+
+    private void btnCancelarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarJugadorActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L757">        this.panelRegistrarJugador.setVisible(false);</span>
+<span class="nc" id="L758">        this.panelRegistrarJugador.setEnabled(false);</span>
+<span class="nc" id="L759">        this.panelMenuPrincipal.setEnabled(true);</span>
+<span class="nc" id="L760">        this.panelMenuPrincipal.setVisible(true);</span>
+<span class="nc" id="L761">    }//GEN-LAST:event_btnCancelarJugadorActionPerformed</span>
+
+    private void btnRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRankingActionPerformed
+        // TODO add your handling code here:
+<span class="nc bnc" id="L765" title="All 2 branches missed.">        if (!myManager.getPlayerList().isEmpty()) {</span>
+<span class="nc" id="L766">            this.panelMenuPrincipal.setEnabled(false);</span>
+<span class="nc" id="L767">            this.panelMenuPrincipal.setVisible(false);</span>
+<span class="nc" id="L768">            this.panelRanking.setVisible(true);</span>
+<span class="nc" id="L769">            this.panelRanking.setEnabled(true);</span>
+
+<span class="nc" id="L771">            this.lstJugadores1.setListData(myManager.getPlayerList().toArray());</span>
+        } else {
+<span class="nc" id="L773">            JOptionPane.showMessageDialog(this, &quot;No hay jugadores registrados&quot;, &quot;Advertencia&quot;, JOptionPane.WARNING_MESSAGE);</span>
+        }
+<span class="nc" id="L775">    }//GEN-LAST:event_btnRankingActionPerformed</span>
+>>>>>>> d9fcaaba0d33d776b4fcebbd4c2eec9149968548
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
         try {
+<<<<<<< HEAD
 <span class="nc" id="L797">            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(&quot;monopoly_data.dat&quot;));</span>
 <span class="nc" id="L798">            out.writeObject(myManager);</span>
 <span class="nc" id="L799">            out.close();</span>
@@ -836,11 +1514,55 @@ public class MainMenu extends javax.swing.JFrame {
            
 <span class="nc" id="L837">            imageFile = fileChooser.getSelectedFile().getAbsoluteFile();   </span>
 <span class="nc" id="L838">            pathLbl.setText(fileChooser.getSelectedFile().getAbsolutePath());</span>
+=======
+<span class="nc" id="L780">            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(&quot;monopoly_data.dat&quot;));</span>
+<span class="nc" id="L781">            out.writeObject(myManager);</span>
+<span class="nc" id="L782">            out.close();</span>
+<span class="nc" id="L783">        } catch (Exception e) {</span>
+<span class="nc" id="L784">            JOptionPane.showMessageDialog(null, e.toString());</span>
+<span class="nc" id="L785">        }</span>
+<span class="nc" id="L786">        this.dispose();</span>
+<span class="nc" id="L787">        System.exit(0);</span>
+<span class="nc" id="L788">    }//GEN-LAST:event_btnSalirActionPerformed</span>
+
+    private void btnSalirRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirRankingActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L792">        this.panelRanking.setVisible(false);</span>
+<span class="nc" id="L793">        this.panelRanking.setEnabled(false);</span>
+<span class="nc" id="L794">        this.panelMenuPrincipal.setEnabled(true);</span>
+<span class="nc" id="L795">        this.panelMenuPrincipal.setVisible(true);</span>
+<span class="nc" id="L796">    }//GEN-LAST:event_btnSalirRankingActionPerformed</span>
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try {
+<span class="nc" id="L800">            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(&quot;monopoly_data.dat&quot;));</span>
+<span class="nc" id="L801">            out.writeObject(myManager);</span>
+<span class="nc" id="L802">            out.close();</span>
+<span class="nc" id="L803">        } catch (Exception e) {</span>
+<span class="nc" id="L804">            JOptionPane.showMessageDialog(null, e.toString());</span>
+<span class="nc" id="L805">        }</span>
+<span class="nc" id="L806">        this.dispose();</span>
+<span class="nc" id="L807">        System.exit(0);</span>
+<span class="nc" id="L808">    }//GEN-LAST:event_formWindowClosing</span>
+
+    private void btnUploadFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUploadFileActionPerformed
+<span class="nc" id="L811">        JFileChooser fileChooser = new JFileChooser();</span>
+<span class="nc" id="L812">        int res = fileChooser.showOpenDialog(this);</span>
+
+<span class="nc bnc" id="L814" title="All 2 branches missed.">        if (res == JFileChooser.APPROVE_OPTION) {</span>
+
+<span class="nc" id="L816">            int width = 963;    //width of the image</span>
+<span class="nc" id="L817">            int height = 640;   //height of the image</span>
+<span class="nc" id="L818">            BufferedImage image = null;</span>
+
+<span class="nc" id="L820">            imageFile = fileChooser.getSelectedFile().getAbsoluteFile();</span>
+<span class="nc" id="L821">            pathLbl.setText(fileChooser.getSelectedFile().getAbsolutePath());</span>
+>>>>>>> d9fcaaba0d33d776b4fcebbd4c2eec9149968548
             //saveImage(f);
         }
 
-       
 
+<<<<<<< HEAD
 <span class="nc" id="L844">    }//GEN-LAST:event_btnUploadFileActionPerformed</span>
 
     private void nrComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nrComboBoxActionPerformed
@@ -1154,6 +1876,313 @@ public class MainMenu extends javax.swing.JFrame {
 <span class="nc" id="L1154">            JOptionPane.showMessageDialog(this, &quot;Error guardando imagen&quot;, &quot;Advertencia&quot;, JOptionPane.WARNING_MESSAGE);</span>
 <span class="nc" id="L1155">        }</span>
 <span class="nc" id="L1156">    }</span>
+=======
+<span class="nc" id="L826">    }//GEN-LAST:event_btnUploadFileActionPerformed</span>
+
+    private void nrComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nrComboBoxActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L830">        this.players = Integer.parseInt((String) this.nrComboBox.getSelectedItem());</span>
+<span class="nc" id="L831">        setPlayerValues();</span>
+<span class="nc" id="L832">    }//GEN-LAST:event_nrComboBoxActionPerformed</span>
+
+    private void btnConfigurarPartidaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfigurarPartidaMouseReleased
+        // TODO add your handling code here:
+<span class="nc bnc" id="L836" title="All 2 branches missed.">        if (!myManager.getPlayerList().isEmpty()) {</span>
+<span class="nc" id="L837">            this.panelConfigurarPartida.setVisible(true);</span>
+<span class="nc" id="L838">            this.panelConfigurarPartida.setEnabled(true);</span>
+<span class="nc" id="L839">            this.panelMenuPrincipal.setEnabled(false);</span>
+<span class="nc" id="L840">            this.panelMenuPrincipal.setVisible(false);</span>
+<span class="nc" id="L841">            setPlayerValues();</span>
+<span class="nc" id="L842">            setPlayersToSelect();</span>
+        } else {
+<span class="nc" id="L844">            JOptionPane.showMessageDialog(this, &quot;No hay jugadores registrados&quot;, &quot;Advertencia&quot;, JOptionPane.WARNING_MESSAGE);</span>
+        }
+<span class="nc" id="L846">    }//GEN-LAST:event_btnConfigurarPartidaMouseReleased</span>
+
+    private void nrComboBoxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nrComboBoxFocusLost
+        // TODO add your handling code here:
+<span class="nc" id="L850">        this.players = Integer.parseInt((String) this.nrComboBox.getSelectedItem());</span>
+<span class="nc" id="L851">        setPlayerValues();</span>
+<span class="nc" id="L852">    }//GEN-LAST:event_nrComboBoxFocusLost</span>
+
+    private void setBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setBtnActionPerformed
+        // TODO add your handling code here:
+<span class="nc bnc" id="L856" title="All 2 branches missed.">        if (addPlayersToParty()) {</span>
+<span class="nc" id="L857">            this.configurado = true;</span>
+<span class="nc" id="L858">            this.panelConfigurarPartida.setVisible(false);</span>
+<span class="nc" id="L859">            this.panelConfigurarPartida.setEnabled(false);</span>
+<span class="nc" id="L860">            this.panelMenuPrincipal.setEnabled(true);</span>
+<span class="nc" id="L861">            this.panelMenuPrincipal.setVisible(true);</span>
+        } else {
+<span class="nc" id="L863">            this.configurado = false;</span>
+<span class="nc" id="L864">            JOptionPane.showMessageDialog(this, &quot;Todos los jugadores deben de ser distintos con colores distintos&quot;, &quot;Advertencia&quot;, JOptionPane.WARNING_MESSAGE);</span>
+        }
+<span class="nc" id="L866">    }//GEN-LAST:event_setBtnActionPerformed</span>
+
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L870">        this.panelConfigurarPartida.setVisible(false);</span>
+<span class="nc" id="L871">        this.panelConfigurarPartida.setEnabled(false);</span>
+<span class="nc" id="L872">        this.panelMenuPrincipal.setEnabled(true);</span>
+<span class="nc" id="L873">        this.panelMenuPrincipal.setVisible(true);</span>
+<span class="nc" id="L874">    }//GEN-LAST:event_cancelBtnActionPerformed</span>
+
+    public boolean addPlayersToParty() {
+<span class="nc" id="L877">        boolean flag = true;</span>
+<span class="nc" id="L878">        this.playerNames.clear();</span>
+<span class="nc" id="L879">        this.playerColors.clear();</span>
+<span class="nc" id="L880">        this.playerNames.add((String) selectPlayer1ComboBox.getSelectedItem());</span>
+<span class="nc" id="L881">        this.playerColors.add((String) color1ComboBox.getSelectedItem());</span>
+<span class="nc bnc" id="L882" title="All 4 branches missed.">        if (this.playerNames.contains((String) selectPlayer2ComboBox.getSelectedItem()) || this.playerColors.contains((String) color2ComboBox.getSelectedItem())) {</span>
+<span class="nc" id="L883">            flag = false;</span>
+        } else {
+<span class="nc" id="L885">            this.playerNames.add((String) selectPlayer2ComboBox.getSelectedItem());</span>
+<span class="nc" id="L886">            this.playerColors.add((String) color2ComboBox.getSelectedItem());</span>
+        }
+<span class="nc bnc" id="L888" title="All 2 branches missed.">        if (this.players &gt;= 3) {</span>
+<span class="nc bnc" id="L889" title="All 4 branches missed.">            if (this.playerNames.contains((String) selectPlayer3ComboBox.getSelectedItem()) || this.playerColors.contains((String) color3ComboBox.getSelectedItem())) {</span>
+<span class="nc" id="L890">                flag = false;</span>
+            } else {
+<span class="nc" id="L892">                this.playerNames.add((String) selectPlayer3ComboBox.getSelectedItem());</span>
+<span class="nc" id="L893">                this.playerColors.add((String) color3ComboBox.getSelectedItem());</span>
+            }
+        }
+<span class="nc bnc" id="L896" title="All 2 branches missed.">        if (this.players &gt;= 4) {</span>
+<span class="nc bnc" id="L897" title="All 4 branches missed.">            if (this.playerNames.contains((String) selectPlayer4ComboBox.getSelectedItem()) || this.playerColors.contains((String) color4ComboBox.getSelectedItem())) {</span>
+<span class="nc" id="L898">                flag = false;</span>
+            } else {
+<span class="nc" id="L900">                this.playerNames.add((String) selectPlayer4ComboBox.getSelectedItem());</span>
+<span class="nc" id="L901">                this.playerColors.add((String) color4ComboBox.getSelectedItem());</span>
+            }
+        }
+<span class="nc bnc" id="L904" title="All 2 branches missed.">        if (this.players &gt;= 5) {</span>
+<span class="nc bnc" id="L905" title="All 4 branches missed.">            if (this.playerNames.contains((String) selectPlayer5ComboBox.getSelectedItem()) || this.playerColors.contains((String) color5ComboBox.getSelectedItem())) {</span>
+<span class="nc" id="L906">                flag = false;</span>
+            } else {
+<span class="nc" id="L908">                this.playerNames.add((String) selectPlayer5ComboBox.getSelectedItem());</span>
+<span class="nc" id="L909">                this.playerColors.add((String) color5ComboBox.getSelectedItem());</span>
+            }
+        }
+<span class="nc bnc" id="L912" title="All 2 branches missed.">        if (this.players &gt;= 6) {</span>
+<span class="nc bnc" id="L913" title="All 4 branches missed.">            if (this.playerNames.contains((String) selectPlayer6ComboBox.getSelectedItem()) || this.playerColors.contains((String) color6ComboBox.getSelectedItem())) {</span>
+<span class="nc" id="L914">                flag = false;</span>
+            } else {
+<span class="nc" id="L916">                this.playerNames.add((String) selectPlayer6ComboBox.getSelectedItem());</span>
+<span class="nc" id="L917">                this.playerColors.add((String) color6ComboBox.getSelectedItem());</span>
+            }
+        }
+<span class="nc bnc" id="L920" title="All 2 branches missed.">        if (this.players &gt;= 7) {</span>
+<span class="nc bnc" id="L921" title="All 4 branches missed.">            if (this.playerNames.contains((String) selectPlayer7ComboBox.getSelectedItem()) || this.playerColors.contains((String) color7ComboBox.getSelectedItem())) {</span>
+<span class="nc" id="L922">                flag = false;</span>
+            } else {
+<span class="nc" id="L924">                this.playerNames.add((String) selectPlayer7ComboBox.getSelectedItem());</span>
+<span class="nc" id="L925">                this.playerColors.add((String) color7ComboBox.getSelectedItem());</span>
+            }
+        }
+<span class="nc bnc" id="L928" title="All 2 branches missed.">        if (this.players &gt;= 8) {</span>
+<span class="nc bnc" id="L929" title="All 4 branches missed.">            if (this.playerNames.contains((String) selectPlayer8ComboBox.getSelectedItem()) || this.playerColors.contains((String) color8ComboBox.getSelectedItem())) {</span>
+<span class="nc" id="L930">                flag = false;</span>
+            } else {
+<span class="nc" id="L932">                this.playerNames.add((String) selectPlayer8ComboBox.getSelectedItem());</span>
+<span class="nc" id="L933">                this.playerColors.add((String) color8ComboBox.getSelectedItem());</span>
+            }
+        }
+<span class="nc" id="L936">        return flag;</span>
+    }
+
+    public void setPlayersToSelect() {
+<span class="nc" id="L940">        this.selectPlayer1ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));</span>
+<span class="nc" id="L941">        this.selectPlayer2ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));</span>
+<span class="nc" id="L942">        this.selectPlayer3ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));</span>
+<span class="nc" id="L943">        this.selectPlayer4ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));</span>
+<span class="nc" id="L944">        this.selectPlayer5ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));</span>
+<span class="nc" id="L945">        this.selectPlayer6ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));</span>
+<span class="nc" id="L946">        this.selectPlayer7ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));</span>
+<span class="nc" id="L947">        this.selectPlayer8ComboBox.setModel(new DefaultComboBoxModel(this.myManager.getPlayerNames().toArray()));</span>
+<span class="nc" id="L948">    }</span>
+
+    public void setPlayerValues() {
+<span class="nc bnc" id="L951" title="All 2 branches missed.">        if (this.players &lt; 3) {</span>
+<span class="nc" id="L952">            this.player3Lbl.setVisible(false);</span>
+<span class="nc" id="L953">            this.player3Lbl.setEnabled(false);</span>
+<span class="nc" id="L954">            this.selectPlayer3Lbl.setVisible(false);</span>
+<span class="nc" id="L955">            this.selectPlayer3Lbl.setEnabled(false);</span>
+<span class="nc" id="L956">            this.selectPlayer3ComboBox.setVisible(false);</span>
+<span class="nc" id="L957">            this.selectPlayer3ComboBox.setEnabled(false);</span>
+<span class="nc" id="L958">            this.color3Lbl.setVisible(false);</span>
+<span class="nc" id="L959">            this.color3Lbl.setEnabled(false);</span>
+<span class="nc" id="L960">            this.color3ComboBox.setVisible(false);</span>
+<span class="nc" id="L961">            this.color3ComboBox.setEnabled(false);</span>
+        } else {
+<span class="nc" id="L963">            this.player3Lbl.setVisible(true);</span>
+<span class="nc" id="L964">            this.player3Lbl.setEnabled(true);</span>
+<span class="nc" id="L965">            this.selectPlayer3Lbl.setVisible(true);</span>
+<span class="nc" id="L966">            this.selectPlayer3Lbl.setEnabled(true);</span>
+<span class="nc" id="L967">            this.selectPlayer3ComboBox.setVisible(true);</span>
+<span class="nc" id="L968">            this.selectPlayer3ComboBox.setEnabled(true);</span>
+<span class="nc" id="L969">            this.color3Lbl.setVisible(true);</span>
+<span class="nc" id="L970">            this.color3Lbl.setEnabled(true);</span>
+<span class="nc" id="L971">            this.color3ComboBox.setVisible(true);</span>
+<span class="nc" id="L972">            this.color3ComboBox.setEnabled(true);</span>
+        }
+<span class="nc bnc" id="L974" title="All 2 branches missed.">        if (this.players &lt; 4) {</span>
+<span class="nc" id="L975">            this.player4Lbl.setVisible(false);</span>
+<span class="nc" id="L976">            this.player4Lbl.setEnabled(false);</span>
+<span class="nc" id="L977">            this.selectPlayer4Lbl.setVisible(false);</span>
+<span class="nc" id="L978">            this.selectPlayer4Lbl.setEnabled(false);</span>
+<span class="nc" id="L979">            this.selectPlayer4ComboBox.setVisible(false);</span>
+<span class="nc" id="L980">            this.selectPlayer4ComboBox.setEnabled(false);</span>
+<span class="nc" id="L981">            this.color4Lbl.setVisible(false);</span>
+<span class="nc" id="L982">            this.color4Lbl.setEnabled(false);</span>
+<span class="nc" id="L983">            this.color4ComboBox.setVisible(false);</span>
+<span class="nc" id="L984">            this.color4ComboBox.setEnabled(false);</span>
+        } else {
+<span class="nc" id="L986">            this.player4Lbl.setVisible(true);</span>
+<span class="nc" id="L987">            this.player4Lbl.setEnabled(true);</span>
+<span class="nc" id="L988">            this.selectPlayer4Lbl.setVisible(true);</span>
+<span class="nc" id="L989">            this.selectPlayer4Lbl.setEnabled(true);</span>
+<span class="nc" id="L990">            this.selectPlayer4ComboBox.setVisible(true);</span>
+<span class="nc" id="L991">            this.selectPlayer4ComboBox.setEnabled(true);</span>
+<span class="nc" id="L992">            this.color4Lbl.setVisible(true);</span>
+<span class="nc" id="L993">            this.color4Lbl.setEnabled(true);</span>
+<span class="nc" id="L994">            this.color4ComboBox.setVisible(true);</span>
+<span class="nc" id="L995">            this.color4ComboBox.setEnabled(true);</span>
+        }
+<span class="nc bnc" id="L997" title="All 2 branches missed.">        if (this.players &lt; 5) {</span>
+<span class="nc" id="L998">            this.player5Lbl.setVisible(false);</span>
+<span class="nc" id="L999">            this.player5Lbl.setEnabled(false);</span>
+<span class="nc" id="L1000">            this.selectPlayer5Lbl.setVisible(false);</span>
+<span class="nc" id="L1001">            this.selectPlayer5Lbl.setEnabled(false);</span>
+<span class="nc" id="L1002">            this.selectPlayer5ComboBox.setVisible(false);</span>
+<span class="nc" id="L1003">            this.selectPlayer5ComboBox.setEnabled(false);</span>
+<span class="nc" id="L1004">            this.color5Lbl.setVisible(false);</span>
+<span class="nc" id="L1005">            this.color5Lbl.setEnabled(false);</span>
+<span class="nc" id="L1006">            this.color5ComboBox.setVisible(false);</span>
+<span class="nc" id="L1007">            this.color5ComboBox.setEnabled(false);</span>
+        } else {
+<span class="nc" id="L1009">            this.player5Lbl.setVisible(true);</span>
+<span class="nc" id="L1010">            this.player5Lbl.setEnabled(true);</span>
+<span class="nc" id="L1011">            this.selectPlayer5Lbl.setVisible(true);</span>
+<span class="nc" id="L1012">            this.selectPlayer5Lbl.setEnabled(true);</span>
+<span class="nc" id="L1013">            this.selectPlayer5ComboBox.setVisible(true);</span>
+<span class="nc" id="L1014">            this.selectPlayer5ComboBox.setEnabled(true);</span>
+<span class="nc" id="L1015">            this.color5Lbl.setVisible(true);</span>
+<span class="nc" id="L1016">            this.color5Lbl.setEnabled(true);</span>
+<span class="nc" id="L1017">            this.color5ComboBox.setVisible(true);</span>
+<span class="nc" id="L1018">            this.color5ComboBox.setEnabled(true);</span>
+        }
+<span class="nc bnc" id="L1020" title="All 2 branches missed.">        if (this.players &lt; 6) {</span>
+<span class="nc" id="L1021">            this.player6Lbl.setVisible(false);</span>
+<span class="nc" id="L1022">            this.player6Lbl.setEnabled(false);</span>
+<span class="nc" id="L1023">            this.selectPlayer6Lbl.setVisible(false);</span>
+<span class="nc" id="L1024">            this.selectPlayer6Lbl.setEnabled(false);</span>
+<span class="nc" id="L1025">            this.selectPlayer6ComboBox.setVisible(false);</span>
+<span class="nc" id="L1026">            this.selectPlayer6ComboBox.setEnabled(false);</span>
+<span class="nc" id="L1027">            this.color6Lbl.setVisible(false);</span>
+<span class="nc" id="L1028">            this.color6Lbl.setEnabled(false);</span>
+<span class="nc" id="L1029">            this.color6ComboBox.setVisible(false);</span>
+<span class="nc" id="L1030">            this.color6ComboBox.setEnabled(false);</span>
+        } else {
+<span class="nc" id="L1032">            this.player6Lbl.setVisible(true);</span>
+<span class="nc" id="L1033">            this.player6Lbl.setEnabled(true);</span>
+<span class="nc" id="L1034">            this.selectPlayer6Lbl.setVisible(true);</span>
+<span class="nc" id="L1035">            this.selectPlayer6Lbl.setEnabled(true);</span>
+<span class="nc" id="L1036">            this.selectPlayer6ComboBox.setVisible(true);</span>
+<span class="nc" id="L1037">            this.selectPlayer6ComboBox.setEnabled(true);</span>
+<span class="nc" id="L1038">            this.color6Lbl.setVisible(true);</span>
+<span class="nc" id="L1039">            this.color6Lbl.setEnabled(true);</span>
+<span class="nc" id="L1040">            this.color6ComboBox.setVisible(true);</span>
+<span class="nc" id="L1041">            this.color6ComboBox.setEnabled(true);</span>
+        }
+<span class="nc bnc" id="L1043" title="All 2 branches missed.">        if (this.players &lt; 7) {</span>
+<span class="nc" id="L1044">            this.player7Lbl.setVisible(false);</span>
+<span class="nc" id="L1045">            this.player7Lbl.setEnabled(false);</span>
+<span class="nc" id="L1046">            this.selectPlayer7Lbl.setVisible(false);</span>
+<span class="nc" id="L1047">            this.selectPlayer7Lbl.setEnabled(false);</span>
+<span class="nc" id="L1048">            this.selectPlayer7ComboBox.setVisible(false);</span>
+<span class="nc" id="L1049">            this.selectPlayer7ComboBox.setEnabled(false);</span>
+<span class="nc" id="L1050">            this.color7Lbl.setVisible(false);</span>
+<span class="nc" id="L1051">            this.color7Lbl.setEnabled(false);</span>
+<span class="nc" id="L1052">            this.color7ComboBox.setVisible(false);</span>
+<span class="nc" id="L1053">            this.color7ComboBox.setEnabled(false);</span>
+        } else {
+<span class="nc" id="L1055">            this.player7Lbl.setVisible(true);</span>
+<span class="nc" id="L1056">            this.player7Lbl.setEnabled(true);</span>
+<span class="nc" id="L1057">            this.selectPlayer7Lbl.setVisible(true);</span>
+<span class="nc" id="L1058">            this.selectPlayer7Lbl.setEnabled(true);</span>
+<span class="nc" id="L1059">            this.selectPlayer7ComboBox.setVisible(true);</span>
+<span class="nc" id="L1060">            this.selectPlayer7ComboBox.setEnabled(true);</span>
+<span class="nc" id="L1061">            this.color7Lbl.setVisible(true);</span>
+<span class="nc" id="L1062">            this.color7Lbl.setEnabled(true);</span>
+<span class="nc" id="L1063">            this.color7ComboBox.setVisible(true);</span>
+<span class="nc" id="L1064">            this.color7ComboBox.setEnabled(true);</span>
+        }
+<span class="nc bnc" id="L1066" title="All 2 branches missed.">        if (this.players &lt; 8) {</span>
+<span class="nc" id="L1067">            this.player8Lbl.setVisible(false);</span>
+<span class="nc" id="L1068">            this.player8Lbl.setEnabled(false);</span>
+<span class="nc" id="L1069">            this.selectPlayer8Lbl.setVisible(false);</span>
+<span class="nc" id="L1070">            this.selectPlayer8Lbl.setEnabled(false);</span>
+<span class="nc" id="L1071">            this.selectPlayer8ComboBox.setVisible(false);</span>
+<span class="nc" id="L1072">            this.selectPlayer8ComboBox.setEnabled(false);</span>
+<span class="nc" id="L1073">            this.color8Lbl.setVisible(false);</span>
+<span class="nc" id="L1074">            this.color8Lbl.setEnabled(false);</span>
+<span class="nc" id="L1075">            this.color8ComboBox.setVisible(false);</span>
+<span class="nc" id="L1076">            this.color8ComboBox.setEnabled(false);</span>
+        } else {
+<span class="nc" id="L1078">            this.player8Lbl.setVisible(true);</span>
+<span class="nc" id="L1079">            this.player8Lbl.setEnabled(true);</span>
+<span class="nc" id="L1080">            this.selectPlayer8Lbl.setVisible(true);</span>
+<span class="nc" id="L1081">            this.selectPlayer8Lbl.setEnabled(true);</span>
+<span class="nc" id="L1082">            this.selectPlayer8ComboBox.setVisible(true);</span>
+<span class="nc" id="L1083">            this.selectPlayer8ComboBox.setEnabled(true);</span>
+<span class="nc" id="L1084">            this.color8Lbl.setVisible(true);</span>
+<span class="nc" id="L1085">            this.color8Lbl.setEnabled(true);</span>
+<span class="nc" id="L1086">            this.color8ComboBox.setVisible(true);</span>
+<span class="nc" id="L1087">            this.color8ComboBox.setEnabled(true);</span>
+        }
+<span class="nc" id="L1089">    }</span>
+
+    public boolean verificarQueSeaInt(String numero, int min, int max) {
+<span class="nc" id="L1092">        boolean ok = true;</span>
+        try {
+<span class="nc bnc" id="L1094" title="All 4 branches missed.">            if (Integer.parseInt(numero) &lt; min &amp;&amp; Integer.parseInt(numero) &gt; max) {</span>
+<span class="nc" id="L1095">                ok = false;</span>
+            }
+<span class="nc" id="L1097">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L1098">            ok = false;</span>
+<span class="nc" id="L1099">        }</span>
+<span class="nc" id="L1100">        return ok;</span>
+
+    }
+
+    public boolean isEmpty(String aString) {
+<span class="nc" id="L1105">        boolean returnVal = false;</span>
+<span class="nc bnc" id="L1106" title="All 4 branches missed.">        if (aString.trim().equals(&quot;&quot;) || aString.equals(null)) {</span>
+<span class="nc" id="L1107">            returnVal = true;</span>
+        }
+<span class="nc" id="L1109">        return returnVal;</span>
+    }
+
+    public void saveImage(File f, String fileName) {
+<span class="nc" id="L1113">        int width = 963;    //width of the image</span>
+<span class="nc" id="L1114">        int height = 640;   //height of the image</span>
+<span class="nc" id="L1115">        BufferedImage image = null;</span>
+
+        try {
+<span class="nc" id="L1118">            image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);</span>
+<span class="nc" id="L1119">            image = ImageIO.read(f);</span>
+<span class="nc" id="L1120">        } catch (IOException e) {</span>
+<span class="nc" id="L1121">            JOptionPane.showMessageDialog(this, &quot;Error leyendo archivo&quot;, &quot;Advertencia&quot;, JOptionPane.WARNING_MESSAGE);</span>
+<span class="nc" id="L1122">        }</span>
+
+        try {
+<span class="nc" id="L1125">            f = new File(&quot;images/&quot; + fileName + &quot;.jpg&quot;);  //output file path</span>
+<span class="nc" id="L1126">            ImageIO.write(image, &quot;jpg&quot;, f);</span>
+<span class="nc" id="L1127">        } catch (IOException e) {</span>
+<span class="nc" id="L1128">            JOptionPane.showMessageDialog(this, &quot;Error guardando imagen&quot;, &quot;Advertencia&quot;, JOptionPane.WARNING_MESSAGE);</span>
+<span class="nc" id="L1129">        }</span>
+<span class="nc" id="L1130">    }</span>
+>>>>>>> d9fcaaba0d33d776b4fcebbd4c2eec9149968548
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
