@@ -107,4 +107,6 @@ public class PlayerTest extends TestCase {
 		gameMaster.movePlayer(gameMaster.getCurrentPlayerIndex(),1);
         }
         
+        
+        
 }

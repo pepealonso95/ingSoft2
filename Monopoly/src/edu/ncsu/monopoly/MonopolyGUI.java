@@ -8,6 +8,7 @@ public interface MonopolyGUI {
     public boolean isDrawCardButtonEnabled();
     public boolean isEndTurnButtonEnabled();
 	public boolean isGetOutOfJailButtonEnabled();
+                public boolean isRollDiceButtonEnabled();
     public boolean isTradeButtonEnabled(int i);
 	public void movePlayer(int index, int from, int to);
     public RespondDialog openRespondDialog(TradeDeal deal);

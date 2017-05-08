@@ -9,7 +9,7 @@ import edu.ncsu.monopoly.TradeDeal;
 import edu.ncsu.monopoly.TradeDialog;
 
 public class MockGUI implements MonopolyGUI {
-    private boolean btnDrawCardState, btnEndTurnState, btnGetOutOfJailState;
+    private boolean btnDrawCardState, btnEndTurnState, btnGetOutOfJailState, btnRollDiceState;
     private boolean[] btnTradeState = new boolean[2];
 
     public void enableEndTurnBtn(int playerIndex) {
@@ -41,6 +41,10 @@ public class MockGUI implements MonopolyGUI {
 
     public boolean isTradeButtonEnabled(int i) {
         return btnTradeState[i];
+    }
+    
+    public boolean isRollDiceButtonEnabled() {
+        return true;
     }
 
     public void movePlayer(int index, int from, int to) {

@@ -6,6 +6,7 @@
 package edu.ncsu.monopoly;
 
 import java.io.Serializable;
+import javax.swing.ImageIcon;
 /**
  *
  * @author Dolores
@@ -15,61 +16,70 @@ public class PlayerInfo implements Serializable{
         private String picture;    
         private int gamesPlayed;
         private int gamesWon;
+        private ImageIcon image;
 
 
 
-<span class="fc" id="L21">    public PlayerInfo(String name) {</span>
-<span class="fc" id="L22">        this.name = name;</span>
-<span class="fc" id="L23">        this.picture = &quot;/images/default.jpg&quot;;</span>
-<span class="fc" id="L24">        this.gamesPlayed = 0;</span>
-<span class="fc" id="L25">        this.gamesWon = 0;</span>
-<span class="fc" id="L26">    }</span>
+<span class="fc" id="L23">    public PlayerInfo(String name) {</span>
+<span class="fc" id="L24">        this.name = name;</span>
+<span class="fc" id="L25">        this.picture = &quot;/images/default.jpg&quot;;</span>
+<span class="fc" id="L26">        this.gamesPlayed = 0;</span>
+<span class="fc" id="L27">        this.gamesWon = 0;</span>
+<span class="fc" id="L28">        this.image = new ImageIcon(getClass().getResource(&quot;default.jpg&quot;));</span>
+<span class="fc" id="L29">    }</span>
 
     public String getName() {
-<span class="fc" id="L29">        return name;</span>
+<span class="fc" id="L32">        return name;</span>
     }
 
     public void setName(String name) {
-<span class="fc" id="L33">        this.name = name;</span>
-<span class="fc" id="L34">    }</span>
+<span class="fc" id="L36">        this.name = name;</span>
+<span class="fc" id="L37">    }</span>
 
     public String getPicture() {
-<span class="nc" id="L37">        return picture;</span>
+<span class="fc" id="L40">        return picture;</span>
     }
 
     public void setPicture(String picture) {
-<span class="nc" id="L41">        this.picture = picture;</span>
-<span class="nc" id="L42">    }</span>
+<span class="fc" id="L44">        this.picture = picture;</span>
+<span class="fc" id="L45">    }</span>
 
+    public ImageIcon getImage() {
+<span class="nc" id="L48">        return image;</span>
+    }
+
+    public void saveImage(ImageIcon image) {
+<span class="nc" id="L52">        this.image = image;</span>
+<span class="nc" id="L53">    }</span>
     public int getGamesPlayed() {
-<span class="nc" id="L45">        return gamesPlayed;</span>
+<span class="nc" id="L55">        return gamesPlayed;</span>
     }
 
     public void setGamesPlayed(int gamesPlayed) {
-<span class="nc" id="L49">        this.gamesPlayed = gamesPlayed;</span>
-<span class="nc" id="L50">    }</span>
+<span class="nc" id="L59">        this.gamesPlayed = gamesPlayed;</span>
+<span class="nc" id="L60">    }</span>
     
      public void addGamePlayed() {
-<span class="nc" id="L53">        this.gamesPlayed++;</span>
-<span class="nc" id="L54">    }</span>
+<span class="nc" id="L63">        this.gamesPlayed++;</span>
+<span class="nc" id="L64">    }</span>
 
     public int getGamesWon() {
-<span class="nc" id="L57">        return gamesWon;</span>
+<span class="nc" id="L67">        return gamesWon;</span>
     }
 
     public void setGamesWon(int gamesWon) {
-<span class="nc" id="L61">        this.gamesWon = gamesWon;</span>
-<span class="nc" id="L62">    }</span>
+<span class="nc" id="L71">        this.gamesWon = gamesWon;</span>
+<span class="nc" id="L72">    }</span>
     
     
      public void addGameWon() {
-<span class="nc" id="L66">        this.gamesWon++;</span>
-<span class="nc" id="L67">    }</span>
+<span class="nc" id="L76">        this.gamesWon++;</span>
+<span class="nc" id="L77">    }</span>
     
     
     @Override
     public String toString() {
-<span class="nc" id="L72">        return name +&quot; - Partidas jugadas: &quot; + gamesPlayed + &quot; - Partidas ganadas: &quot; + gamesWon;</span>
+<span class="nc" id="L82">        return name +&quot; - Partidas jugadas: &quot; + gamesPlayed + &quot; - Partidas ganadas: &quot; + gamesWon;</span>
     }
     
     

@@ -16,7 +16,7 @@ public class GoToJailCardTest extends TestCase {
     protected void setUp() {
 		gameMaster = GameMaster.instance();
 		gameMaster.setGameBoard(new GameBoardCCJail());
-		gameMaster.setNumberOfPlayers(1);
+		gameMaster.setNumberOfPlayers(2);
 		gameMaster.reset();
 		gameMaster.setGUI(new MockGUI());
 		gameMaster.getGameBoard().addCard(jailCard);
@@ -44,5 +44,11 @@ public class GoToJailCardTest extends TestCase {
 		Cell cell = gameMaster.getCurrentPlayer().getPosition();
 		assertEquals(gameMaster.getGameBoard().queryCell("Jail"), cell);
 		assertTrue(gameMaster.getGUI().isEndTurnButtonEnabled());
+                gameMaster.btnEndTurnClicked();
+                gameMaster.btnEndTurnClicked();;
+		assertTrue(gameMaster.getGUI().isGetOutOfJailButtonEnabled());
+                gameMaster.getCurrentPlayer().setMoney(100);
+                gameMaster.btnGetOutOfJailClicked();
+		assertTrue(gameMaster.getGUI().isRollDiceButtonEnabled());
     }
 }

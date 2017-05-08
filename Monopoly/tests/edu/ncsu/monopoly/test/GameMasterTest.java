@@ -10,6 +10,7 @@ import edu.ncsu.monopoly.RespondDialog;
 import edu.ncsu.monopoly.TradeDeal;
 import edu.ncsu.monopoly.TradeDialog;
 import edu.ncsu.monopoly.boardScenarios.GameBoardFull;
+import java.awt.Color;
 
 import junit.framework.TestCase;
 
@@ -19,8 +20,6 @@ public class GameMasterTest extends TestCase {
     Manager myManager;
 
     protected void setUp() throws Exception {
-        myManager = new Manager();
-        gameMaster = GameMaster.newInstance(myManager);
         gameMaster = GameMaster.instance();
         gameMaster.setGameBoard(new GameBoardFull());
         gameMaster.setNumberOfPlayers(2);
@@ -36,11 +35,54 @@ public class GameMasterTest extends TestCase {
         assertEquals(gameMaster.getInitAmountOfMoney(),
                 gameMaster.getPlayer(0).getMoney());
     }
-
-    public void testManager() {
-        assertEquals(gameMaster.getManager(),
-                myManager);
+    
+    public void testPlayerColorRed(){
+        gameMaster.getCurrentPlayer().setColor("rojo");
+        assertEquals(gameMaster.getCurrentPlayer().getColor(),Color.red);
     }
+    
+    public void testPlayerColorBlue(){
+        gameMaster.getCurrentPlayer().setColor("azul");
+        assertEquals(gameMaster.getCurrentPlayer().getColor(),Color.blue);
+    }
+    
+    public void testPlayerColorOrange(){
+        gameMaster.getCurrentPlayer().setColor("naranja");
+        assertEquals(gameMaster.getCurrentPlayer().getColor(),Color.orange);
+    }
+    
+    public void testPlayerColorPink(){
+        gameMaster.getCurrentPlayer().setColor("rosado");
+        assertEquals(gameMaster.getCurrentPlayer().getColor(),Color.pink);
+    }
+    
+    public void testPlayerColorYellow(){
+        gameMaster.getCurrentPlayer().setColor("amarillo");
+        assertEquals(gameMaster.getCurrentPlayer().getColor(),Color.yellow);
+    }
+    
+    public void testPlayerColorGreen(){
+        gameMaster.getCurrentPlayer().setColor("verde");
+        assertEquals(gameMaster.getCurrentPlayer().getColor(),Color.green);
+    }
+    
+    public void testPlayerColorBlack(){
+        gameMaster.getCurrentPlayer().setColor("negro");
+        assertEquals(gameMaster.getCurrentPlayer().getColor(),Color.black);
+    }
+    
+    public void testPlayerColorWhite(){
+        gameMaster.getCurrentPlayer().setColor("blanco");
+        assertEquals(gameMaster.getCurrentPlayer().getColor(),Color.white);
+    }
+/*
+    public void testManager() {
+        
+        myManager = new Manager();
+        GameMaster testMaster = GameMaster.newInstance(myManager);
+        assertEquals(testMaster.getManager(),
+                myManager);
+    }*/
     
     public void testReset() {
         gameMaster.movePlayer(0, 3);
@@ -86,11 +128,6 @@ public class GameMasterTest extends TestCase {
         gameMaster.switchTurn();
     }
 
-    public void testEndGame() {
-        assertEquals(0, gameMaster.getTurn());
-        gameMaster.getPlayer(0).setMoney(0);
-    }
-
     public void testButtonPurchasePropertyClicked() {
         MonopolyGUI gui = gameMaster.getGUI();
         gameMaster.movePlayer(0, 1);
@@ -117,4 +154,6 @@ public class GameMasterTest extends TestCase {
         assertEquals(1640, gameMaster.getPlayer(0).getMoney());
         assertEquals(1300, gameMaster.getPlayer(1).getMoney());
     }
+    
+
 }

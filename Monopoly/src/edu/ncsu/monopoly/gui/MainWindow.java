@@ -106,6 +106,11 @@ public class MainWindow extends JFrame implements MonopolyGUI{
         int currentPlayerIndex = GameMaster.instance().getCurrentPlayerIndex();
         return playerPanels[currentPlayerIndex].isEndTurnButtonEnabled();
     }
+    
+    public boolean isRollDiceButtonEnabled() {
+        int currentPlayerIndex = GameMaster.instance().getCurrentPlayerIndex();
+        return playerPanels[currentPlayerIndex].isRollDiceButtonEnabled();
+    }
 
 	public boolean isGetOutOfJailButtonEnabled() {
 		int currentPlayerIndex = GameMaster.instance().getCurrentPlayerIndex();

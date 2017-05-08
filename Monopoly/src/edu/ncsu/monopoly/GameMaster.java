@@ -7,6 +7,10 @@ import javax.swing.JOptionPane;
 
 public class GameMaster {
 
+    public static GameMaster instance(Manager myManager) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     private Manager myManager;
     private static GameMaster gameMaster;
     static final public int MAX_PLAYER = 8;
@@ -95,6 +99,7 @@ public class GameMaster {
             gui.setPurchasePropertyEnabled(false);
             gui.setRollDiceEnabled(false);
             gui.setTradeEnabled(getCurrentPlayerIndex(), false);
+            switchTurn();
         } else {
             gui.setRollDiceEnabled(true);
             gui.setBuyHouseEnabled(getCurrentPlayer().canBuyHouse());
@@ -361,6 +366,7 @@ public class GameMaster {
     
     public boolean checkEnd(){
         if(this.losers.size()==(this.players.size()-1)){
+            this.ended = true;
             gui.endGame();
             gui.setBuyHouseEnabled(false);
             gui.setDrawCardEnabled(false);

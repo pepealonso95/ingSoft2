@@ -6,6 +6,7 @@
 package edu.ncsu.monopoly;
 
 import java.io.Serializable;
+import javax.swing.ImageIcon;
 /**
  *
  * @author Dolores
@@ -15,6 +16,7 @@ public class PlayerInfo implements Serializable{
         private String picture;    
         private int gamesPlayed;
         private int gamesWon;
+        private ImageIcon image;
 
 
 
@@ -23,6 +25,7 @@ public class PlayerInfo implements Serializable{
         this.picture = "/images/default.jpg";
         this.gamesPlayed = 0;
         this.gamesWon = 0;
+        this.image = new ImageIcon(getClass().getResource("default.jpg"));
     }
 
     public String getName() {
@@ -41,6 +44,13 @@ public class PlayerInfo implements Serializable{
         this.picture = picture;
     }
 
+    public ImageIcon getImage() {
+        return image;
+    }
+
+    public void saveImage(ImageIcon image) {
+        this.image = image;
+    }
     public int getGamesPlayed() {
         return gamesPlayed;
     }

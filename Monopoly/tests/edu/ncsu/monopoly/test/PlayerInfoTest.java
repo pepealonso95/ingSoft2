@@ -50,8 +50,8 @@ public class PlayerInfoTest extends TestCase{
      @Test
     public void testGetPicture() {
         PlayerInfo instance = new PlayerInfo("dolo");
-        String expResult = "/images/default.png";
-        String result = instance.getName();
+        String expResult = "/images/default.jpg";
+        String result = instance.getPicture();
         assertEquals(expResult, result);
     }
 

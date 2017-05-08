@@ -40,7 +40,11 @@ public class GUICell extends JPanel {
         Player player = GameMaster.instance().getPlayer(index);
         lblPlayers[index].setText(player.getName().substring(0, 1));
         lblPlayers[index].setOpaque(true);
+        if(player.getColor()!=Color.gray){
         lblPlayers[index].setBackground(player.getColor());
+        } else{
+            lblPlayers[index].setIcon(player.getImage());
+        }
                 //ImageIcon icon = new ImageIcon(getClass().getResource("/addIcon.png"));
         //lblPlayers[index].setIcon(icon);
     }

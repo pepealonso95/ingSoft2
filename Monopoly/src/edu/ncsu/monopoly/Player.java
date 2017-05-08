@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
+import javax.swing.ImageIcon;
 
 
 public class Player {
@@ -13,6 +14,7 @@ public class Player {
 	private int money;
 	private String name;
         private String picture;
+        private ImageIcon image;
         private Color color;
 	private Cell position;    
         
@@ -121,6 +123,10 @@ public class Player {
         
         public String getPicture(){
                 return picture;
+        }
+        
+        public ImageIcon getImage(){
+            return this.image;
         }
         
         public Color getColor(){
@@ -273,6 +279,12 @@ public class Player {
                 this.picture = picture;
         }
         
+        
+        public void saveImage(ImageIcon img){
+                this.image = img;
+        }
+        
+        
         public void setColor(String color){
             if(color == "rojo"){
                 this.color = Color.red;
@@ -288,8 +300,10 @@ public class Player {
                 this.color = Color.green;
             } else if(color == "negro"){
                 this.color = Color.black;
-            } else {
+            } else if(color == "blanco"){
                 this.color = Color.white;
+            }else{
+                this.color = Color.gray;
             }
         }
 
