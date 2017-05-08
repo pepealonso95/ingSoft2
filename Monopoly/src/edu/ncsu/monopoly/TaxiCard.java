@@ -15,13 +15,13 @@ public class TaxiCard extends Card {
     public void applyAction() {
         int pos = 0;
         while (pos <= 0 || pos > 6) {
-            String numberOfPlayers = JOptionPane.showInputDialog(null, "How many positions forward would you like to move?");
-            if (numberOfPlayers == null) {
+            String positionsToMove = JOptionPane.showInputDialog(null, "How many positions forward would you like to move?");
+            if (positionsToMove == null) {
                 JOptionPane.showMessageDialog(null, "Using a taxi card is mandatory");
             } else{
                 boolean isNumber = true;
                 try {
-                    pos = Integer.parseInt(numberOfPlayers);
+                    pos = Integer.parseInt(positionsToMove);
                 } catch (NumberFormatException e) {
                     isNumber = false;
                     JOptionPane.showMessageDialog(null, "Please input a number");
