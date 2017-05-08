@@ -23,7 +23,7 @@ public class MovePlayerCardTest extends TestCase {
 		gameMaster.getGameBoard().addCard(movePlayerCard);
     }
     
-    public void testJailCardLabel() {
+    public void testMovePlayerCardLabel() {
         assertEquals("Go to Blue 1", movePlayerCard.getLabel());
     }
     

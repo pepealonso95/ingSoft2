@@ -1,22 +1,39 @@
 package edu.ncsu.monopoly;
 
-import static java.awt.SystemColor.window;
 import javax.swing.JOptionPane;
 
 
 public class TaxiCard extends Card {
     
     private int type;
+    private String positionsToMove= "0";
 
     public TaxiCard(int cardType) {
         this.type = cardType;
+    }
+    
+    public TaxiCard(int cardType, String positions) {
+        this.type = cardType;
+        this.positionsToMove = positions;
+        
     }
 
     public void applyAction() {
         int pos = 0;
         while (pos <= 0 || pos > 6) {
-            String positionsToMove = JOptionPane.showInputDialog(null, "How many positions forward would you like to move?");
-            if (positionsToMove == null) {
+            if(this.positionsToMove == "0"){
+                this.positionsToMove = JOptionPane.showInputDialog(null, "How many positions forward would you like to move?");
+            }
+            pos = movePlayer(pos);
+        }
+    }
+
+    public int getCardType() {
+        return type;
+    }
+    
+    public int movePlayer(int pos){
+        if (positionsToMove == null) {
                 JOptionPane.showMessageDialog(null, "Using a taxi card is mandatory");
             } else{
                 boolean isNumber = true;
@@ -32,18 +49,15 @@ public class TaxiCard extends Card {
                     } else {
                         Player currentPlayer = GameMaster.instance().getCurrentPlayer();
                         GameMaster.instance().movePlayer(currentPlayer, pos);
+                        this.positionsToMove = "0";
                     }
                 }
             }
-        }
-    }
-
-    public int getCardType() {
-        return type;
+        return pos;
     }
 
     public String getLabel() {
-        return "Taxi moves you forward";
+        return "Taxi moves you forward "+positionsToMove+" positions";
     }
 
 }
