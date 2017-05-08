@@ -2,6 +2,7 @@ package edu.ncsu.monopoly.gui;
 
 import edu.ncsu.monopoly.*;
 import edu.ncsu.monopoly.boardScenarios.GameBoardCCJail;
+import edu.ncsu.monopoly.boardScenarios.GameBoardCCTaxi;
 import edu.ncsu.monopoly.boardScenarios.GameBoardFull;
 import java.util.*;
 import java.awt.event.*;
@@ -700,7 +701,7 @@ public class MainMenu extends javax.swing.JFrame {
         if (this.configurado) {
             GameMaster master = GameMaster.newInstance(this.myManager);
             MainWindow window = new MainWindow();
-            GameBoard gameBoard = new GameBoardCCJail();
+            GameBoard gameBoard = new GameBoardCCTaxi();
             master.setGameBoard(gameBoard);
             GameMaster.instance().setNumberOfPlayers(this.players);
             // String name1 = myManager.getPlayerList().get(CBplayer1.getSelectedIndex()).getName();

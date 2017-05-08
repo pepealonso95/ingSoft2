@@ -70,9 +70,6 @@ public class GameMaster {
         setAllButtonEnabled(false);
         getCurrentPlayer().getPosition().playAction();
         if (getCurrentPlayer().isBankrupt()) {
-            if(!this.losers.contains(this.turn)){
-                this.losers.add(this.turn);
-            }
             gui.setBuyHouseEnabled(false);
             gui.setDrawCardEnabled(false);
             gui.setEndTurnEnabled(false);
@@ -267,6 +264,10 @@ public class GameMaster {
             };
         }
     }
+    
+    public Manager getManager(){
+        return this.myManager;
+    }
 
     public void sendToJail(Player player) {
         int oldPosition = gameBoard.queryCellIndex(getCurrentPlayer().getPosition().getName());
@@ -321,12 +322,17 @@ public class GameMaster {
     }
 
     public void switchTurn() {
+        if(getCurrentPlayer().isBankrupt()){
+                if(!this.losers.contains(this.turn)){
+                    this.losers.add(this.turn);
+                }
+            }
         if(!checkEnd()){
             turn = (turn + 1) % getNumberOfPlayers();
-            while(this.losers.contains(turn)){
-                turn = (turn + 1) % getNumberOfPlayers();
+            if(getCurrentPlayer().isBankrupt()){
+                switchTurn();
             }
-            if (!getCurrentPlayer().isInJail()) {
+            else if (!getCurrentPlayer().isInJail()) {
                 gui.enablePlayerTurn(turn);
                 gui.setBuyHouseEnabled(getCurrentPlayer().canBuyHouse());
                 gui.setTradeEnabled(turn, true);
